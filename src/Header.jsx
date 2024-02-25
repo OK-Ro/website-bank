@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const HeaderSection = styled.header`
-  background-color: #f8f9fa;
+  background-color: #0a192f;
   padding: 20px;
 `;
 
@@ -14,7 +14,7 @@ const HeaderContainer = styled.div`
 
 const LogoContainer = styled.div`
   img {
-    max-width: 150px;
+    max-width: 200px;
     height: auto;
   }
 `;
@@ -33,12 +33,13 @@ const NavMenu = styled.nav`
         background: none;
         border: none;
         cursor: pointer;
-        font-size: 16px;
-        color: #333;
+        font-size: 18px;
+        color: #fff;
+        font-family: "Montserrat", sans-serif;
         transition: color 0.3s ease;
 
         &:hover {
-          color: #007bff;
+          color: #64ffda;
         }
       }
     }
@@ -49,7 +50,7 @@ const NavMenu = styled.nav`
       .dropdown-content {
         display: none;
         position: absolute;
-        background-color: #fff;
+        background-color: #0a192f;
         min-width: 200px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 10px;
@@ -72,24 +73,27 @@ const SearchSection = styled.div`
   display: flex;
 
   input[type="text"] {
-    padding: 8px;
-    border-radius: 4px 0 0 4px;
-    border: 1px solid #ccc;
-    border-right: none;
-    width: 200px;
+    padding: 10px;
+    border-radius: 20px 0 0 20px;
+    border: none;
+    width: 300px;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
   }
 
   button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #64ffda;
+    color: #0a192f;
     border: none;
-    padding: 8px 16px;
-    border-radius: 0 4px 4px 0;
+    padding: 10px 20px;
+    border-radius: 0 20px 20px 0;
     cursor: pointer;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: #0056b3;
+      background-color: #00bfa6;
     }
   }
 `;
