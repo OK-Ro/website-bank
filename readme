@@ -1,0 +1,42 @@
+# Web Bank - React Project
+
+Welcome to Web Bank! This React project is a showcase platform where users can explore different website templates for various purposes. Whether you're looking for a business website, portfolio, e-commerce store, blog, or personal website, Web Bank offers a curated selection of templates to suit your needs.
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Application](#running-the-application)
+- [Project Structure](#project-structure)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Overview
+
+Web Bank is built using React, providing a modern and responsive user interface. The project aims to provide users with an easy-to-navigate platform to discover and explore different website templates. Users can browse through featured templates, view details, and find templates suitable for their projects.
+
+## Features
+
+- **Featured Templates**: Showcase of featured website templates with images, titles, descriptions, and "View Details" buttons.
+- **Categories**: Browse templates by categories such as business, portfolio, e-commerce, blog, etc.
+- **Search Functionality**: Search for specific templates using keywords.
+- **Responsive Design**: Optimized for various screen sizes and devices.
+- **Interactive UI**: Smooth transitions and user-friendly interface for seamless navigation.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm/yarn installed on your machine.
+
+### Installation
+
+1. Clone the repository to your local machine:
+
+   ```bash
+   git clone https://github.com/your-username/web-bank-react.git
+   ```
