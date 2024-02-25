@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const HeaderSection = styled.header`
-  background-color: #0a192f;
+  background-color: #f8f9fa;
   padding: 20px;
 `;
 
@@ -14,7 +14,7 @@ const HeaderContainer = styled.div`
 
 const LogoContainer = styled.div`
   img {
-    max-width: 200px;
+    max-width: 150px;
     height: auto;
   }
 `;
@@ -28,33 +28,31 @@ const NavMenu = styled.nav`
 
     li {
       margin-right: 20px;
+      position: relative;
 
       button {
         background: none;
         border: none;
         cursor: pointer;
-        font-size: 18px;
-        color: #fff;
-        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        color: #333;
         transition: color 0.3s ease;
 
         &:hover {
-          color: #64ffda;
+          color: #007bff;
         }
       }
-    }
-
-    .dropdown-menu {
-      position: relative;
 
       .dropdown-content {
         display: none;
         position: absolute;
-        background-color: #0a192f;
-        min-width: 200px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 10px;
+        background-color: #f9f9f9;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
         z-index: 1;
+        top: 40px;
+        left: 0;
+        min-width: 160px;
+        padding: 12px 16px;
 
         button {
           display: block;
@@ -69,31 +67,46 @@ const NavMenu = styled.nav`
   }
 `;
 
+const UserProfile = styled.div`
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+`;
+
 const SearchSection = styled.div`
   display: flex;
 
   input[type="text"] {
-    padding: 10px;
-    border-radius: 20px 0 0 20px;
-    border: none;
-    width: 300px;
-    font-size: 16px;
-    font-family: "Montserrat", sans-serif;
+    padding: 8px;
+    border-radius: 4px 0 0 4px;
+    border: 1px solid #ccc;
+    border-right: none;
+    width: 200px;
   }
 
   button[type="submit"] {
-    background-color: #64ffda;
-    color: #0a192f;
+    background-color: #007bff;
+    color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 0 20px 20px 0;
+    padding: 8px 16px;
+    border-radius: 0 4px 4px 0;
     cursor: pointer;
-    font-size: 16px;
-    font-family: "Montserrat", sans-serif;
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: #00bfa6;
+      background-color: #0056b3;
     }
   }
 `;
@@ -142,6 +155,10 @@ function Header() {
             </li>
           </ul>
         </NavMenu>
+        {/* User Profile */}
+        <UserProfile>
+          <img src="https://via.placeholder.com/40" alt="User Profile" />
+        </UserProfile>
         {/* Search Bar */}
         <SearchSection>
           <input type="text" placeholder="Search..." />
