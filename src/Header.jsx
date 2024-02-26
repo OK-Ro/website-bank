@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const HeaderSection = styled.header`
@@ -36,6 +36,74 @@ const LogoContainer = styled.div`
   }
 `;
 
+const NavMenu = styled.nav`
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-right: 50px;
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        color: #ecf0f1;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #3498db;
+        }
+      }
+    }
+
+    .dropdown-menu {
+      position: relative;
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 220px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        z-index: 1;
+        border-radius: 8px;
+
+        button {
+          display: block;
+          margin-bottom: 10px;
+          background: none;
+          border: none;
+          color: #333;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #007bff;
+          }
+        }
+      }
+
+      &:hover .dropdown-content {
+        display: block;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    ul {
+      flex-direction: column;
+
+      li {
+        margin: 10px 0;
+      }
+    }
+  }
+`;
+
 const SearchSection = styled.div`
   display: flex;
 
@@ -65,115 +133,6 @@ const SearchSection = styled.div`
 `;
 
 function Header() {
-  const [isMobile, setIsMobile] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const NavMenu = styled.nav`
-    display: ${(props) => (props.isOpen || !isMobile ? "block" : "none")};
-
-    @media (max-width: 768px) {
-      position: absolute;
-      top: 70px;
-      left: 0;
-      width: 100%;
-      background-color: #2c3e50;
-      padding: 20px;
-    }
-  `;
-
-  const NavToggle = styled.input.attrs({ type: "checkbox", id: "nav" })`
-    display: none;
-
-    @media (max-width: 768px) {
-      display: block;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      z-index: 3;
-
-      &:checked + ${NavMenu} {
-        display: block;
-      }
-    }
-  `;
-
-  const NavLabel = styled.label.attrs({ htmlFor: "nav" })`
-    display: none;
-
-    @media (max-width: 768px) {
-      display: block;
-      position: absolute;
-      top: 28px;
-      left: 30px;
-      width: 40px;
-      height: 4px;
-      background-color: #fff;
-      border-radius: 4px;
-
-      &:before,
-      &:after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 4px;
-        background-color: #fff;
-        border-radius: 4px;
-        transition: transform 0.8s;
-      }
-
-      &:before {
-        top: 10px;
-      }
-
-      &:after {
-        top: 20px;
-      }
-
-      &:hover {
-        cursor: pointer;
-      }
-
-      &:hover:before,
-      &:hover::after {
-        transform: ${(props) =>
-          props.isOpen ? "rotate(-45deg)" : "rotate(0)"};
-      }
-
-      &:hover:before {
-        top: ${(props) => (props.isOpen ? "15px" : "10px")};
-      }
-
-      &:hover::after {
-        top: ${(props) => (props.isOpen ? "15px" : "20px")};
-      }
-
-      &:hover + ${NavToggle} {
-        display: block;
-      }
-
-      &:hover + ${NavToggle}:checked {
-        display: none;
-      }
-
-      &:hover + ${NavToggle} + ${NavMenu} {
-        display: block;
-      }
-    }
-  `;
-
   return (
     <HeaderSection>
       <HeaderContainer>
@@ -183,20 +142,13 @@ function Header() {
             alt="Your Platform Name"
           />
         </LogoContainer>
-        {isMobile && (
-          <>
-            <NavToggle checked={isOpen} onChange={toggleMenu} />
-            <NavLabel isOpen={isOpen} htmlFor="nav" />
-          </>
-        )}
-        <NavMenu isOpen={isOpen}>
+        <NavMenu>
           <ul>
             <li>
               <button onClick={() => (window.location.href = "#home")}>
                 Home
               </button>
             </li>
-
             <li className="dropdown-menu">
               <button className="dropbtn">Templates</button>
               <div className="dropdown-content">
