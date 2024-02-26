@@ -7,14 +7,6 @@ const HeaderSection = styled.header`
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 `;
 
-const HeaderContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-`;
-
 const bounceAnimation = keyframes`
   0%, 100% {
     transform: translateY(0);
@@ -33,6 +25,36 @@ const LogoContainer = styled.div`
     max-width: 150px;
     height: auto;
     display: block;
+
+    @media (max-width: 768px) {
+      max-width: 40%;
+    }
+  }
+`;
+
+const HeaderContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+`;
+
+const NavToggler = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    cursor: pointer;
+    color: #ecf0f1;
+    font-size: 44px;
   }
 `;
 
@@ -96,9 +118,43 @@ const NavMenu = styled.nav`
   @media (max-width: 768px) {
     ul {
       flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
 
       li {
         margin: 10px 0;
+      }
+
+      .dropdown-menu {
+        position: static;
+
+        .dropdown-content {
+          display: none;
+          position: static;
+          background-color: #f9f9f9;
+          min-width: 220px;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+          padding: 10px;
+          z-index: 1;
+          border-radius: 8px;
+
+          button {
+            display: block;
+            margin-bottom: 10px;
+            background: none;
+            border: none;
+            color: #333;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: #007bff;
+            }
+          }
+        }
+
+        &:hover .dropdown-content {
+          display: block;
+        }
       }
     }
   }
@@ -113,6 +169,11 @@ const SearchSection = styled.div`
     border: 1px solid #ccc;
     border-right: none;
     width: 300px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-bottom: 10px;
+    }
   }
 
   button[type="submit"] {
@@ -142,6 +203,7 @@ function Header() {
             alt="Your Platform Name"
           />
         </LogoContainer>
+        <NavToggler>☰</NavToggler>
         <NavMenu>
           <ul>
             <li>
@@ -202,7 +264,7 @@ function Header() {
           </ul>
         </NavMenu>
         <SearchSection>
-          <input type="text" placeholder="Search..." />
+          <input type="text" placeholder></input>
           <button type="submit">Search</button>
         </SearchSection>
       </HeaderContainer>
