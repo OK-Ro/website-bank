@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const HeaderSection = styled.header`
   background-color: #2c3e50;
@@ -41,7 +43,7 @@ const HeaderContainer = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     padding: 20px;
   }
@@ -54,7 +56,10 @@ const NavToggler = styled.div`
     display: block;
     cursor: pointer;
     color: #ecf0f1;
-    font-size: 44px;
+    font-size: 50px;
+    position: absolute;
+    top: 40px;
+    right: 20px;
   }
 `;
 
@@ -160,8 +165,22 @@ const NavMenu = styled.nav`
   }
 `;
 
+const SearchIcon = styled(FontAwesomeIcon)`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: inline;
+    color: white;
+    font-size: 30px;
+    margin-right: 10px;
+    position: absolute;
+    top: 60px;
+    right: 70px;
+    cursor: pointer;
+  }
+`;
 const SearchSection = styled.div`
-  display: flex;
+  display: ${(props) => (props.isVisible ? "flex" : "none")};
 
   input[type="text"] {
     padding: 8px;
@@ -171,6 +190,8 @@ const SearchSection = styled.div`
     width: 300px;
 
     @media (max-width: 768px) {
+      display: ${(props) =>
+        props.isVisible ? "block" : "none"}; // Change "flex" to "block"
       width: 100%;
       margin-bottom: 10px;
     }
@@ -179,7 +200,6 @@ const SearchSection = styled.div`
   button[type="submit"] {
     background-color: #74ebd5;
     background-image: linear-gradient(90deg, #74ebd5 0%, #9face6 100%);
-
     color: #fff;
     border: none;
     padding: 8px 36px;
@@ -194,6 +214,19 @@ const SearchSection = styled.div`
 `;
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+    console.log("Search icon clicked");
+  };
+
+  const toggleSearch = () => {
+    console.log("Toggle search function called");
+    setIsSearchVisible(!isSearchVisible);
+  };
+
   return (
     <HeaderSection>
       <HeaderContainer>
@@ -203,8 +236,10 @@ function Header() {
             alt="Your Platform Name"
           />
         </LogoContainer>
-        <NavToggler>☰</NavToggler>
-        <NavMenu>
+        <SearchIcon icon={faSearch} onClick={toggleSearch} />
+
+        <NavToggler onClick={toggleMenu}>☰</NavToggler>
+        <NavMenu isOpen={isOpen}>
           <ul>
             <li>
               <button onClick={() => (window.location.href = "#home")}>
@@ -263,8 +298,8 @@ function Header() {
             </li>
           </ul>
         </NavMenu>
-        <SearchSection>
-          <input type="text" placeholder></input>
+        <SearchSection isVisible={isSearchVisible}>
+          <input type="text" placeholder="" />
           <button type="submit">Search</button>
         </SearchSection>
       </HeaderContainer>
