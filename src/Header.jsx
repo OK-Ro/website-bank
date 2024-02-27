@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const HeaderSection = styled.header`
@@ -48,6 +48,24 @@ const HeaderContainer = styled.div`
     padding: 20px;
   }
 `;
+const SearchSection = styled.div`
+  display: flex;
+  align-items: center;
+  input {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: none;
+  }
+  button {
+    padding: 8px 15px;
+    border: none;
+    background-color: #4caf50;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+`;
 
 const NavToggler = styled.div`
   display: none;
@@ -56,115 +74,12 @@ const NavToggler = styled.div`
     display: block;
     cursor: pointer;
     color: #ecf0f1;
-    font-size: 50px;
-    position: absolute;
-    top: 40px;
-    right: 20px;
+    font-size: 40px;
+    position: relative;
+    top: -90px;
+    right: 2px;
   }
 `;
-
-const NavMenu = styled.nav`
-  ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-      margin-right: 50px;
-
-      button {
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: 16px;
-        color: #ecf0f1;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: #3498db;
-        }
-      }
-    }
-
-    .dropdown-menu {
-      position: relative;
-
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 220px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        padding: 10px;
-        z-index: 1;
-        border-radius: 8px;
-
-        button {
-          display: block;
-          margin-bottom: 10px;
-          background: none;
-          border: none;
-          color: #333;
-          transition: color 0.3s ease;
-
-          &:hover {
-            color: #007bff;
-          }
-        }
-      }
-
-      &:hover .dropdown-content {
-        display: block;
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    ul {
-      flex-direction: column;
-      align-items: center;
-      margin-top: 20px;
-
-      li {
-        margin: 10px 0;
-      }
-
-      .dropdown-menu {
-        position: static;
-
-        .dropdown-content {
-          display: none;
-          position: static;
-          background-color: #f9f9f9;
-          min-width: 220px;
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-          padding: 10px;
-          z-index: 1;
-          border-radius: 8px;
-
-          button {
-            display: block;
-            margin-bottom: 10px;
-            background: none;
-            border: none;
-            color: #333;
-            transition: color 0.3s ease;
-
-            &:hover {
-              color: #007bff;
-            }
-          }
-        }
-
-        &:hover .dropdown-content {
-          display: block;
-        }
-      }
-    }
-  }
-`;
-
 const SearchIcon = styled(FontAwesomeIcon)`
   display: none;
 
@@ -175,56 +90,44 @@ const SearchIcon = styled(FontAwesomeIcon)`
     margin-right: 10px;
     position: absolute;
     top: 60px;
-    right: 70px;
+    right: 90px;
     cursor: pointer;
   }
 `;
-const SearchSection = styled.div`
-  display: ${(props) => (props.isVisible ? "flex" : "none")};
-
-  input[type="text"] {
-    padding: 8px;
-    border-radius: 20px 0 20px 2px;
-    border: 1px solid #ccc;
-    border-right: none;
-    width: 300px;
-
+const NavMenu = styled.nav`
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
     @media (max-width: 768px) {
-      display: ${(props) =>
-        props.isVisible ? "block" : "none"}; // Change "flex" to "block"
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: ${({ open }) => (open ? "0" : "-100%")};
+      background-color: #333;
       width: 100%;
-      margin-bottom: 10px;
-    }
-  }
-
-  button[type="submit"] {
-    background-color: #74ebd5;
-    background-image: linear-gradient(90deg, #74ebd5 0%, #9face6 100%);
-    color: #fff;
-    border: none;
-    padding: 8px 36px;
-    border-radius: 0 4px 20px 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: #2980b9;
+      transition: left 0.3s ease-in-out;
+      li {
+        padding: 10px;
+        border-bottom: 1px solid #555;
+        a {
+          color: #fff;
+          text-decoration: none;
+          &:hover {
+            color: #4caf50;
+          }
+        }
+      }
     }
   }
 `;
 
 function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
-    console.log("Search icon clicked");
-  };
-
-  const toggleSearch = () => {
-    console.log("Toggle search function called");
-    setIsSearchVisible(!isSearchVisible);
+    setMenuOpen(!menuOpen);
   };
 
   return (
@@ -236,10 +139,11 @@ function Header() {
             alt="Your Platform Name"
           />
         </LogoContainer>
-        <SearchIcon icon={faSearch} onClick={toggleSearch} />
-
-        <NavToggler onClick={toggleMenu}>☰</NavToggler>
-        <NavMenu isOpen={isOpen}>
+        <SearchIcon icon={faSearch} />
+        <NavToggler onClick={toggleMenu}>
+          <FontAwesomeIcon icon={faBars} size="lg" />
+        </NavToggler>
+        <NavMenu open={menuOpen}>
           <ul>
             <li>
               <button onClick={() => (window.location.href = "#home")}>
@@ -298,8 +202,8 @@ function Header() {
             </li>
           </ul>
         </NavMenu>
-        <SearchSection isVisible={isSearchVisible}>
-          <input type="text" placeholder="" />
+        <SearchSection>
+          <input type="text" placeholder=""></input>
           <button type="submit">Search</button>
         </SearchSection>
       </HeaderContainer>
