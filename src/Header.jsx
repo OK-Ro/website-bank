@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
-import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const HeaderSection = styled.header`
   background-color: #2c3e50;
   padding: 20px 0;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 0px 0;
+  }
 `;
 
 const bounceAnimation = keyframes`
@@ -29,7 +33,7 @@ const LogoContainer = styled.div`
     display: block;
 
     @media (max-width: 768px) {
-      max-width: 40%;
+      max-width: 35%;
     }
   }
 `;
@@ -48,22 +52,111 @@ const HeaderContainer = styled.div`
     padding: 20px;
   }
 `;
-const SearchSection = styled.div`
-  display: flex;
-  align-items: center;
-  input {
-    padding: 8px;
-    margin-right: 10px;
-    border-radius: 4px;
-    border: none;
+
+const NavMenu = styled.nav`
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-right: 50px;
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        color: #ecf0f1;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #3498db;
+        }
+      }
+    }
+
+    .dropdown-menu {
+      position: relative;
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 220px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        z-index: 1;
+        border-radius: 8px;
+
+        button {
+          display: block;
+          margin-bottom: 10px;
+          background: none;
+          border: none;
+          color: #333;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #007bff;
+          }
+        }
+      }
+
+      &:hover .dropdown-content {
+        display: block;
+      }
+    }
   }
-  button {
-    padding: 8px 15px;
-    border: none;
-    background-color: #4caf50;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: ${(props) => (props.isOpen ? "block" : "none")};
+    ul {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1px;
+      background-color: #d9afd9;
+      background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
+
+      padding: 15px;
+
+      li {
+        margin: 10px 0;
+      }
+
+      .dropdown-menu {
+        position: static;
+
+        .dropdown-content {
+          display: none;
+          position: static;
+          background-color: #f9f9f9;
+          min-width: 220px;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+          padding: 10px;
+          z-index: 1;
+          border-radius: 8px;
+
+          button {
+            display: block;
+            margin-bottom: 10px;
+            background: none;
+            border: none;
+            color: #333;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: #007bff;
+            }
+          }
+        }
+
+        &:hover .dropdown-content {
+          display: block;
+        }
+      }
+    }
   }
 `;
 
@@ -74,11 +167,11 @@ const NavToggler = styled.div`
     display: block;
     cursor: pointer;
     color: #ecf0f1;
-    font-size: 40px;
+    font-size: 50px;
     position: absolute;
-    top: 20px; /* Adjust the positioning */
-    right: 20px; /* Adjust the positioning */
-    z-index: 999; /* Ensure it's above other elements */
+    top: 20px;
+    right: 20px;
+    z-index: 2;
   }
 `;
 
@@ -88,52 +181,67 @@ const SearchIcon = styled(FontAwesomeIcon)`
   @media (max-width: 768px) {
     display: inline;
     color: white;
-    font-size: 30px;
-    margin-right: 10px;
+    font-size: 25px;
     position: absolute;
-    top: 20px; /* Adjust the positioning */
-    right: 90px; /* Adjust the positioning */
+    top: 40px;
+    right: 90px;
     cursor: pointer;
-    z-index: 999; /* Ensure it's above other elements */
+    z-index: 2;
   }
 `;
 
-const NavMenu = styled.nav`
-  ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+const SearchSection = styled.div`
+  display: flex;
+
+  input[type="text"] {
+    padding: 8px;
+    border-radius: 20px 0 20px 2px;
+    border: 1px solid #ccc;
+    border-right: none;
+    width: 300px;
+
     @media (max-width: 768px) {
-      flex-direction: column;
-      position: absolute;
-      top: 70px; /* Adjust the positioning */
-      right: ${({ open }) =>
-        open ? "0" : "-100vw"}; /* Adjust the positioning */
-      background-color: #333;
-      width: 100%;
-      transition: right 0.3s ease-in-out;
-      z-index: 998; /* Ensure it's below the NavToggler */
-      li {
-        padding: 10px;
-        border-bottom: 1px solid #555;
-        a {
-          color: #fff;
-          text-decoration: none;
-          &:hover {
-            color: #4caf50;
-          }
-        }
-      }
+      display: ${(props) => (props.isVisible ? "flex" : "none")};
+      width: 250px;
+      margin-bottom: 10px;
+      border-radius: 20px 0 0px 20px;
+    }
+  }
+
+  button[type="submit"] {
+    display: ${(props) => (props.isVisible ? "flex" : "none")};
+    background-color: #74ebd5;
+    background-image: linear-gradient(90deg, #74ebd5 0%, #9face6 100%);
+    color: #fff;
+    border: none;
+    padding: 8px 36px;
+    border-radius: 0 4px 20px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    @media (max-width: 768px) {
+      padding: 8px 37px;
+      height: 35px;
+    }
+
+    &:hover {
+      background-color: #2980b9;
     }
   }
 `;
 
 function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setIsOpen(!isOpen);
+    console.log("navtogler icon clicked");
+  };
+
+  const toggleSearch = () => {
+    setIsSearchVisible(!isSearchVisible);
+    console.log("Search icon clicked");
   };
 
   return (
@@ -145,11 +253,9 @@ function Header() {
             alt="Your Platform Name"
           />
         </LogoContainer>
-        <SearchIcon icon={faSearch} />
-        <NavToggler onClick={toggleMenu}>
-          <FontAwesomeIcon icon={faBars} size="lg" />
-        </NavToggler>
-        <NavMenu open={menuOpen}>
+        <SearchIcon icon={faSearch} onClick={toggleSearch} />
+        <NavToggler onClick={toggleMenu}>☰</NavToggler>
+        <NavMenu isOpen={isOpen}>
           <ul>
             <li>
               <button onClick={() => (window.location.href = "#home")}>
@@ -208,7 +314,7 @@ function Header() {
             </li>
           </ul>
         </NavMenu>
-        <SearchSection>
+        <SearchSection isVisible={isSearchVisible}>
           <input type="text" placeholder=""></input>
           <button type="submit">Search</button>
         </SearchSection>
