@@ -75,11 +75,13 @@ const NavToggler = styled.div`
     cursor: pointer;
     color: #ecf0f1;
     font-size: 40px;
-    position: relative;
-    top: -90px;
-    right: 2px;
+    position: absolute;
+    top: 20px; /* Adjust the positioning */
+    right: 20px; /* Adjust the positioning */
+    z-index: 999; /* Ensure it's above other elements */
   }
 `;
+
 const SearchIcon = styled(FontAwesomeIcon)`
   display: none;
 
@@ -89,11 +91,13 @@ const SearchIcon = styled(FontAwesomeIcon)`
     font-size: 30px;
     margin-right: 10px;
     position: absolute;
-    top: 60px;
-    right: 90px;
+    top: 20px; /* Adjust the positioning */
+    right: 90px; /* Adjust the positioning */
     cursor: pointer;
+    z-index: 999; /* Ensure it's above other elements */
   }
 `;
+
 const NavMenu = styled.nav`
   ul {
     display: flex;
@@ -103,11 +107,13 @@ const NavMenu = styled.nav`
     @media (max-width: 768px) {
       flex-direction: column;
       position: absolute;
-      top: 60px;
-      left: ${({ open }) => (open ? "0" : "-100%")};
+      top: 70px; /* Adjust the positioning */
+      right: ${({ open }) =>
+        open ? "0" : "-100vw"}; /* Adjust the positioning */
       background-color: #333;
       width: 100%;
-      transition: left 0.3s ease-in-out;
+      transition: right 0.3s ease-in-out;
+      z-index: 998; /* Ensure it's below the NavToggler */
       li {
         padding: 10px;
         border-bottom: 1px solid #555;
