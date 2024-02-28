@@ -1,8 +1,89 @@
 import React from "react";
+import styled from "styled-components";
 
-function HeroSection() {
+const HeroSection = styled.section`
+  .hero-container {
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  /* Styles for tablets */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    .cta-button {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+
+  /* Styles for mobile phones */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .cta-button {
+      font-size: 12px;
+      padding: 8px 16px;
+    }
+  }
+
+  /* Desktop styles */
+  @media (min-width: 769px) {
+    h1 {
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+    .cta-button {
+      font-size: 16px;
+      padding: 12px 24px;
+    }
+  }
+`;
+
+function HeroSectionComponent() {
   return (
-    <section className="hero-section">
+    <HeroSection>
       <div className="hero-container">
         <h1>Discover Your Perfect Website</h1>
         <p>
@@ -17,8 +98,8 @@ function HeroSection() {
           Explore Templates
         </a>
       </div>
-    </section>
+    </HeroSection>
   );
 }
 
-export default HeroSection;
+export default HeroSectionComponent;
