@@ -33,7 +33,7 @@ const LogoContainer = styled.div`
     display: block;
 
     @media (max-width: 768px) {
-      max-width: 35%;
+      max-width: 30%;
     }
   }
 `;
@@ -115,14 +115,17 @@ const NavMenu = styled.nav`
     ul {
       flex-direction: column;
       align-items: center;
-      margin-top: 1px;
+      margin-top: 0px;
       background-color: #d9afd9;
       background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
-
-      padding: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
+      border-radius: 4px;
+      padding: 20px;
+      width: 250px;
+      height: 82vh;
 
       li {
-        margin: 10px 0;
+        margin: 50px 0;
       }
 
       .dropdown-menu {
@@ -167,9 +170,9 @@ const NavToggler = styled.div`
     display: block;
     cursor: pointer;
     color: #ecf0f1;
-    font-size: 50px;
+    font-size: 35px;
     position: absolute;
-    top: 20px;
+    top: 28px;
     right: 20px;
     z-index: 2;
   }
