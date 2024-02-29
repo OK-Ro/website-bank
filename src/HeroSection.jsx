@@ -1,67 +1,95 @@
 import React from "react";
+import styled from "styled-components";
 
-function HeroSection() {
+const HeroSection = styled.section`
+  background-color: #f8f9fa;
+  padding: 80px 0;
+
+  .hero-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+  }
+
+  .cta-button:hover {
+    background-color: #0056b3;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    .cta-button {
+      font-size: 14px;
+      padding: 12px 24px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    .cta-button {
+      font-size: 12px;
+      padding: 10px 20px;
+    }
+  }
+`;
+
+function HeroSectionComponent() {
   return (
-    <div>
-      {/* Eye */}
-      <svg
-        className="eye"
-        width="190"
-        height="190"
-        viewBox="0 0 190 190"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <clipPath id="bagel1">
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M95 190C147.467 190 190 147.467 190 95C190 42.533 147.467 0 95 0C42.533 0 0 42.533 0 95C0 147.467 42.533 190 95 190ZM95 120C108.807 120 120 108.807 120 95C120 81.1929 108.807 70 95 70C81.1929 70 70 81.1929 70 95C70 108.807 81.1929 120 95 120Z"
-            />
-          </clipPath>
-          <clipPath id="bagel2">
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M71 142C110.212 142 142 110.212 142 71C142 31.7878 110.212 0 71 0C31.7878 0 0 31.7878 0 71C0 110.212 31.7878 142 71 142ZM71 139C108.555 139 139 108.555 139 71C139 33.4446 108.555 3 71 3C33.4446 3 3 33.4446 3 71C3 108.555 33.4446 139 71 139Z"
-            />
-          </clipPath>
-          <clipPath id="bagel3">
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M60 120C93.1372 120 120 93.1372 120 60C120 26.8628 93.1372 0 60 0C26.8628 0 0 26.8628 0 60C0 93.1372 26.8628 120 60 120ZM60 115C90.3757 115 115 90.3757 115 60C115 29.6243 90.3757 5 60 5C29.6243 5 5 29.6243 5 60C5 90.3757 29.6243 115 60 115Z"
-            />
-          </clipPath>
-          <clipPath id="bagel4">
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M38 76C58.9868 76 76 58.9868 76 38C76 17.0132 58.9868 0 38 0C17.0132 0 0 17.0132 0 38C0 58.9868 17.0132 76 38 76ZM38 72C56.7777 72 72 56.7776 72 38C72 19.2224 56.7777 4 38 4C19.2223 4 4 19.2224 4 38C4 56.7776 19.2223 72 38 72Z"
-            />
-          </clipPath>
-        </defs>
-        <use href="#bagel1" fill="#EBEDF3" />
-        <use href="#bagel2" fill="#EBEDF3" />
-        <use href="#bagel3" fill="#EBEDF3" />
-        <use href="#bagel4" fill="#FFFFFF" />
-      </svg>
-
-      {/* Circles */}
-      {[...Array(14)].map((_, index) => (
-        <div key={index} className={`circle-${index + 1}`}></div>
-      ))}
-
-      {/* Glitch */}
-      <div className="glitch"></div>
-
-      {/* Fragments */}
-      {[...Array(3)].map((_, index) => (
-        <div key={index} className={`fragment-${index + 1}`}></div>
-      ))}
-    </div>
+    <HeroSection>
+      <div className="hero-container">
+        <h1>Discover Your Perfect Website</h1>
+        <p>
+          Find the ideal website template for your project with Website Bank.
+          Our carefully curated selection offers templates for every need, from
+          sleek business sites to captivating portfolios and vibrant e-commerce
+          stores. Stand out from the crowd and impress your visitors with our
+          professionally designed and fully customizable templates. Get started
+          today and unlock the potential of your online presence!
+        </p>
+        <a href="#templates" className="cta-button">
+          Explore Templates
+        </a>
+      </div>
+    </HeroSection>
   );
 }
 
-export default HeroSection;
+export default HeroSectionComponent;
