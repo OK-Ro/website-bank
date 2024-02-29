@@ -1,79 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 
-const HeroSection = styled.section`
-  background-color: #f8f9fa;
-  padding: 80px 0;
-
-  .hero-container {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  h1 {
-    font-size: 36px;
-    color: #333;
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-
-  p {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 30px;
-    line-height: 1.6;
-  }
-
-  .cta-button {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    font-size: 16px;
-  }
-
-  .cta-button:hover {
-    background-color: #0056b3;
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 32px;
-    }
-
-    p {
-      font-size: 16px;
-    }
-
-    .cta-button {
-      font-size: 14px;
-      padding: 12px 24px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 28px;
-    }
-
-    p {
-      font-size: 14px;
-    }
-
-    .cta-button {
-      font-size: 12px;
-      padding: 10px 20px;
-    }
-  }
-`;
-
-function HeroSectionComponent() {
+function HeroSection() {
   return (
-    <HeroSection>
+    <section className="hero-section">
       <div className="hero-container">
         <h1>Discover Your Perfect Website</h1>
         <p>
@@ -88,8 +17,8 @@ function HeroSectionComponent() {
           Explore Templates
         </a>
       </div>
-    </HeroSection>
+    </section>
   );
 }
 
-export default HeroSectionComponent;
+export default HeroSection;
