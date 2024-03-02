@@ -1,6 +1,7 @@
 import FeaturedTemplatesSection from "./FeaturedTemplatesSection";
 import Header from "./Header";
 import HeroSection from "./HeroSection";
+import PopularCategoriesSection from "./PopularCategoriesSection";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <HeroSection />
       <FeaturedTemplatesSection />
+      <PopularCategoriesSection />
     </div>
   );
 }
