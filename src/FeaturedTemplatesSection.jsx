@@ -11,6 +11,13 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
+const MainTitle = styled.h2`
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+`;
+
 const TemplateWrapper = styled.div`
   width: 30%;
   background-color: #f8f9fa;
@@ -67,8 +74,60 @@ const FeaturedButton = styled.a`
 `;
 
 const FeaturedTemplatesSection = () => {
+  const templates = [
+    {
+      title: "BusinessPro",
+      image:
+        "https://th.bing.com/th/id/OIP.Jj9J6E_COTFKUVjiKLorvwHaGZ?w=186&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      description:
+        "A sleek and professional template perfect for business websites.",
+      link: "#",
+    },
+    {
+      title: "CreativeWorks",
+      image:
+        "https://th.bing.com/th/id/OIP.LubZGdf1qHT7NvszV9AiKQHaFj?rs=1&pid=ImgDetMain",
+      description:
+        "An innovative and creative template ideal for portfolio websites.",
+      link: "#",
+    },
+    {
+      title: "E-StorePro",
+      image:
+        "https://blendermedia.com/wp-content/uploads/2016/07/July12_banner.jpg",
+      description:
+        "A fully customizable template designed for e-commerce and online stores.",
+      link: "#",
+    },
+    {
+      title: "MagazinePlus",
+      image:
+        "https://webneel.com/daily/sites/default/files/images/daily/02-2014/10-beautiful-websites.jpg",
+      description:
+        "An elegant and feature-rich template perfect for blogs and online magazines.",
+      link: "#",
+    },
+    {
+      title: "Travelify",
+      image:
+        "https://webneel.com/daily/sites/default/files/images/daily/02-2014/13-beautiful-website.jpg",
+      description:
+        "A captivating template designed for travel blogs and tourism websites.",
+      link: "#",
+    },
+    {
+      title: "FitLife",
+      image:
+        "https://cdn.dribbble.com/users/5796985/screenshots/14427400/media/edbe0e672fc47d50a6b278f7c5ae0970.png",
+      description:
+        "A vibrant and energetic template tailored for health and fitness websites.",
+      link: "#",
+    },
+  ];
+
   return (
     <Section className="featured-templates-section">
+      <MainTitle>Featured Templates</MainTitle>
       <Container className="featured-templates-container">
         {templates.map((template, index) => (
           <TemplateWrapper key={index}>
