@@ -11,6 +11,13 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
+const MainTitle = styled.h2`
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+`;
+
 const TemplateWrapper = styled.div`
   width: 30%;
   background-color: #f8f9fa;
@@ -120,6 +127,7 @@ const FeaturedTemplatesSection = () => {
 
   return (
     <Section className="featured-templates-section">
+      <MainTitle>Featured Templates</MainTitle>
       <Container className="featured-templates-container">
         {templates.map((template, index) => (
           <TemplateWrapper key={index}>

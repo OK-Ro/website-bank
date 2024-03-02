@@ -3,23 +3,31 @@ import styled from "styled-components";
 
 const HeroSection = styled.section`
   background-color: #f8f9fa;
-  padding: 80px 0;
+  padding: 300px 0;
+
+  @media (max-width: 768px) {
+    padding: 200px 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 60px 0;
+  }
 
   .hero-container {
     text-align: center;
-    max-width: 800px;
+    width: 80%;
     margin: 0 auto;
   }
 
   h1 {
-    font-size: 36px;
+    font-size: 6rem;
     color: #333;
     margin-bottom: 20px;
     font-weight: bold;
   }
 
   p {
-    font-size: 18px;
+    font-size: 2rem;
     color: #555;
     margin-bottom: 30px;
     line-height: 1.6;
@@ -42,7 +50,7 @@ const HeroSection = styled.section`
 
   @media (max-width: 768px) {
     h1 {
-      font-size: 32px;
+      font-size: 381rem;
     }
 
     p {

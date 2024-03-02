@@ -9,6 +9,9 @@ const PopularSection = styled.section`
 
 const CategoryContainer = styled.div`
   margin: 20px;
+  @media (max-width: 768px) {
+    margin: 3px;
+  }
 `;
 
 const Category = styled.div`
@@ -27,6 +30,7 @@ const Category = styled.div`
   @media (max-width: 768px) {
     width: 45%;
     height: 16vh;
+    padding: 10px;
   }
 
   @media (max-width: 576px) {
@@ -40,7 +44,7 @@ const CategoryImage = styled.img`
   border-radius: 8px;
   @media (max-width: 576px) {
     width: 100%;
-    height: 14vh;
+    height: 12vh;
   }
 `;
 
