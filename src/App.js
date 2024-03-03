@@ -3,6 +3,7 @@ import Header from "./Header";
 import HeroSection from "./HeroSection";
 import PopularCategoriesSection from "./PopularCategoriesSection";
 import ServicesSection from "./ServiceSection";
+import Testimonials from "./Testimonials";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <FeaturedTemplatesSection />
       <PopularCategoriesSection />
       <ServicesSection />
+      <Testimonials />
     </div>
   );
 }
