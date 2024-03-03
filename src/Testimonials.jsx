@@ -23,6 +23,10 @@ const Testimonial = styled.div`
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    flex: 0 1 calc(50% - 20px); /* Adjust width for smaller screens */
+  }
 `;
 
 const TestimonialIcon = styled.div`
@@ -40,6 +44,18 @@ const TestimonialImage = styled.img`
 
 const TestimonialText = styled.div`
   margin-bottom: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(40, end);
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
 `;
 
 const TestimonialAuthor = styled.div`
