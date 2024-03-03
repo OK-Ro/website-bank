@@ -44,18 +44,6 @@ const TestimonialImage = styled.img`
 
 const TestimonialText = styled.div`
   margin-bottom: 10px;
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typing 3s steps(40, end);
-
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
 `;
 
 const TestimonialAuthor = styled.div`
