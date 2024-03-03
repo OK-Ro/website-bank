@@ -4,47 +4,49 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 
 // Styled components for the Testimonials Section
+
 const TestimonialsSection = styled.section`
   margin-top: 40px;
+  text-align: center;
 `;
 
 const TestimonialsContainer = styled.div`
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
 `;
 
 const Testimonial = styled.div`
-  width: 45%;
+  flex: 0 1 calc(25% - 20px); /* Adjust width according to the number of testimonials you want in a row */
   background-color: #f8f9fa;
   border-radius: 8px;
   padding: 20px;
-  margin-bottom: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
 `;
 
 const TestimonialIcon = styled.div`
-  margin-right: 10px;
+  color: #007bff;
+  font-size: 24px;
+  margin-bottom: 10px;
 `;
 
 const TestimonialImage = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 100px; /* Adjust image size as needed */
+  height: 100px;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-bottom: 10px;
 `;
 
 const TestimonialText = styled.div`
-  flex-grow: 1;
+  margin-bottom: 10px;
 `;
 
 const TestimonialAuthor = styled.div`
   font-style: italic;
 `;
 
-const TestimonialsComponent = () => {
+const Testimonials = () => {
   return (
     <TestimonialsSection>
       <h2>Testimonials</h2>
@@ -92,4 +94,4 @@ const TestimonialsComponent = () => {
   );
 };
 
-export default TestimonialsComponent;
+export default Testimonials;
