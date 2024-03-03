@@ -56,7 +56,7 @@ const Testimonials = () => {
             <FontAwesomeIcon icon={faQuoteLeft} />
           </TestimonialIcon>
           <TestimonialImage
-            src="https://via.placeholder.com/100"
+            src="https://th.bing.com/th/id/OIP.jAEnONxlpsGr8oF6yPHI9QHaHZ?w=200&h=199&c=7&r=0&o=5&dpr=1.3&pid=1.7"
             alt="John Doe"
           />
           <TestimonialText>
@@ -75,7 +75,7 @@ const Testimonials = () => {
             <FontAwesomeIcon icon={faQuoteLeft} />
           </TestimonialIcon>
           <TestimonialImage
-            src="https://via.placeholder.com/100"
+            src="https://www.bing.com/th?id=OIP.kx4PP2AZfFKfNHq0yOMSAAHaNJ&w=150&h=267&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
             alt="Jane Smith"
           />
           <TestimonialText>
@@ -87,6 +87,26 @@ const Testimonials = () => {
           </TestimonialText>
           <TestimonialAuthor>
             <p>- Jane Smith</p>
+          </TestimonialAuthor>
+        </Testimonial>
+
+        <Testimonial>
+          <TestimonialIcon>
+            <FontAwesomeIcon icon={faQuoteLeft} />
+          </TestimonialIcon>
+          <TestimonialImage
+            src="https://th.bing.com/th/id/OIP.7mHXjj_rXnhRlqCfJ-Ew_AHaHF?pid=ImgDet&w=200&h=191&c=7&dpr=1,3"
+            alt="John Doe"
+          />
+          <TestimonialText>
+            <p>
+              "I'm very pleased with the service provided by Company X. Their
+              professionalism and attention to detail exceeded my expectations.
+              I highly recommend their services."
+            </p>
+          </TestimonialText>
+          <TestimonialAuthor>
+            <p>- Alex Bax</p>
           </TestimonialAuthor>
         </Testimonial>
       </TestimonialsContainer>
