@@ -3,58 +3,51 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 
+// Styled components for the Testimonials Section
 const TestimonialsSection = styled.section`
   margin-top: 40px;
 `;
 
 const TestimonialsContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
 `;
 
 const Testimonial = styled.div`
-  width: 70%;
+  width: 45%;
   background-color: #f8f9fa;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
 `;
 
 const TestimonialIcon = styled.div`
-  color: #0070c9;
-  font-size: 24px;
-  margin-bottom: 10px;
+  margin-right: 10px;
 `;
 
 const TestimonialImage = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  margin-bottom: 20px;
+  margin-right: 10px;
 `;
 
 const TestimonialText = styled.div`
-  font-size: 18px;
-  color: #333;
-  margin-bottom: 10px;
+  flex-grow: 1;
 `;
 
 const TestimonialAuthor = styled.div`
   font-style: italic;
-  font-size: 16px;
-  color: #555;
 `;
 
-const Testimonials = () => {
+const TestimonialsComponent = () => {
   return (
     <TestimonialsSection>
-      <h2 style={{ color: "#000", textAlign: "center" }}>Testimonials</h2>
+      <h2>Testimonials</h2>
       <TestimonialsContainer>
         <Testimonial>
           <TestimonialIcon>
@@ -99,4 +92,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default TestimonialsComponent;
