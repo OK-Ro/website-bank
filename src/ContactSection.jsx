@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const ContactSection = styled.section`
   background-color: #f8f9fa;
-  padding: 80px 0;
+  padding: 40px 0;
 `;
 
 const ContactContainer = styled.div`
@@ -13,9 +13,8 @@ const ContactContainer = styled.div`
 `;
 
 const ContactHeading = styled.h2`
-  font-size: 36px;
-  margin-bottom: 30px;
-  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
 `;
 
 const ContactForm = styled.form`
@@ -26,48 +25,36 @@ const ContactForm = styled.form`
 
 const FormInput = styled.input`
   width: 100%;
-  padding: 15px;
+  padding: 10px;
   margin-bottom: 20px;
-  border: 2px solid #ddd;
+  border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 16px;
-  color: #555;
-  transition: border-color 0.3s ease;
-
-  &:focus {
-    outline: none;
-    border-color: #007bff;
-  }
+  background-color: #f8f9fa;
 `;
 
 const FormTextarea = styled.textarea`
   width: 100%;
-  padding: 15px;
+  padding: 10px;
   margin-bottom: 20px;
-  border: 2px solid #ddd;
+  border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 16px;
-  color: #555;
-  transition: border-color 0.3s ease;
-
-  &:focus {
-    outline: none;
-    border-color: #007bff;
-  }
+  background-color: #f8f9fa;
 `;
 
 const FormButton = styled.button`
-  padding: 15px 40px;
-  background-color: #007bff;
+  padding: 10px 20px;
+  background-color: #0070c9;
   color: #fff;
   border: none;
   border-radius: 8px;
-  font-size: 18px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-size: 16px;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: #005ba1;
   }
 `;
 
