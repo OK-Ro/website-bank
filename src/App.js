@@ -1,3 +1,4 @@
+import Contact from "./ContactSection";
 import FeaturedTemplatesSection from "./FeaturedTemplatesSection";
 import Header from "./Header";
 import HeroSection from "./HeroSection";
@@ -14,6 +15,7 @@ function App() {
       <PopularCategoriesSection />
       <ServicesSection />
       <Testimonials />
+      <Contact />
     </div>
   );
 }
