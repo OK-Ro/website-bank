@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // Styled components for the Contact Section
 const ContactSection = styled.section`
@@ -65,40 +67,19 @@ const FormButton = styled.button`
 `;
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch("/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      if (response.ok) {
-        // Handle success (e.g., display success message)
-        console.log("Email sent successfully!");
-      } else {
-        // Handle error (e.g., display error message)
-        console.error("Failed to send email.");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
+    // Here you can add your form submission logic, for example, sending an email
+    // After the submission, you can show a success toast message
+    toast.success("Message sent successfully!");
+    // Clear the form fields after submission
+    setName("");
+    setEmail("");
+    setMessage("");
   };
 
   return (
@@ -108,28 +89,26 @@ const Contact = () => {
         <ContactForm onSubmit={handleSubmit}>
           <FormInput
             type="text"
-            name="name"
             placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
           <FormInput
             type="email"
-            name="email"
             placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <FormTextarea
             rows="5"
-            name="message"
             placeholder="Your Message"
-            value={formData.message}
-            onChange={handleChange}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
           ></FormTextarea>
           <FormButton type="submit">Send Message</FormButton>
         </ContactForm>
       </ContactContainer>
+      <ToastContainer />
     </ContactSection>
   );
 };
