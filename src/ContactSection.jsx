@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 // Styled components for the Contact Section
@@ -65,14 +65,68 @@ const FormButton = styled.button`
 `;
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        // Handle success (e.g., display success message)
+        console.log("Email sent successfully!");
+      } else {
+        // Handle error (e.g., display error message)
+        console.error("Failed to send email.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   return (
     <ContactSection id="contact">
       <ContactContainer>
         <ContactHeading>Contact Us</ContactHeading>
-        <ContactForm>
-          <FormInput type="text" placeholder="Your Name" />
-          <FormInput type="email" placeholder="Your Email" />
-          <FormTextarea rows="5" placeholder="Your Message"></FormTextarea>
+        <ContactForm onSubmit={handleSubmit}>
+          <FormInput
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+          />
+          <FormInput
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          <FormTextarea
+            rows="5"
+            name="message"
+            placeholder="Your Message"
+            value={formData.message}
+            onChange={handleChange}
+          ></FormTextarea>
           <FormButton type="submit">Send Message</FormButton>
         </ContactForm>
       </ContactContainer>
