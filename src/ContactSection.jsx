@@ -1,60 +1,66 @@
 import React from "react";
 import styled from "styled-components";
 
+// Styled components for the Contact Section
 const ContactSection = styled.section`
-  background-color: #f8f9fa;
-  padding: 40px 0;
+  margin-top: 40px;
 `;
 
 const ContactContainer = styled.div`
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
-  text-align: center;
 `;
 
 const ContactHeading = styled.h2`
-  font-size: 24px;
+  font-size: 28px;
+  text-align: center;
   margin-bottom: 20px;
+  color: #333;
 `;
 
 const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 
 const FormInput = styled.input`
-  width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
   font-size: 16px;
-  background-color: #f8f9fa;
+  transition: background-color 0.3s;
+  &:focus {
+    background-color: #e0e0e0;
+  }
 `;
 
 const FormTextarea = styled.textarea`
-  width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
   font-size: 16px;
-  background-color: #f8f9fa;
+  resize: vertical;
+  transition: background-color 0.3s;
+  &:focus {
+    background-color: #e0e0e0;
+  }
 `;
 
 const FormButton = styled.button`
-  padding: 10px 20px;
-  background-color: #0070c9;
+  padding: 12px 0;
+  background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  border-radius: 5px;
   font-size: 16px;
-
+  cursor: pointer;
+  transition: background-color 0.3s;
   &:hover {
-    background-color: #005ba1;
+    background-color: #0056b3;
   }
 `;
 
