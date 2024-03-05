@@ -71,28 +71,32 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Simulate sending an email (replace this with your actual logic)
-    sendEmail(name, email, message);
-
-    // Show a success toast message
-    toast.success("Message sent successfully!");
-
-    // Clear the form fields after submission
-    setName("");
-    setEmail("");
-    setMessage("");
+    try {
+      // Simulate sending an email (replace with your actual logic)
+      await sendEmail({ name, email, message });
+      // Show success toast message
+      toast.success("Message sent successfully!");
+      // Clear form fields
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (error) {
+      // Handle error, show error toast message
+      toast.error("Failed to send message. Please try again later.");
+    }
   };
 
-  // Function to simulate sending an email (replace this with your actual email sending logic)
-  const sendEmail = (name, email, message) => {
-    console.log(
-      `Sending email to ${email} from ${name} with message: ${message}`
-    );
-    // Here you can add your actual email sending logic
-    // For example, you can use a library like Nodemailer to send emails from a Node.js server
+  // Function to send email (replace with your actual logic)
+  const sendEmail = async ({ name, email, message }) => {
+    // Simulate sending email with a delay (replace with actual logic)
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    // Log the details (replace with actual email sending logic)
+    console.log("Sending email...");
+    console.log("Name:", name);
+    console.log("Email:", email);
+    console.log("Message:", message);
   };
 
   return (
