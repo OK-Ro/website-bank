@@ -73,13 +73,26 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you can add your form submission logic, for example, sending an email
-    // After the submission, you can show a success toast message
+
+    // Simulate sending an email (replace this with your actual logic)
+    sendEmail(name, email, message);
+
+    // Show a success toast message
     toast.success("Message sent successfully!");
+
     // Clear the form fields after submission
     setName("");
     setEmail("");
     setMessage("");
+  };
+
+  // Function to simulate sending an email (replace this with your actual email sending logic)
+  const sendEmail = (name, email, message) => {
+    console.log(
+      `Sending email to ${email} from ${name} with message: ${message}`
+    );
+    // Here you can add your actual email sending logic
+    // For example, you can use a library like Nodemailer to send emails from a Node.js server
   };
 
   return (
