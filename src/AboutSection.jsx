@@ -36,12 +36,6 @@ const AboutImageLeft = styled.img`
   height: 40vh;
   margin-right: 40px;
   object-fit: cover;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
 `;
 
 const AboutImageRight = styled.img`
@@ -49,11 +43,6 @@ const AboutImageRight = styled.img`
   height: 40vh;
   margin-left: 40px;
   object-fit: cover;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    margin-left: 0;
-  }
 `;
 
 const AboutSection = () => {
