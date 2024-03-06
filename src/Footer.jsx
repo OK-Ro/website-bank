@@ -1,7 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookF,
+  faTwitter,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 
-// Styled components for the Footer Section
 const FooterSection = styled.footer`
   background-color: #333;
   color: #fff;
@@ -14,26 +19,10 @@ const FooterContainer = styled.div`
   align-items: center;
 `;
 
-const FooterLinks = styled.div`
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  li {
-    margin-bottom: 10px;
-  }
-
-  a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-
-  a:hover {
-    color: #ccc;
-  }
+const FooterLinks = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
 `;
 
 const ContactInfo = styled.div`
@@ -49,48 +38,36 @@ const SocialLinks = styled.div`
     font-size: 24px;
     text-decoration: none;
     transition: color 0.3s;
-  }
 
-  .social-icon:hover {
-    color: #ccc;
+    &:hover {
+      color: #ccc;
+    }
   }
 `;
 
 const Footer = () => {
   return (
-    <FooterSection className="footer-section">
-      <FooterContainer className="footer-container">
+    <FooterSection>
+      <FooterContainer>
         {/* Footer Links */}
-        <FooterLinks className="footer-links">
-          <ul>
-            <li>
-              <a href="#terms">Terms of Service</a>
-            </li>
-            <li>
-              <a href="#privacy">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="#faqs">FAQs</a>
-            </li>
-          </ul>
+        <FooterLinks>
+          <li>Terms of Service</li>
+          <li>Privacy Policy</li>
+          <li>FAQs</li>
         </FooterLinks>
+
         {/* Contact Information */}
-        <ContactInfo className="contact-info">
+        <ContactInfo>
           <p>Contact Us:</p>
           <p>Email: info@example.com</p>
           <p>Phone: 123-456-7890</p>
         </ContactInfo>
+
         {/* Social Media Links */}
-        <SocialLinks className="social-links">
-          <a href="#" className="social-icon">
-            <i className="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" className="social-icon">
-            <i className="fab fa-twitter"></i>
-          </a>
-          <a href="#" className="social-icon">
-            <i className="fab fa-instagram"></i>
-          </a>
+        <SocialLinks>
+          <FontAwesomeIcon icon={faFacebookF} className="social-icon" />
+          <FontAwesomeIcon icon={faTwitter} className="social-icon" />
+          <FontAwesomeIcon icon={faInstagram} className="social-icon" />
         </SocialLinks>
       </FooterContainer>
     </FooterSection>
