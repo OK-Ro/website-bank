@@ -3,46 +3,59 @@ import styled from "styled-components";
 
 const Section = styled.section`
   background-color: #f8f9fa;
-  padding: 200px 0;
+  padding: 100px 0;
+
+  @media (max-width: 768px) {
+    padding: 50px 0;
+  }
 `;
 
 const AboutContainer = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
 `;
 
 const AboutContent = styled.div`
-  flex: 1;
   max-width: 800px;
   text-align: center;
+  margin-bottom: 40px;
 `;
 
 const AboutHeading = styled.h2`
-  font-size: 4rem;
+  font-size: 3rem;
   color: #333;
   margin-bottom: 20px;
 `;
 
 const AboutDescription = styled.p`
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: #555;
   line-height: 1.6;
 `;
 
 const AboutImageLeft = styled.img`
-  width: 35%;
-  height: 40vh;
-  margin-right: 40px;
+  width: 80%;
+  max-height: 200px;
+  margin-bottom: 20px;
   object-fit: cover;
+
+  @media (min-width: 768px) {
+    width: 35%;
+    height: auto;
+    margin-bottom: 0;
+  }
 `;
 
 const AboutImageRight = styled.img`
-  width: 35%;
-  height: 40vh;
-  margin-left: 40px;
+  width: 80%;
+  max-height: 200px;
   object-fit: cover;
+
+  @media (min-width: 768px) {
+    width: 35%;
+    height: auto;
+  }
 `;
 
 const AboutSection = () => {
