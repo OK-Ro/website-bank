@@ -3,58 +3,56 @@ import styled from "styled-components";
 
 const Section = styled.section`
   background-color: #f8f9fa;
-  padding: 100px 0;
-
-  @media (max-width: 768px) {
-    padding: 50px 0;
-  }
+  padding: 200px 0;
 `;
 
 const AboutContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 `;
 
 const AboutContent = styled.div`
+  flex: 1;
   max-width: 800px;
   text-align: center;
-  margin-bottom: 40px;
 `;
 
 const AboutHeading = styled.h2`
-  font-size: 3rem;
+  font-size: 4rem;
   color: #333;
   margin-bottom: 20px;
 `;
 
 const AboutDescription = styled.p`
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: #555;
   line-height: 1.6;
 `;
 
 const AboutImageLeft = styled.img`
-  width: 80%;
-  max-height: 200px;
-  margin-bottom: 20px;
+  width: 35%;
+  height: 40vh;
+  margin-right: 40px;
   object-fit: cover;
 
-  @media (min-width: 768px) {
-    width: 35%;
-    height: auto;
-    margin-bottom: 0;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
   }
 `;
 
 const AboutImageRight = styled.img`
-  width: 80%;
-  max-height: 200px;
+  width: 35%;
+  height: 40vh;
+  margin-left: 40px;
   object-fit: cover;
 
-  @media (min-width: 768px) {
-    width: 35%;
-    height: auto;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
   }
 `;
 
