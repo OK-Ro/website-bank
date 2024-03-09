@@ -4,6 +4,10 @@ import styled from "styled-components";
 const Section = styled.section`
   background-color: #f8f9fa;
   padding: 200px 0;
+
+  @media (max-width: 768px) {
+    padding: 100px 0;
+  }
 `;
 
 const AboutContainer = styled.div`
@@ -23,12 +27,20 @@ const AboutHeading = styled.h2`
   font-size: 4rem;
   color: #333;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+  }
 `;
 
 const AboutDescription = styled.p`
   font-size: 1.6rem;
   color: #555;
   line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
 `;
 
 const AboutImageLeft = styled.img`
@@ -41,6 +53,7 @@ const AboutImageLeft = styled.img`
     width: 100%;
     margin-right: 0;
     margin-bottom: 20px;
+    height: auto;
   }
 `;
 
@@ -53,6 +66,8 @@ const AboutImageRight = styled.img`
   @media (max-width: 768px) {
     width: 100%;
     margin-left: 0;
+    margin-top: 20px;
+    height: auto;
   }
 `;
 
