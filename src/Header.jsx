@@ -1,18 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+// Styled components for the header section
 const HeaderSection = styled.header`
-  background-color: #2c3e50;
+  background-color: #1abc9c;
   padding: 20px 0;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 
   @media (max-width: 768px) {
-    padding: 0px 0;
+    padding: 10px 0;
   }
 `;
 
+// Keyframe animation for logo bounce
 const bounceAnimation = keyframes`
   0%, 100% {
     transform: translateY(0);
@@ -22,6 +24,7 @@ const bounceAnimation = keyframes`
   }
 `;
 
+// Container for logo with animation
 const LogoContainer = styled.div`
   position: relative;
   z-index: 2;
@@ -38,6 +41,7 @@ const LogoContainer = styled.div`
   }
 `;
 
+// Container for the header content
 const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
@@ -49,10 +53,11 @@ const HeaderContainer = styled.div`
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    padding: 20px;
+    padding: 10px;
   }
 `;
 
+// Styled navigation menu
 const NavMenu = styled.nav`
   ul {
     display: flex;
@@ -61,18 +66,18 @@ const NavMenu = styled.nav`
     margin: 0;
 
     li {
-      margin-right: 50px;
+      margin-right: 20px;
 
       button {
         background: none;
         border: none;
         cursor: pointer;
         font-size: 16px;
-        color: #ecf0f1;
+        color: #fff;
         transition: color 0.3s ease;
 
         &:hover {
-          color: #3498db;
+          color: #fff;
         }
       }
     }
@@ -83,9 +88,9 @@ const NavMenu = styled.nav`
       .dropdown-content {
         display: none;
         position: absolute;
-        background-color: #f9f9f9;
+        background-color: #16a085;
         min-width: 220px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         padding: 10px;
         z-index: 1;
         border-radius: 8px;
@@ -95,11 +100,11 @@ const NavMenu = styled.nav`
           margin-bottom: 10px;
           background: none;
           border: none;
-          color: #333;
+          color: #fff;
           transition: color 0.3s ease;
 
           &:hover {
-            color: #007bff;
+            color: #fff;
           }
         }
       }
@@ -116,16 +121,15 @@ const NavMenu = styled.nav`
       flex-direction: column;
       align-items: center;
       margin-top: 0px;
-      background-color: #d9afd9;
-      background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
+      background-color: #1abc9c;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       border-radius: 4px;
       padding: 20px;
       width: 250px;
       height: 82vh;
 
       li {
-        margin: 50px 0;
+        margin: 20px 0;
       }
 
       .dropdown-menu {
@@ -134,9 +138,9 @@ const NavMenu = styled.nav`
         .dropdown-content {
           display: none;
           position: static;
-          background-color: #f9f9f9;
+          background-color: #16a085;
           min-width: 220px;
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
           padding: 10px;
           z-index: 1;
           border-radius: 8px;
@@ -146,11 +150,11 @@ const NavMenu = styled.nav`
             margin-bottom: 10px;
             background: none;
             border: none;
-            color: #333;
+            color: #fff;
             transition: color 0.3s ease;
 
             &:hover {
-              color: #007bff;
+              color: #fff;
             }
           }
         }
@@ -163,13 +167,14 @@ const NavMenu = styled.nav`
   }
 `;
 
+// Styled component for the nav toggler
 const NavToggler = styled.div`
   display: none;
 
   @media (max-width: 768px) {
     display: block;
     cursor: pointer;
-    color: #ecf0f1;
+    color: #fff;
     font-size: 35px;
     position: absolute;
     top: 28px;
@@ -178,6 +183,7 @@ const NavToggler = styled.div`
   }
 `;
 
+// Styled component for the search icon
 const SearchIcon = styled(FontAwesomeIcon)`
   display: none;
 
@@ -193,6 +199,7 @@ const SearchIcon = styled(FontAwesomeIcon)`
   }
 `;
 
+// Styled component for the search section
 const SearchSection = styled.div`
   display: flex;
 
@@ -213,8 +220,7 @@ const SearchSection = styled.div`
 
   button[type="submit"] {
     display: ${(props) => (props.isVisible ? "flex" : "none")};
-    background-color: #74ebd5;
-    background-image: linear-gradient(90deg, #74ebd5 0%, #9face6 100%);
+    background-color: #16a085;
     color: #fff;
     border: none;
     padding: 8px 36px;
@@ -228,36 +234,65 @@ const SearchSection = styled.div`
     }
 
     &:hover {
-      background-color: #2980b9;
+      background-color: #1abc9c;
     }
   }
 `;
 
+// Header component
 function Header() {
+  // State for toggling menu and search
   const [isOpen, setIsOpen] = useState(false);
   const [isSearchVisible, setIsSearchVisible] = useState(false);
 
+  // Function to toggle menu
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    console.log("navtogler icon clicked");
+    setIsSearchVisible(false); // Close search when menu is opened
+    console.log("nav toggler icon clicked");
   };
 
+  // Function to toggle search
   const toggleSearch = () => {
     setIsSearchVisible(!isSearchVisible);
-    console.log("Search icon clicked");
+    setIsOpen(false); // Close menu when search is opened
+    console.log("search icon clicked");
   };
+
+  // Effect to add scroll event listener
+  useEffect(() => {
+    const handleScroll = () => {
+      // Close menu if it's open when scrolling
+      if (isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll); // Add scroll event listener
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isOpen]);
 
   return (
     <HeaderSection>
       <HeaderContainer>
+        {/* Logo */}
         <LogoContainer>
           <img
             src="https://www.pngplay.com/wp-content/uploads/9/WWW-Website-Transparent-File.png"
             alt="Your Platform Name"
           />
         </LogoContainer>
+
+        {/* Search icon */}
         <SearchIcon icon={faSearch} onClick={toggleSearch} />
+
+        {/* Nav toggler icon */}
         <NavToggler onClick={toggleMenu}>☰</NavToggler>
+
+        {/* Navigation menu */}
         <NavMenu isOpen={isOpen}>
           <ul>
             <li>
@@ -268,6 +303,7 @@ function Header() {
             <li className="dropdown-menu">
               <button className="dropbtn">Templates</button>
               <div className="dropdown-content">
+                {/* Template items */}
                 <button onClick={() => (window.location.href = "#business")}>
                   Business & Corporate
                 </button>
@@ -315,10 +351,13 @@ function Header() {
                 Contact
               </button>
             </li>
+            {/* Other menu items */}
           </ul>
         </NavMenu>
+
+        {/* Search section */}
         <SearchSection isVisible={isSearchVisible}>
-          <input type="text" placeholder=""></input>
+          <input type="text" placeholder="" />
           <button type="submit">Search</button>
         </SearchSection>
       </HeaderContainer>
