@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -256,24 +256,8 @@ function Header() {
   const toggleSearch = () => {
     setIsSearchVisible(!isSearchVisible);
     setIsOpen(false); // Close menu when search is opened
-    console.log("search icon clicked");
+    console.log("Search icon clicked");
   };
-
-  // Effect to add scroll event listener
-  useEffect(() => {
-    const handleScroll = () => {
-      // Close menu if it's open when scrolling
-      if (isOpen) {
-        setIsOpen(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll); // Add scroll event listener
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll); // Remove scroll event listener on cleanup
-    };
-  }, [isOpen]); // Run effect when isOpen state changes
 
   return (
     <HeaderSection>
