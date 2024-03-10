@@ -3,7 +3,6 @@ import styled, { keyframes } from "styled-components";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// Styled components for the header section
 const HeaderSection = styled.header`
   background-color: #1abc9c;
   padding: 20px 0;
@@ -14,7 +13,6 @@ const HeaderSection = styled.header`
   }
 `;
 
-// Keyframe animation for logo bounce
 const bounceAnimation = keyframes`
   0%, 100% {
     transform: translateY(0);
@@ -24,7 +22,6 @@ const bounceAnimation = keyframes`
   }
 `;
 
-// Container for logo with animation
 const LogoContainer = styled.div`
   position: relative;
   z-index: 2;
@@ -41,7 +38,6 @@ const LogoContainer = styled.div`
   }
 `;
 
-// Container for the header content
 const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
@@ -57,7 +53,6 @@ const HeaderContainer = styled.div`
   }
 `;
 
-// Styled navigation menu
 const NavMenu = styled.nav`
   ul {
     display: flex;
@@ -167,7 +162,6 @@ const NavMenu = styled.nav`
   }
 `;
 
-// Styled component for the nav toggler
 const NavToggler = styled.div`
   display: none;
 
@@ -183,7 +177,6 @@ const NavToggler = styled.div`
   }
 `;
 
-// Styled component for the search icon
 const SearchIcon = styled(FontAwesomeIcon)`
   display: none;
 
@@ -199,7 +192,6 @@ const SearchIcon = styled(FontAwesomeIcon)`
   }
 `;
 
-// Styled component for the search section
 const SearchSection = styled.div`
   display: flex;
 
@@ -239,44 +231,31 @@ const SearchSection = styled.div`
   }
 `;
 
-// Header component
 function Header() {
-  // State for toggling menu and search
   const [isOpen, setIsOpen] = useState(false);
   const [isSearchVisible, setIsSearchVisible] = useState(false);
 
-  // Function to toggle menu
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    setIsSearchVisible(false); // Close search when menu is opened
-    console.log("nav toggler icon clicked");
+    console.log("navtogler icon clicked");
   };
 
-  // Function to toggle search
   const toggleSearch = () => {
     setIsSearchVisible(!isSearchVisible);
-    setIsOpen(false); // Close menu when search is opened
     console.log("Search icon clicked");
   };
 
   return (
     <HeaderSection>
       <HeaderContainer>
-        {/* Logo */}
         <LogoContainer>
           <img
             src="https://www.pngplay.com/wp-content/uploads/9/WWW-Website-Transparent-File.png"
             alt="Your Platform Name"
           />
         </LogoContainer>
-
-        {/* Search icon */}
         <SearchIcon icon={faSearch} onClick={toggleSearch} />
-
-        {/* Nav toggler icon */}
         <NavToggler onClick={toggleMenu}>☰</NavToggler>
-
-        {/* Navigation menu */}
         <NavMenu isOpen={isOpen}>
           <ul>
             <li>
@@ -287,7 +266,6 @@ function Header() {
             <li className="dropdown-menu">
               <button className="dropbtn">Templates</button>
               <div className="dropdown-content">
-                {/* Template items */}
                 <button onClick={() => (window.location.href = "#business")}>
                   Business & Corporate
                 </button>
@@ -335,13 +313,10 @@ function Header() {
                 Contact
               </button>
             </li>
-            {/* Other menu items */}
           </ul>
         </NavMenu>
-
-        {/* Search section */}
         <SearchSection isVisible={isSearchVisible}>
-          <input type="text" placeholder="" />
+          <input type="text" placeholder=""></input>
           <button type="submit">Search</button>
         </SearchSection>
       </HeaderContainer>
