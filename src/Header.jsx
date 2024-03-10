@@ -271,9 +271,9 @@ function Header() {
     window.addEventListener("scroll", handleScroll); // Add scroll event listener
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll); // Remove scroll event listener on cleanup
     };
-  }, [isOpen]);
+  }, [isOpen]); // Run effect when isOpen state changes
 
   return (
     <HeaderSection>
