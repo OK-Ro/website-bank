@@ -16,7 +16,7 @@ const PopularSection = styled.section`
 const CategoryContainer = styled.div`
   margin: 20px;
   width: 100vw;
-  @media (max-width: 768px) {
+  background: @media (max-width: 768px) {
     margin: 3px;
   }
 `;
@@ -73,6 +73,7 @@ const Title = styled.h2`
 
 const InformationColumn = styled.div`
   width: 20%;
+  background: yellow;
 `;
 
 const InformationList = styled.ul`
