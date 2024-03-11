@@ -4,11 +4,17 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 
 const PopularSection = styled.section`
-  margin-top: 40px;
+  margin-top: 4rem;
+  margin-left: 8rem;
+  margin-right: 8rem;
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const CategoryContainer = styled.div`
   margin: 20px;
+  width: 100vw;
   @media (max-width: 768px) {
     margin: 3px;
   }
@@ -17,12 +23,8 @@ const CategoryContainer = styled.div`
 const Category = styled.div`
   width: 90%;
   height: 35vh;
-  background-color: #f8f9fa;
-  border-radius: 8px;
   padding: 20px;
-  margin-right: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
+  margin-right: 10px;
   &:last-child {
     margin-right: 0;
   }
@@ -41,7 +43,7 @@ const Category = styled.div`
 const CategoryImage = styled.img`
   width: 100%;
   height: 30vh;
-  border-radius: 8px;
+  border-radius: 2rem;
   @media (max-width: 576px) {
     width: 100%;
     height: 12vh;
@@ -57,12 +59,53 @@ const CategoryTitle = styled.h3`
   }
 `;
 const Title = styled.h2`
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  margin-left: 1.5rem;
+  margin-bottom: 30px;
   color: #333;
   @media (max-width: 576px) {
     margin-left: 20px;
   }
+`;
+
+const InformationColumn = styled.div`
+  width: 20%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border: 4px solid #1abc9c;
+  border-radius: 2rem;
+`;
+
+const InformationList = styled.ul`
+  list-style: none;
+`;
+
+const InformationItem = styled.li`
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+`;
+
+const StarIcon = styled.span`
+  color: gold;
+  margin-left: 5px;
+`;
+
+const EmptyStarIcon = styled.span`
+  color: gray;
+  margin-left: 5px;
+`;
+const StarsContainer = styled.span`
+  margin-left: 35px;
+`;
+const NumberCircle = styled.span`
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: #333;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  margin-right: 10px;
 `;
 
 const PopularCategoriesSection = () => {
@@ -70,28 +113,42 @@ const PopularCategoriesSection = () => {
     {
       title: "Real Estate",
       image: "https://www.w3schools.com/w3images/house5.jpg",
+      stars: 4, // Example: Number of stars indicating popularity
     },
     {
       title: "Healthcare",
       image: "https://www.w3schools.com/w3images/team1.jpg",
+      stars: 5, // Example: Number of stars indicating popularity
     },
-    { title: "Travel", image: "https://www.w3schools.com/w3images/coffee.jpg" },
+    {
+      title: "Travel",
+      image: "https://www.w3schools.com/w3images/coffee.jpg",
+      stars: 3,
+    },
     {
       title: "Education",
       image: "https://www.w3schools.com/w3images/nature.jpg",
+      stars: 2,
     },
     {
       title: "Adventure",
       image: "https://www.w3schools.com/w3images/mountains.jpg",
+      stars: 5,
     },
-    { title: "Nature", image: "https://www.w3schools.com/w3images/rocks.jpg" },
+    {
+      title: "Nature",
+      image: "https://www.w3schools.com/w3images/rocks.jpg",
+      stars: 4,
+    },
     {
       title: "Underwater",
       image: "https://www.w3schools.com/w3images/underwater.jpg",
+      stars: 3,
     },
     {
       title: "Forest",
       image: "https://www.w3schools.com/w3images/forestbridge.jpg",
+      stars: 4,
     },
   ];
 
@@ -99,7 +156,7 @@ const PopularCategoriesSection = () => {
 
   useEffect(() => {
     const updateItemsPerPage = () => {
-      setItemsPerPage(window.innerWidth >= 768 ? 4 : 2);
+      setItemsPerPage(window.innerWidth >= 768 ? 3 : 2);
     };
 
     // Call the function to update items per page initially
@@ -114,10 +171,23 @@ const PopularCategoriesSection = () => {
     };
   }, []);
 
+  // Function to render stars based on the number of stars
+  const renderStars = (numStars) => {
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      if (i < numStars) {
+        stars.push(<StarIcon key={i}>★</StarIcon>);
+      } else {
+        stars.push(<EmptyStarIcon key={i}>☆</EmptyStarIcon>);
+      }
+    }
+    return <StarsContainer>{stars}</StarsContainer>;
+  };
+
   return (
     <PopularSection className="popular-categories-section">
-      <Title>Popular Categories</Title>
       <CategoryContainer className="category-container">
+        <Title>Popular Categories</Title>
         <Splide
           options={{
             perPage: itemsPerPage,
@@ -138,6 +208,19 @@ const PopularCategoriesSection = () => {
           ))}
         </Splide>
       </CategoryContainer>
+      <InformationColumn>
+        <Title>Weekly Popular</Title>
+        <InformationList>
+          {categories.map((category, index) => (
+            <InformationItem key={index}>
+              <NumberCircle>{index + 1}</NumberCircle>
+              {category.title}
+              <br />
+              {renderStars(category.stars)}
+            </InformationItem>
+          ))}
+        </InformationList>
+      </InformationColumn>
     </PopularSection>
   );
 };
