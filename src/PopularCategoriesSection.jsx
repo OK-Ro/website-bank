@@ -86,51 +86,33 @@ const InformationItem = styled.li`
   margin-bottom: 1rem;
 `;
 
-const StarIcon = styled.span`
-  color: gold;
-`;
-
 const PopularCategoriesSection = () => {
   const categories = [
     {
       title: "Real Estate",
       image: "https://www.w3schools.com/w3images/house5.jpg",
-      stars: 4, // Example: Number of stars indicating popularity
     },
     {
       title: "Healthcare",
       image: "https://www.w3schools.com/w3images/team1.jpg",
-      stars: 5, // Example: Number of stars indicating popularity
     },
-    {
-      title: "Travel",
-      image: "https://www.w3schools.com/w3images/coffee.jpg",
-      stars: 3,
-    },
+    { title: "Travel", image: "https://www.w3schools.com/w3images/coffee.jpg" },
     {
       title: "Education",
       image: "https://www.w3schools.com/w3images/nature.jpg",
-      stars: 2,
     },
     {
       title: "Adventure",
       image: "https://www.w3schools.com/w3images/mountains.jpg",
-      stars: 5,
     },
-    {
-      title: "Nature",
-      image: "https://www.w3schools.com/w3images/rocks.jpg",
-      stars: 4,
-    },
+    { title: "Nature", image: "https://www.w3schools.com/w3images/rocks.jpg" },
     {
       title: "Underwater",
       image: "https://www.w3schools.com/w3images/underwater.jpg",
-      stars: 3,
     },
     {
       title: "Forest",
       image: "https://www.w3schools.com/w3images/forestbridge.jpg",
-      stars: 4,
     },
   ];
 
@@ -180,15 +162,9 @@ const PopularCategoriesSection = () => {
       <InformationColumn>
         <Title>Weekly Popular</Title>
         <InformationList>
-          <InformationItem>
-            1. Nature <StarIcon>★</StarIcon>
-          </InformationItem>
-          <InformationItem>
-            2. Healthcare <StarIcon>★</StarIcon>
-          </InformationItem>
-          <InformationItem>
-            3. Commerce <StarIcon>★</StarIcon>
-          </InformationItem>
+          <InformationItem>1. Nature</InformationItem>
+          <InformationItem>2. Healthcare</InformationItem>
+          <InformationItem>3. Commerce</InformationItem>
         </InformationList>
       </InformationColumn>
     </PopularSection>
