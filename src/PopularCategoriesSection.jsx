@@ -21,10 +21,12 @@ const CategoryContainer = styled.div`
 `;
 
 const Category = styled.div`
-  width: 90%;
+  width: 80%;
   height: 35vh;
   padding: 20px;
   margin-right: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
   &:last-child {
     margin-right: 0;
   }
@@ -60,7 +62,7 @@ const CategoryTitle = styled.h3`
 `;
 const Title = styled.h2`
   font-size: 2rem;
-  margin-left: 1.5rem;
+  margin-left: 4rem;
   margin-bottom: 30px;
   color: #333;
   @media (max-width: 576px) {
@@ -94,7 +96,7 @@ const EmptyStarIcon = styled.span`
   margin-left: 5px;
 `;
 const StarsContainer = styled.span`
-  margin-left: 35px;
+  margin-left: 10px; /* Adjust the value as needed */
 `;
 const NumberCircle = styled.span`
   display: inline-block;
@@ -181,7 +183,7 @@ const PopularCategoriesSection = () => {
         stars.push(<EmptyStarIcon key={i}>☆</EmptyStarIcon>);
       }
     }
-    return <StarsContainer>{stars}</StarsContainer>;
+    return stars;
   };
 
   return (
