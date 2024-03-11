@@ -22,14 +22,15 @@ function App() {
       <Header />
       <HeroSection />
       <ScrollEffectContainer>
+        <PopularCategoriesSection />
+      </ScrollEffectContainer>
+      <ScrollEffectContainer>
         <FeaturedTemplatesSection />
       </ScrollEffectContainer>
       <ScrollEffectContainer>
         <AboutSection />
       </ScrollEffectContainer>
-      <ScrollEffectContainer>
-        <PopularCategoriesSection />
-      </ScrollEffectContainer>
+
       <ScrollEffectContainer>
         <ServicesSection />
       </ScrollEffectContainer>

@@ -3,7 +3,11 @@ import styled from "styled-components";
 
 const HeroSection = styled.section`
   background-color: #f8f9fa;
-  padding: 300px 0;
+  padding: 200px 0;
+  height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media (max-width: 768px) {
     padding: 200px 0;
