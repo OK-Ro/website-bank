@@ -5,6 +5,7 @@ import "@splidejs/splide/dist/css/splide.min.css";
 
 const PopularSection = styled.section`
   margin-top: 4rem;
+  background: blue;
   margin-left: 8rem;
   margin-right: 8rem;
   margin-bottom: 4rem;
@@ -72,13 +73,11 @@ const Title = styled.h2`
 
 const InformationColumn = styled.div`
   width: 20%;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  border: 4px solid #1abc9c;
-  border-radius: 2rem;
 `;
 
 const InformationList = styled.ul`
   list-style: none;
+  padding: 0;
 `;
 
 const InformationItem = styled.li`
@@ -88,26 +87,6 @@ const InformationItem = styled.li`
 
 const StarIcon = styled.span`
   color: gold;
-  margin-left: 5px;
-`;
-
-const EmptyStarIcon = styled.span`
-  color: gray;
-  margin-left: 5px;
-`;
-const StarsContainer = styled.span`
-  margin-left: 10px; /* Adjust the value as needed */
-`;
-const NumberCircle = styled.span`
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  background-color: #333;
-  color: white;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 30px;
-  margin-right: 10px;
 `;
 
 const PopularCategoriesSection = () => {
@@ -173,19 +152,6 @@ const PopularCategoriesSection = () => {
     };
   }, []);
 
-  // Function to render stars based on the number of stars
-  const renderStars = (numStars) => {
-    const stars = [];
-    for (let i = 0; i < 5; i++) {
-      if (i < numStars) {
-        stars.push(<StarIcon key={i}>★</StarIcon>);
-      } else {
-        stars.push(<EmptyStarIcon key={i}>☆</EmptyStarIcon>);
-      }
-    }
-    return stars;
-  };
-
   return (
     <PopularSection className="popular-categories-section">
       <CategoryContainer className="category-container">
@@ -213,14 +179,15 @@ const PopularCategoriesSection = () => {
       <InformationColumn>
         <Title>Weekly Popular</Title>
         <InformationList>
-          {categories.map((category, index) => (
-            <InformationItem key={index}>
-              <NumberCircle>{index + 1}</NumberCircle>
-              {category.title}
-              <br />
-              {renderStars(category.stars)}
-            </InformationItem>
-          ))}
+          <InformationItem>
+            1. Nature <StarIcon>★</StarIcon>
+          </InformationItem>
+          <InformationItem>
+            2. Healthcare <StarIcon>★</StarIcon>
+          </InformationItem>
+          <InformationItem>
+            3. Commerce <StarIcon>★</StarIcon>
+          </InformationItem>
         </InformationList>
       </InformationColumn>
     </PopularSection>
