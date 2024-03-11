@@ -6,17 +6,13 @@ import "@splidejs/splide/dist/css/splide.min.css";
 const PopularSection = styled.section`
   margin-top: 4rem;
   background: blue;
-  margin-left: 8rem;
-  margin-right: 8rem;
-  margin-bottom: 4rem;
-  display: flex;
-  justify-content: space-between;
+  margin-left: 6rem;
+  margin-right: 6rem;
 `;
 
 const CategoryContainer = styled.div`
   margin: 20px;
-  width: 100vw;
-  background: @media (max-width: 768px) {
+  @media (max-width: 768px) {
     margin: 3px;
   }
 `;
@@ -64,26 +60,11 @@ const CategoryTitle = styled.h3`
 const Title = styled.h2`
   font-size: 2rem;
   margin-left: 4rem;
-  margin-bottom: 30px;
+  margin-bottom: px;
   color: #333;
   @media (max-width: 576px) {
     margin-left: 20px;
   }
-`;
-
-const InformationColumn = styled.div`
-  width: 20%;
-  background: yellow;
-`;
-
-const InformationList = styled.ul`
-  list-style: none;
-  padding: 0;
-`;
-
-const InformationItem = styled.li`
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
 `;
 
 const PopularCategoriesSection = () => {
@@ -137,8 +118,8 @@ const PopularCategoriesSection = () => {
 
   return (
     <PopularSection className="popular-categories-section">
+      <Title>Popular Categories</Title>
       <CategoryContainer className="category-container">
-        <Title>Popular Categories</Title>
         <Splide
           options={{
             perPage: itemsPerPage,
@@ -159,14 +140,6 @@ const PopularCategoriesSection = () => {
           ))}
         </Splide>
       </CategoryContainer>
-      <InformationColumn>
-        <Title>Weekly Popular</Title>
-        <InformationList>
-          <InformationItem>1. Nature</InformationItem>
-          <InformationItem>2. Healthcare</InformationItem>
-          <InformationItem>3. Commerce</InformationItem>
-        </InformationList>
-      </InformationColumn>
     </PopularSection>
   );
 };
