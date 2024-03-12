@@ -45,7 +45,7 @@ const LargeCircle = styled(Circle)`
   height: 200px;
   top: 100px;
   right: 200px;
-  background-image: url("https://99designs-blog.imgix.net/blog/wp-content/uploads/2019/11/attachment_88813488-e1572534840369.png?auto=format&q=60&fit=max&w=930");
+  background-image: url("path_to_your_image");
   background-size: cover;
 `;
 
@@ -68,11 +68,11 @@ const SmallCircle = styled(Circle)`
 `;
 
 const SmallestCircle = styled(Circle)`
-  width: 100px;
-  height: 0px;
+  width: 70px;
+  height: 70px;
   top: 500px;
   right: 1500px;
-  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/1400/349f2e68871707.5b6c370540d19.png");
+  background-image: url("https://th.bing.com/th/id/OIP.MlvxvVz3ct9qBjgdzF1I3QHaFj?w=223&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7");
   background-size: cover;
 `;
 
