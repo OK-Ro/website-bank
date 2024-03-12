@@ -38,8 +38,6 @@ const Image = styled.img`
 const Circle = styled.div`
   position: absolute;
   border-radius: 50%;
-  box-shadow: 0 0 15px rgba(0, 0, 255, 0.5), 0 0 25px rgba(0, 0, 255, 0.3); /* Added box-shadow */
-  border: 4px solid rgba(0, 0, 255, 0.1); /* Added border */
 `;
 
 const LargeCircle = styled(Circle)`
@@ -71,7 +69,7 @@ const SmallCircle = styled(Circle)`
 
 const SmallestCircle = styled(Circle)`
   width: 100px;
-  height: 100px;
+  height: 0px;
   top: 500px;
   right: 1500px;
   background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/1400/349f2e68871707.5b6c370540d19.png");
