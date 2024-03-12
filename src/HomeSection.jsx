@@ -18,12 +18,10 @@ const LeftSection = styled.div`
 
 const RightSection = styled.div`
   width: 55%;
-
-  position: relative; /* Added */
+  background: red;
 `;
 
 const ImageContainer = styled.div`
-  position: relative;
   width: 80%;
   height: 60vh;
   background-color: transparent;
@@ -36,40 +34,6 @@ const Image = styled.img`
   height: 100%;
 `;
 
-const Circle = styled.div`
-  position: absolute;
-  border-radius: 50%;
-  background-color: rgba(255, 0, 0, 0.5);
-`;
-
-const LargeCircle = styled(Circle)`
-  width: 200px;
-  height: 200px;
-  top: 100px; /* Adjusted */
-  right: 200px; /* Adjusted */
-`;
-
-const MediumCircle = styled(Circle)`
-  width: 150px;
-  height: 150px;
-  top: 250px; /* Adjusted */
-  right: 1000px; /* Adjusted */
-`;
-
-const SmallCircle = styled(Circle)`
-  width: 100px;
-  height: 100px;
-  top: 400px; /* Adjusted */
-  right: 0; /* Adjusted */
-`;
-
-const SmallestCircle = styled(Circle)`
-  width: 70px;
-  height: 70px;
-  top: 500px; /* Adjusted */
-  right: 1500px; /* Adjusted */
-`;
-
 function HomeSection() {
   return (
     <Container>
@@ -77,10 +41,6 @@ function HomeSection() {
         <HeroSectionComponent />
       </LeftSection>
       <RightSection>
-        <LargeCircle />
-        <MediumCircle />
-        <SmallCircle />
-        <SmallestCircle />
         <ImageContainer>
           <Image
             src="https://www.pngplay.com/wp-content/uploads/9/WWW-Website-Transparent-Background.png"
