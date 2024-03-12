@@ -18,7 +18,8 @@ const LeftSection = styled.div`
 
 const RightSection = styled.div`
   width: 55%;
-  position: relative;
+
+  position: relative; /* Added */
 `;
 
 const ImageContainer = styled.div`
@@ -38,42 +39,35 @@ const Image = styled.img`
 const Circle = styled.div`
   position: absolute;
   border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.5);
 `;
 
 const LargeCircle = styled(Circle)`
   width: 200px;
   height: 200px;
-  top: 100px;
-  right: 200px;
-  background-image: url("path_to_your_image");
-  background-size: cover;
+  top: 100px; /* Adjusted */
+  right: 200px; /* Adjusted */
 `;
 
 const MediumCircle = styled(Circle)`
   width: 150px;
   height: 150px;
-  top: 250px;
-  right: 1000px;
-  background-image: url("https://colorlib.com/wp/wp-content/uploads/sites/2/kiddos-free-template.jpg");
-  background-size: cover;
+  top: 250px; /* Adjusted */
+  right: 1000px; /* Adjusted */
 `;
 
 const SmallCircle = styled(Circle)`
   width: 100px;
   height: 100px;
-  top: 400px;
-  right: 0;
-  background-image: url("https://th.bing.com/th?id=OIP.rQbae0nnUWmyB6EMUQxfuAHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2");
-  background-size: cover;
+  top: 400px; /* Adjusted */
+  right: 0; /* Adjusted */
 `;
 
 const SmallestCircle = styled(Circle)`
   width: 70px;
   height: 70px;
-  top: 500px;
-  right: 1500px;
-  background-image: url("https://th.bing.com/th/id/OIP.MlvxvVz3ct9qBjgdzF1I3QHaFj?w=223&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7");
-  background-size: cover;
+  top: 500px; /* Adjusted */
+  right: 1500px; /* Adjusted */
 `;
 
 function HomeSection() {
