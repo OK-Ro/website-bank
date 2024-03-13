@@ -35,50 +35,55 @@ const Image = styled.img`
   height: 100%;
 `;
 
-const SpinAnimation = keyframes`
+const PulsateAnimation = keyframes`
   0% {
-    transform: rotate(0deg);
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
   }
   100% {
-    transform: rotate(360deg);
+    transform: scale(0.5);
   }
 `;
 
 const Circle = styled.div`
   position: absolute;
   border-radius: 50%;
-  box-shadow: 10px 50px 70px rgba(0, 0, 0, 0.87),
-    inset 1px 1px 1px rgba(0, 0, 0, 0.61),
-    inset 5px 5px 20px rgba(0, 0, 0, 0.555),
+  box-shadow: 20px 20px 60px rgba(0, 20, 0, 0.87),
+    inset 5px 5px 60px rgba(0, 0, 0, 0.555),
     inset -5px -5px 15px rgba(0, 0, 0, 0.75);
-  animation: ${SpinAnimation} 4s linear infinite; /* Changed animation */
+  animation: ${PulsateAnimation} 2s infinite alternate;
 `;
 
 const LargeCircle = styled(Circle)`
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   top: 100px;
   right: 200px;
   background-image: url("https://www.bing.com/th/id/OGC.77a9c3545a7e1016d73876cabfa4e314?pid=1.7&rurl=https%3a%2f%2ffiverr-res.cloudinary.com%2fattachments%2fgeneric_asset%2fasset%2fe28bed16bca1eef244ddb4c98572fb20-1596709168025%2fgif.gif&ehk=yFkI3d59zWOrmbeEscgeW7hPk2xFi92uT32E47R1rUI%3d");
   background-size: cover;
+  animation: ${PulsateAnimation} 3s infinite alternate;
 `;
 
 const MediumCircle = styled(Circle)`
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   top: 250px;
   right: 1000px;
   background-image: url("https://cdn.dribbble.com/users/1856812/screenshots/4020514/webpage.gif");
   background-size: cover;
+  animation: ${PulsateAnimation} 4s infinite alternate;
 `;
 
 const SmallCircle = styled(Circle)`
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   top: 400px;
   right: 0;
   background-image: url("https://cdn.dribbble.com/users/278201/screenshots/3861829/gif.gif");
   background-size: cover;
+  animation: ${PulsateAnimation} 5s infinite alternate;
 `;
 
 const SmallestCircle = styled(Circle)`
@@ -88,6 +93,7 @@ const SmallestCircle = styled(Circle)`
   right: 1500px;
   background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/be510767817393.5b472244e895f.gif");
   background-size: cover;
+  animation: ${PulsateAnimation} 6s infinite alternate;
 `;
 
 function HomeSection() {
