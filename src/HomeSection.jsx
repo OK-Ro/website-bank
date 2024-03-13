@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import HeroSectionComponent from "./HeroSection";
 
 const Container = styled.div`
@@ -35,13 +35,26 @@ const Image = styled.img`
   height: 100%;
 `;
 
+const CircleAnimation = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+`;
+
 const Circle = styled.div`
   position: absolute;
   border-radius: 50%;
   box-shadow: 10px 50px 70px rgba(0, 0, 0, 0.87),
-    inset 5px 5px 10px rgba(0, 0, 0, 0.61),
+    inset 1px 1px 1px rgba(0, 0, 0, 0.61),
     inset 5px 5px 20px rgba(0, 0, 0, 0.555),
     inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+  animation: ${CircleAnimation} 3s infinite alternate; /* Added animation */
 `;
 
 const LargeCircle = styled(Circle)`
