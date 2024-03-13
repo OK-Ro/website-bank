@@ -38,8 +38,10 @@ const Image = styled.img`
 const Circle = styled.div`
   position: absolute;
   border-radius: 50%;
-  box-shadow: 0 0 15px rgba(0, 0, 255, 0.5), 0 0 25px rgba(0, 0, 255, 0.3); /* Added box-shadow */
-  border: 4px solid rgba(0, 0, 255, 0.1); /* Added border */
+  box-shadow: 10px 50px 70px rgba(0, 0, 0, 0.87),
+    inset 5px 5px 10px rgba(0, 0, 0, 0.61),
+    inset 5px 5px 20px rgba(0, 0, 0, 0.555),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.75);
 `;
 
 const LargeCircle = styled(Circle)`
@@ -47,7 +49,7 @@ const LargeCircle = styled(Circle)`
   height: 200px;
   top: 100px;
   right: 200px;
-  background-image: url("https://99designs-blog.imgix.net/blog/wp-content/uploads/2019/11/attachment_88813488-e1572534840369.png?auto=format&q=60&fit=max&w=930");
+  background-image: url("https://www.bing.com/th/id/OGC.77a9c3545a7e1016d73876cabfa4e314?pid=1.7&rurl=https%3a%2f%2ffiverr-res.cloudinary.com%2fattachments%2fgeneric_asset%2fasset%2fe28bed16bca1eef244ddb4c98572fb20-1596709168025%2fgif.gif&ehk=yFkI3d59zWOrmbeEscgeW7hPk2xFi92uT32E47R1rUI%3d");
   background-size: cover;
 `;
 
@@ -56,7 +58,7 @@ const MediumCircle = styled(Circle)`
   height: 150px;
   top: 250px;
   right: 1000px;
-  background-image: url("https://colorlib.com/wp/wp-content/uploads/sites/2/kiddos-free-template.jpg");
+  background-image: url("https://cdn.dribbble.com/users/1856812/screenshots/4020514/webpage.gif");
   background-size: cover;
 `;
 
@@ -65,7 +67,7 @@ const SmallCircle = styled(Circle)`
   height: 100px;
   top: 400px;
   right: 0;
-  background-image: url("https://th.bing.com/th?id=OIP.rQbae0nnUWmyB6EMUQxfuAHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2");
+  background-image: url("https://cdn.dribbble.com/users/278201/screenshots/3861829/gif.gif");
   background-size: cover;
 `;
 
@@ -74,7 +76,7 @@ const SmallestCircle = styled(Circle)`
   height: 100px;
   top: 500px;
   right: 1500px;
-  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/1400/349f2e68871707.5b6c370540d19.png");
+  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/be510767817393.5b472244e895f.gif");
   background-size: cover;
 `;
 
