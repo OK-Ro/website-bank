@@ -35,15 +35,12 @@ const Image = styled.img`
   height: 100%;
 `;
 
-const CircleAnimation = keyframes`
+const SpinAnimation = keyframes`
   0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
+    transform: rotate(0deg);
   }
   100% {
-    transform: scale(1);
+    transform: rotate(360deg);
   }
 `;
 
@@ -54,7 +51,7 @@ const Circle = styled.div`
     inset 1px 1px 1px rgba(0, 0, 0, 0.61),
     inset 5px 5px 20px rgba(0, 0, 0, 0.555),
     inset -5px -5px 15px rgba(0, 0, 0, 0.75);
-  animation: ${CircleAnimation} 3s infinite alternate; /* Added animation */
+  animation: ${SpinAnimation} 4s linear infinite; /* Changed animation */
 `;
 
 const LargeCircle = styled(Circle)`
