@@ -3,12 +3,11 @@ import styled, { keyframes } from "styled-components";
 import HeroSectionComponent from "./HeroSection";
 
 const Container = styled.div`
-  background-color: #f8f9fa;
-  padding: 150px 0;
+  background: linear-gradient(to right, #f5f5f5, #c0adada5);
+  padding: 100px 80px;
   margin: 3rem;
   border-radius: 2rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  border: 4px solid #1abc9c;
   display: flex;
 `;
 
@@ -26,7 +25,7 @@ const ImageContainer = styled.div`
   width: 80%;
   height: 60vh;
   background-color: transparent;
-  margin-top: 20rem;
+  top: 38rem;
   margin-left: 15rem;
 `;
 
@@ -43,22 +42,42 @@ const PulsateAnimation = keyframes`
     transform: scale(1.2);
   }
   100% {
-    transform: scale(0.5);
+    transform: scale(1);
+  }
+`;
+
+const HeartbeatAnimation = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 `;
 
 const Circle = styled.div`
   position: absolute;
   border-radius: 50%;
-  box-shadow: 20px 20px 60px rgba(0, 20, 0, 0.87),
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border: 4px solid white;
+  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.87),
     inset 5px 5px 60px rgba(0, 0, 0, 0.555),
     inset -5px -5px 15px rgba(0, 0, 0, 0.75);
-  animation: ${PulsateAnimation} 2s infinite alternate;
+  animation: ${HeartbeatAnimation} 1s infinite alternate;
 `;
 
 const LargeCircle = styled(Circle)`
-  width: 250px;
-  height: 250px;
+  width: 230px;
+  height: 230px;
   top: 100px;
   right: 200px;
   background-image: url("https://www.bing.com/th/id/OGC.77a9c3545a7e1016d73876cabfa4e314?pid=1.7&rurl=https%3a%2f%2ffiverr-res.cloudinary.com%2fattachments%2fgeneric_asset%2fasset%2fe28bed16bca1eef244ddb4c98572fb20-1596709168025%2fgif.gif&ehk=yFkI3d59zWOrmbeEscgeW7hPk2xFi92uT32E47R1rUI%3d");
@@ -67,10 +86,10 @@ const LargeCircle = styled(Circle)`
 `;
 
 const MediumCircle = styled(Circle)`
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   top: 250px;
-  right: 1000px;
+  right: 900px;
   background-image: url("https://cdn.dribbble.com/users/1856812/screenshots/4020514/webpage.gif");
   background-size: cover;
   animation: ${PulsateAnimation} 4s infinite alternate;
@@ -90,7 +109,7 @@ const SmallestCircle = styled(Circle)`
   width: 100px;
   height: 100px;
   top: 500px;
-  right: 1500px;
+  right: 1200px;
   background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/be510767817393.5b472244e895f.gif");
   background-size: cover;
   animation: ${PulsateAnimation} 6s infinite alternate;

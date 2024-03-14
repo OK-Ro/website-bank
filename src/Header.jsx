@@ -192,57 +192,12 @@ const SearchIcon = styled(FontAwesomeIcon)`
   }
 `;
 
-const SearchSection = styled.div`
-  display: flex;
-
-  input[type="text"] {
-    padding: 8px;
-    border-radius: 20px 0 20px 2px;
-    border: 1px solid #ccc;
-    border-right: none;
-    width: 300px;
-
-    @media (max-width: 768px) {
-      display: ${(props) => (props.isVisible ? "flex" : "none")};
-      width: 250px;
-      margin-bottom: 10px;
-      border-radius: 20px 0 0px 20px;
-    }
-  }
-
-  button[type="submit"] {
-    display: ${(props) => (props.isVisible ? "flex" : "none")};
-    background-color: #16a085;
-    color: #fff;
-    border: none;
-    padding: 8px 36px;
-    border-radius: 0 4px 20px 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    @media (max-width: 768px) {
-      padding: 8px 37px;
-      height: 35px;
-    }
-
-    &:hover {
-      background-color: #1abc9c;
-    }
-  }
-`;
-
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isSearchVisible, setIsSearchVisible] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     console.log("navtogler icon clicked");
-  };
-
-  const toggleSearch = () => {
-    setIsSearchVisible(!isSearchVisible);
-    console.log("Search icon clicked");
   };
 
   return (
@@ -254,7 +209,7 @@ function Header() {
             alt="Your Platform Name"
           />
         </LogoContainer>
-        <SearchIcon icon={faSearch} onClick={toggleSearch} />
+        <SearchIcon icon={faSearch} />
         <NavToggler onClick={toggleMenu}>☰</NavToggler>
         <NavMenu isOpen={isOpen}>
           <ul>
@@ -315,10 +270,6 @@ function Header() {
             </li>
           </ul>
         </NavMenu>
-        <SearchSection isVisible={isSearchVisible}>
-          <input type="text" placeholder=""></input>
-          <button type="submit">Search</button>
-        </SearchSection>
       </HeaderContainer>
     </HeaderSection>
   );
