@@ -98,7 +98,7 @@ const SpecialBlock = styled.div`
   width: 4rem;
   height: 4rem;
   display: grid;
-  grid-template-columns: repeat(7, 1rem);
+  grid-template-columns: repeat(, 1rem);
   grid-template-rows: repeat(4, 1rem);
   gap: 0.5rem;
   z-index: 1;
@@ -127,7 +127,7 @@ function HeroSectionComponent() {
           <SearchContainer>
             <SearchInput type="text" placeholder="Search templates..." />
             <SpecialBlock>
-              {[...Array()].map((_, index) => (
+              {[...Array(42)].map((_, index) => (
                 <Dot key={index} />
               ))}
             </SpecialBlock>
