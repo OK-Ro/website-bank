@@ -59,56 +59,55 @@ const SearchContainer = styled.div`
   margin-top: 6rem;
   margin-bottom: 7rem;
   width: 45vw;
+  z-index: 999;
   padding: 2rem 0;
 `;
 
 const SearchInput = styled.input`
   padding: 0.5rem 4rem 0.5rem 1rem;
-  width: 96%;
-  height: 6.5rem;
+  width: 100%;
+  height: 6rem;
   border-radius: 4rem;
   font-size: 1rem;
   border: none;
   background: white;
   box-shadow: 0 9px 90px rgba(0, 0, 0, 0.2);
-  position: relative;
-  z-index: 1000;
 `;
 
 const SearchButton = styled.button`
   position: absolute;
-  top: 20%;
-  right: 0;
-  padding: 1.7rem 7rem;
+  top: 50%;
+  right: -4rem;
+  transform: translateY(-50%);
+  padding: 1.5rem 7rem;
   border-radius: 4rem;
+  border: none;
   background-color: #1abc9c;
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
-  border: 4px solid white; /* Border declaration */
+  border: 5px solid #fff;
   box-shadow: 0 0 10px rgba(27, 131, 166, 0.6);
-  z-index: 1000;
 `;
 
 const SpecialBlock = styled.div`
-  position: relative;
+  position: absolute;
   top: 50%;
-  left: -3rem;
+  left: -6rem;
   transform: translateY(-50%);
   width: 4rem;
   height: 4rem;
   display: grid;
-  grid-template-columns: repeat(, 1rem);
+  grid-template-columns: repeat(6, 1rem);
   grid-template-rows: repeat(4, 1rem);
   gap: 0.5rem;
-  z-index: 1;
 `;
 
 const Dot = styled.div`
   width: 1rem;
   height: 1rem;
-  border-radius: 2px;
-  background-color: #000;
+  border-radius: 2px; // Adjust the border-radius to control the shape
+  background-color: #000; // You can remove this line to remove the color
 `;
 
 function HeroSectionComponent() {
@@ -126,12 +125,45 @@ function HeroSectionComponent() {
 
           <SearchContainer>
             <SearchInput type="text" placeholder="Search templates..." />
-            <SpecialBlock>
-              {[...Array(42)].map((_, index) => (
-                <Dot key={index} />
-              ))}
-            </SpecialBlock>
             <SearchButton>Search</SearchButton>
+            <SpecialBlock>
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+            </SpecialBlock>
           </SearchContainer>
         </HeroContent>
       </Container>
