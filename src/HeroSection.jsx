@@ -98,7 +98,7 @@ const SpecialBlock = styled.div`
   width: 4rem;
   height: 4rem;
   display: grid;
-  grid-template-columns: repeat(6, 1rem);
+  grid-template-columns: repeat(, 1rem);
   grid-template-rows: repeat(4, 1rem);
   gap: 0.5rem;
 `;
@@ -125,15 +125,6 @@ function HeroSectionComponent() {
 
           <SearchContainer>
             <SpecialBlock>
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
               <Dot />
               <Dot />
               <Dot />
