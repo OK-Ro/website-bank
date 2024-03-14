@@ -98,7 +98,7 @@ const SpecialBlock = styled.div`
   width: 4rem;
   height: 4rem;
   display: grid;
-  grid-template-columns: repeat(7, 1.1rem);
+  grid-template-columns: repeat(7, 1rem);
   grid-template-rows: repeat(4, 1rem);
   gap: 0.5rem;
   z-index: 1;
@@ -108,7 +108,7 @@ const Dot = styled.div`
   width: 1rem;
   height: 1rem;
   border-radius: 2px;
-  background: linear-gradient(to right, #1abc9c, #1abc9c, black);
+  background-color: #000;
 `;
 
 function HeroSectionComponent() {
@@ -127,7 +127,7 @@ function HeroSectionComponent() {
           <SearchContainer>
             <SearchInput type="text" placeholder="Search templates..." />
             <SpecialBlock>
-              {[...Array(49)].map((_, index) => (
+              {[...Array()].map((_, index) => (
                 <Dot key={index} />
               ))}
             </SpecialBlock>
