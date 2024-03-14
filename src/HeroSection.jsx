@@ -126,44 +126,6 @@ function HeroSectionComponent() {
           <SearchContainer>
             <SearchInput type="text" placeholder="Search templates..." />
             <SearchButton>Search</SearchButton>
-            <SpecialBlock>
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-              <Dot />
-            </SpecialBlock>
           </SearchContainer>
         </HeroContent>
       </Container>
