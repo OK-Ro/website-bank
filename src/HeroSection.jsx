@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const HeroSection = styled.section``;
 
@@ -111,33 +111,11 @@ const Dot = styled.div`
   background: linear-gradient(to right, #1abc9c, #1abc9c, black);
 `;
 
-const mediaStyles = css`
-  @media (max-width: 768px) {
-    /* Add your styles for tablets here */
-    /* For example: */
-    width: 90%;
-  }
-
-  @media (max-width: 480px) {
-    /* Add your styles for mobile devices here */
-    /* For example: */
-    margin-left: 1rem;
-  }
-`;
-
-const ModifiedContainer = styled(Container)`
-  ${mediaStyles}
-`;
-
-const ModifiedHeroContent = styled(HeroContent)`
-  ${mediaStyles}
-`;
-
 function HeroSectionComponent() {
   return (
     <HeroSection>
-      <ModifiedContainer>
-        <ModifiedHeroContent>
+      <Container>
+        <HeroContent>
           <Title>Discover Your Perfect Website</Title>
           <Paragraph>
             Find your ideal website template with Website Bank. From business
@@ -155,8 +133,8 @@ function HeroSectionComponent() {
             </SpecialBlock>
             <SearchButton>Search</SearchButton>
           </SearchContainer>
-        </ModifiedHeroContent>
-      </ModifiedContainer>
+        </HeroContent>
+      </Container>
     </HeroSection>
   );
 }
