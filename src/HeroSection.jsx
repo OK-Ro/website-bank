@@ -20,6 +20,12 @@ const HeroContent = styled.div`
   text-align: left;
   width: 80%;
   margin-left: 3rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 1rem; /* Adjust padding */
+  }
 `;
 
 const Title = styled.h1`
@@ -31,6 +37,7 @@ const Title = styled.h1`
 
   @media (max-width: 768px) {
     font-size: 3.81rem;
+    width: auto;
   }
 
   @media (max-width: 480px) {
@@ -60,11 +67,19 @@ const SearchContainer = styled.div`
   margin-bottom: 7rem;
   width: 45vw;
   padding: 2rem 0;
+
+  @media (max-width: 768px) {
+    width: 80vw; /* Adjust width for smaller screens */
+  }
+
+  @media (max-width: 480px) {
+    width: 90vw; /* Adjust width for smaller screens */
+  }
 `;
 
 const SearchInput = styled.input`
   padding: 0.5rem 4rem 0.5rem 1rem;
-  width: 100%; /* Adjusted width */
+  width: 96%;
   height: 6.5rem;
   border-radius: 4rem;
   font-size: 1rem;
@@ -73,13 +88,17 @@ const SearchInput = styled.input`
   box-shadow: 0 9px 90px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 1000;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const SearchButton = styled.button`
   position: absolute;
   top: 20%;
-  right: 2%; /* Adjusted position */
-  padding: 1.7rem 4rem; /* Adjusted padding */
+  right: 0;
+  padding: 1.7rem 7rem;
   border-radius: 4rem;
   background-color: #1abc9c;
   color: white;
@@ -88,10 +107,14 @@ const SearchButton = styled.button`
   border: 4px solid white; /* Border declaration */
   box-shadow: 0 0 10px rgba(27, 131, 166, 0.6);
   z-index: 1000;
+
+  @media (max-width: 768px) {
+    padding: 1.7rem 4rem; /* Adjusted padding */
+  }
 `;
 
 const SpecialBlock = styled.div`
-  position: absolute;
+  position: relative;
   top: 50%;
   left: -3rem;
   transform: translateY(-50%);
@@ -102,6 +125,10 @@ const SpecialBlock = styled.div`
   grid-template-rows: repeat(4, 1rem);
   gap: 0.5rem;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    display: none; /* Hide on smaller screens */
+  }
 `;
 
 const Dot = styled.div`
