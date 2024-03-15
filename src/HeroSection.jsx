@@ -64,7 +64,7 @@ const SearchContainer = styled.div`
 
 const SearchInput = styled.input`
   padding: 0.5rem 4rem 0.5rem 1rem;
-  width: 96%;
+  width: 100%; /* Adjusted width */
   height: 6.5rem;
   border-radius: 4rem;
   font-size: 1rem;
@@ -78,8 +78,8 @@ const SearchInput = styled.input`
 const SearchButton = styled.button`
   position: absolute;
   top: 20%;
-  right: 0;
-  padding: 1.7rem 7rem;
+  right: 2%; /* Adjusted position */
+  padding: 1.7rem 4rem; /* Adjusted padding */
   border-radius: 4rem;
   background-color: #1abc9c;
   color: white;
@@ -91,7 +91,7 @@ const SearchButton = styled.button`
 `;
 
 const SpecialBlock = styled.div`
-  position: relative;
+  position: absolute;
   top: 50%;
   left: -3rem;
   transform: translateY(-50%);
