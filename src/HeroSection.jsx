@@ -9,7 +9,6 @@ const Container = styled.div`
 
   @media (max-width: 768px) {
     padding: 200px 0;
-    margin: 1rem;
   }
 
   @media (max-width: 480px) {
@@ -42,8 +41,7 @@ const Title = styled.h1`
   }
 
   @media (max-width: 480px) {
-    font-size: 40px;
-    margin-bottom: 50px;
+    font-size: 28px;
   }
 `;
 
@@ -55,13 +53,13 @@ const Paragraph = styled.p`
   line-height: 1.6;
 
   @media (max-width: 768px) {
-    font-size: 17px;
-    width: 94%;
+    font-size: 16px;
+    width: 100%;
     margin-bottom: 3px;
   }
 
   @media (max-width: 480px) {
-    font-size: 16px;
+    font-size: 14px;
   }
 `;
 
@@ -73,16 +71,15 @@ const SearchContainer = styled.div`
   padding: 2rem 0;
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: 20vw;
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
 
   @media (max-width: 480px) {
-    width: 100%;
+    width: 90vw;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    left: -8%;
   }
 `;
 
@@ -99,8 +96,10 @@ const SearchInput = styled.input`
   z-index: 1000;
 
   @media (max-width: 768px) {
+    width: 100%;
     height: 3rem;
-    width: 97%;
+    width: 96%;
+    height: 2rem;
   }
 `;
 
@@ -119,11 +118,7 @@ const SearchButton = styled.button`
   z-index: 1000;
 
   @media (max-width: 768px) {
-    padding: 0.8rem 2.5rem;
-    font-size: 1rem;
-    right: -24%;
-    top: 29%;
-    z-index: 1000;
+    padding: 1rem 4rem;
   }
 `;
 
