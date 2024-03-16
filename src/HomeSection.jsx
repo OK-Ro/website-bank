@@ -110,7 +110,7 @@ const LargeCircle = styled(Circle)`
   right: 200px;
   background-image: url("https://static.wixstatic.com/media/bb1bd6_e70f4c7201f94a258d92cbda381ddfb1~mv2.gif");
   background-size: cover;
-  animation: ${PulsateAnimation} 3s infinite alternate;
+  animation: ${HeartbeatAnimation} 1s infinite alternate; /* Apply HeartbeatAnimation */
 
   @media (max-width: 768px) {
     width: 80px;
