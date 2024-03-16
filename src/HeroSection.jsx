@@ -54,8 +54,6 @@ const Paragraph = styled.p`
 
   @media (max-width: 768px) {
     font-size: 16px;
-    width: 100%;
-    margin-bottom: 3px;
   }
 
   @media (max-width: 480px) {
@@ -71,15 +69,11 @@ const SearchContainer = styled.div`
   padding: 2rem 0;
 
   @media (max-width: 768px) {
-    width: 20vw;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    width: 80vw; /* Adjust width for smaller screens */
   }
 
   @media (max-width: 480px) {
-    width: 90vw;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    width: 90vw; /* Adjust width for smaller screens */
   }
 `;
 
@@ -98,8 +92,6 @@ const SearchInput = styled.input`
   @media (max-width: 768px) {
     width: 100%;
     height: 3rem;
-    width: 96%;
-    height: 2rem;
   }
 `;
 
