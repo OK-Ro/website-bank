@@ -1,5 +1,6 @@
 import React from "react";
-import styled from "styled-components";
+
+import styled, { keyframes } from "styled-components";
 
 const HeroSection = styled.section``;
 
@@ -9,6 +10,7 @@ const Container = styled.div`
 
   @media (max-width: 768px) {
     padding: 200px 0;
+    margin: 1rem;
   }
 
   @media (max-width: 480px) {
@@ -24,7 +26,7 @@ const HeroContent = styled.div`
   @media (max-width: 768px) {
     width: 100%;
     margin-left: 0;
-    padding: 0 1rem; /* Adjust padding */
+    padding: 0 1rem;
   }
 `;
 
@@ -41,7 +43,8 @@ const Title = styled.h1`
   }
 
   @media (max-width: 480px) {
-    font-size: 28px;
+    font-size: 40px;
+    margin-bottom: 50px;
   }
 `;
 
@@ -53,11 +56,13 @@ const Paragraph = styled.p`
   line-height: 1.6;
 
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: 17px;
+    width: 94%;
+    margin-bottom: 3px;
   }
 
   @media (max-width: 480px) {
-    font-size: 14px;
+    font-size: 16px;
   }
 `;
 
@@ -69,11 +74,16 @@ const SearchContainer = styled.div`
   padding: 2rem 0;
 
   @media (max-width: 768px) {
-    width: 80vw; /* Adjust width for smaller screens */
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
 
   @media (max-width: 480px) {
-    width: 90vw; /* Adjust width for smaller screens */
+    width: 90%;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    left: -8%;
   }
 `;
 
@@ -90,10 +100,25 @@ const SearchInput = styled.input`
   z-index: 1000;
 
   @media (max-width: 768px) {
-    width: 100%;
+    height: 3rem;
+    width: 97%;
   }
 `;
 
+/ Keyframes for pulse animation
+const pulseAnimation = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+`;
+
+// Styled search button with animation
 const SearchButton = styled.button`
   position: absolute;
   top: 20%;
@@ -104,12 +129,22 @@ const SearchButton = styled.button`
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
-  border: 4px solid white; /* Border declaration */
+  border: 4px solid white;
   box-shadow: 0 0 10px rgba(27, 131, 166, 0.6);
   z-index: 1000;
+  transition: background-color 0.3s ease;
 
   @media (max-width: 768px) {
-    padding: 1.7rem 4rem; /* Adjusted padding */
+    padding: 0.8rem 2.9rem;
+    font-size: 1rem;
+    right: -38%;
+    top: 29%;
+    z-index: 1000;
+  }
+
+  &:hover {
+    animation: ${pulseAnimation} 0.5s ease-in-out infinite; /* Apply pulse animation on hover */
+    background-color: #16a085; /* Change background color on hover */
   }
 `;
 
