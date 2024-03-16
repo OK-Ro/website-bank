@@ -1,6 +1,5 @@
 import React from "react";
-
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 const HeroSection = styled.section``;
 
@@ -80,7 +79,7 @@ const SearchContainer = styled.div`
   }
 
   @media (max-width: 480px) {
-    width: 90%;
+    width: 100%;
     margin-top: 2rem;
     margin-bottom: 1rem;
     left: -8%;
@@ -105,20 +104,6 @@ const SearchInput = styled.input`
   }
 `;
 
-/ Keyframes for pulse animation
-const pulseAnimation = keyframes`
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-`;
-
-// Styled search button with animation
 const SearchButton = styled.button`
   position: absolute;
   top: 20%;
@@ -129,22 +114,16 @@ const SearchButton = styled.button`
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
-  border: 4px solid white;
+  border: 4px solid white; /* Border declaration */
   box-shadow: 0 0 10px rgba(27, 131, 166, 0.6);
   z-index: 1000;
-  transition: background-color 0.3s ease;
 
   @media (max-width: 768px) {
-    padding: 0.8rem 2.9rem;
+    padding: 0.8rem 2.5rem;
     font-size: 1rem;
-    right: -38%;
+    right: -24%;
     top: 29%;
     z-index: 1000;
-  }
-
-  &:hover {
-    animation: ${pulseAnimation} 0.5s ease-in-out infinite; /* Apply pulse animation on hover */
-    background-color: #16a085; /* Change background color on hover */
   }
 `;
 
