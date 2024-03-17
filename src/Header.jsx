@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import styled, { keyframes } from "styled-components";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styled from "styled-components";
 
 const HeaderSection = styled.header`
   background-color: #1abc9c;
@@ -9,23 +7,22 @@ const HeaderSection = styled.header`
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 
   @media (max-width: 768px) {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 `;
 
-const bounceAnimation = keyframes`
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-`;
+// const bounceAnimation = keyframes`
+//   0%, 100% {
+//     transform: translateY(0);
+//   }
+//   50% {
+//     transform: translateY(-10px);
+//   }
+// `;
 
 const LogoContainer = styled.div`
   position: relative;
   z-index: 2;
-  animation: ${bounceAnimation} 1s ease infinite;
 
   img {
     max-width: 150px;
@@ -109,30 +106,48 @@ const NavMenu = styled.nav`
       }
     }
   }
-
   @media (max-width: 768px) {
     display: ${(props) => (props.isOpen ? "block" : "none")};
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+
     ul {
       flex-direction: column;
       align-items: center;
-      margin-top: 0px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 80%;
+      max-width: 300px;
+      height: 100%;
       background-color: #1abc9c;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      border-radius: 4px;
+      border-radius: 0 0 10px 10px; /* Rounded corners only at the bottom */
+      overflow-y: auto;
       padding: 20px;
-      width: 250px;
-      height: 82vh;
+      padding-top: 50px;
+      z-index: 999;
 
       li {
-        margin: 20px 0;
+        font-size: 30px;
+        margin: 60px 0;
+        text-align: center;
       }
 
       .dropdown-menu {
-        position: static;
+        position: relative;
 
         .dropdown-content {
           display: none;
-          position: static;
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
           background-color: #16a085;
           min-width: 220px;
           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -171,23 +186,8 @@ const NavToggler = styled.div`
     color: #fff;
     font-size: 35px;
     position: absolute;
-    top: 28px;
+    top: 20px;
     right: 20px;
-    z-index: 2;
-  }
-`;
-
-const SearchIcon = styled(FontAwesomeIcon)`
-  display: none;
-
-  @media (max-width: 768px) {
-    display: inline;
-    color: white;
-    font-size: 25px;
-    position: absolute;
-    top: 40px;
-    right: 90px;
-    cursor: pointer;
     z-index: 2;
   }
 `;
@@ -205,11 +205,11 @@ function Header() {
       <HeaderContainer>
         <LogoContainer>
           <img
-            src="https://www.pngplay.com/wp-content/uploads/9/WWW-Website-Transparent-File.png"
+            src="https://logos-download.com/wp-content/uploads/2019/11/Web_Bank_Logo.png"
             alt="Your Platform Name"
           />
         </LogoContainer>
-        <SearchIcon icon={faSearch} />
+
         <NavToggler onClick={toggleMenu}>☰</NavToggler>
         <NavMenu isOpen={isOpen}>
           <ul>

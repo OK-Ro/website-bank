@@ -14,6 +14,8 @@ const Container = styled.div`
     flex-direction: column;
     padding: 5px 5px;
     margin: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to right, #f1f1f1, #c0adada5);
   }
 `;
 
@@ -50,6 +52,7 @@ const ImageContainer = styled.div`
     margin-right: auto;
     height: 50vh;
     top: 0;
+    left: -5%;
   }
 `;
 
@@ -101,6 +104,7 @@ const Circle = styled.div`
       inset 5px 5px 60px rgba(0, 0, 0, 0.555),
       inset -5px -5px 15px rgba(0, 0, 0, 0.75);
   }
+  z-index: 999;
 `;
 
 const LargeCircle = styled(Circle)`
@@ -153,7 +157,7 @@ const SmallCircle = styled(Circle)`
   @media (max-width: 768px) {
     width: 70px;
     height: 70px;
-    top: 5rem;
+    top: 6rem;
     right: auto;
     left: 3%;
     transform: translateX(-50%);

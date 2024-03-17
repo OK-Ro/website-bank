@@ -8,12 +8,8 @@ const Container = styled.div`
   border-radius: 2rem;
 
   @media (max-width: 768px) {
-    padding: 200px 0;
-    margin: 1rem;
-  }
-
-  @media (max-width: 480px) {
     padding: 60px 0;
+    margin: 1rem;
   }
 `;
 
@@ -37,13 +33,9 @@ const Title = styled.h1`
   width: 125%;
 
   @media (max-width: 768px) {
-    font-size: 3.81rem;
-    width: auto;
-  }
-
-  @media (max-width: 480px) {
     font-size: 40px;
     margin-bottom: 50px;
+    width: auto;
   }
 `;
 
@@ -55,13 +47,9 @@ const Paragraph = styled.p`
   line-height: 1.6;
 
   @media (max-width: 768px) {
-    font-size: 17px;
+    font-size: 16px;
     width: 94%;
     margin-bottom: 3px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 16px;
   }
 `;
 
@@ -73,12 +61,6 @@ const SearchContainer = styled.div`
   padding: 2rem 0;
 
   @media (max-width: 768px) {
-    width: 100%;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  @media (max-width: 480px) {
     width: 90%;
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -99,8 +81,9 @@ const SearchInput = styled.input`
   z-index: 1000;
 
   @media (max-width: 768px) {
-    height: 3rem;
+    height: 2.4rem;
     width: 97%;
+    z-index: 0;
   }
 `;
 
@@ -114,7 +97,7 @@ const SearchButton = styled.button`
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
-  border: 4px solid white; /* Border declaration */
+  border: 4px solid white;
   box-shadow: 0 0 10px rgba(27, 131, 166, 0.6);
   z-index: 1000;
 
@@ -122,14 +105,13 @@ const SearchButton = styled.button`
     padding: 0.8rem 2.9rem;
     font-size: 1rem;
     right: -38%;
-    top: 29%;
-    z-index: 1000;
+    top: 25%;
+    z-index: 0;
   }
 `;
 
 const SpecialBlock = styled.div`
   position: relative;
-  top: 50%;
   left: -3rem;
   transform: translateY(-50%);
   width: 4rem;
@@ -141,7 +123,13 @@ const SpecialBlock = styled.div`
   z-index: 1;
 
   @media (max-width: 768px) {
-    display: none; /* Hide on smaller screens */
+    top: -3rem;
+    left: -0.5rem;
+    width: 1rem;
+    height: 1rem;
+    gap: 0.1rem;
+    grid-template-columns: repeat(7, 0.6rem);
+    grid-template-rows: repeat(2, 1rem);
   }
 `;
 
@@ -149,7 +137,14 @@ const Dot = styled.div`
   width: 1rem;
   height: 1rem;
   border-radius: 2px;
-  background: linear-gradient(to right, #1abc9c, #1abc9c, black);
+  border: 3px solid white;
+  box-shadow: 0 0 10px rgba(27, 131, 166, 0.1);
+  background: linear-gradient(to right, #1abc9c, #1abc9c, #1abc9c);
+
+  @media (max-width: 768px) {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
 `;
 
 function HeroSectionComponent() {
