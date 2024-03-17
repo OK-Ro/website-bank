@@ -83,7 +83,7 @@ const SearchInput = styled.input`
   @media (max-width: 768px) {
     height: 2.4rem;
     width: 97%;
-    z-index: 0;
+    z-index: auto;
   }
 `;
 
@@ -105,8 +105,8 @@ const SearchButton = styled.button`
     padding: 0.8rem 2.9rem;
     font-size: 1rem;
     right: -38%;
-    top: 25%;
-    z-index: 0;
+    top: 27.5%;
+    z-index: 1000;
   }
 `;
 
@@ -123,6 +123,7 @@ const SpecialBlock = styled.div`
   z-index: 1;
 
   @media (max-width: 768px) {
+    display: none;
     top: -3rem;
     left: -0.5rem;
     width: 1rem;

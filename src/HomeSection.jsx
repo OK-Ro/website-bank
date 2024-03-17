@@ -51,7 +51,7 @@ const ImageContainer = styled.div`
     margin-left: auto;
     margin-right: auto;
     height: 50vh;
-    top: 0;
+    top: 4rem;
     left: -5%;
   }
 `;

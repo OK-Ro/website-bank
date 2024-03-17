@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const HeaderSection = styled.header`
   background-color: #1abc9c;
@@ -192,14 +194,52 @@ const NavToggler = styled.div`
   }
 `;
 
+const CloseIcon = styled.span`
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1000;
+  background-color: #1abc9c;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 0.5rem;
+  border: 3px solid white;
+  box-shadow: 0 0 10px rgba(27, 131, 166, 0.6);
+  box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.4),
+    inset 5px 5px 60px rgba(0, 0, 0, 0.555),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.2);
+`;
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef();
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    console.log("navtogler icon clicked");
   };
 
+  const handleClose = () => {
+    setIsOpen(false);
+  };
   return (
     <HeaderSection>
       <HeaderContainer>
@@ -211,7 +251,13 @@ function Header() {
         </LogoContainer>
 
         <NavToggler onClick={toggleMenu}>☰</NavToggler>
-        <NavMenu isOpen={isOpen}>
+        {isOpen && (
+          <CloseIcon onClick={handleClose}>
+            <FontAwesomeIcon icon={faTimes} />
+          </CloseIcon>
+        )}
+
+        <NavMenu ref={menuRef} isOpen={isOpen}>
           <ul>
             <li>
               <button onClick={() => (window.location.href = "#home")}>
