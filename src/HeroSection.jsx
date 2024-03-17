@@ -7,7 +7,7 @@ const Container = styled.div`
   margin: 3rem;
   border-radius: 2rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 768px) and (max-device-width: 480px) {
     padding: 60px 0;
     margin: 1rem;
   }
@@ -18,7 +18,7 @@ const HeroContent = styled.div`
   width: 80%;
   margin-left: 3rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 768px) and (max-device-width: 480px) {
     width: 100%;
     margin-left: 0;
     padding: 0 1rem;
@@ -32,7 +32,7 @@ const Title = styled.h1`
   font-weight: bold;
   width: 125%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 768px) and (max-device-width: 480px) {
     font-size: 40px;
     margin-bottom: 50px;
     width: auto;
@@ -46,7 +46,7 @@ const Paragraph = styled.p`
   margin-bottom: 30px;
   line-height: 1.6;
 
-  @media (max-width: 768px) {
+  @media (max-width: 768px) and (max-device-width: 480px) {
     font-size: 16px;
     width: 94%;
     margin-bottom: 3px;
@@ -60,7 +60,7 @@ const SearchContainer = styled.div`
   width: 45vw;
   padding: 2rem 0;
 
-  @media (max-width: 768px) {
+  @media (max-width: 768px) and (max-device-width: 480px) {
     width: 90%;
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -81,7 +81,7 @@ const SearchInput = styled.input`
   z-index: 1001;
   outline: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 768px) and (max-device-width: 480px) {
     height: 2.4rem;
     width: 97%;
     z-index: 1;
@@ -102,7 +102,7 @@ const SearchButton = styled.button`
   box-shadow: 0 0 10px rgba(27, 131, 166, 0.6);
   z-index: 1001;
 
-  @media (max-width: 768px) {
+  @media (max-width: 768px) and (max-device-width: 480px) {
     padding: 0.8rem 2.9rem;
     font-size: 1rem;
     right: -38%;
@@ -123,7 +123,7 @@ const SpecialBlock = styled.div`
   gap: 0.5rem;
   z-index: 1;
 
-  @media (max-width: 768px) {
+  @media (max-width: 768px) and (max-device-width: 480px) {
     display: none;
     top: -3rem;
     left: -0.5rem;
