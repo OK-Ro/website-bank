@@ -78,12 +78,13 @@ const SearchInput = styled.input`
   background: white;
   box-shadow: 0 9px 90px rgba(0, 0, 0, 0.2);
   position: relative;
-  z-index: 1000;
+  z-index: 1001;
+  outline: none;
 
   @media (max-width: 768px) {
     height: 2.4rem;
     width: 97%;
-    z-index: auto;
+    z-index: 1;
   }
 `;
 
@@ -99,14 +100,14 @@ const SearchButton = styled.button`
   cursor: pointer;
   border: 4px solid white;
   box-shadow: 0 0 10px rgba(27, 131, 166, 0.6);
-  z-index: 1000;
+  z-index: 1001;
 
   @media (max-width: 768px) {
     padding: 0.8rem 2.9rem;
     font-size: 1rem;
     right: -38%;
     top: 27.5%;
-    z-index: 1000;
+    z-index: 1001;
   }
 `;
 
