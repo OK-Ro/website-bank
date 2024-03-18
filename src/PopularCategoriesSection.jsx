@@ -10,9 +10,9 @@ const PopularSection = styled.section`
   margin-bottom: 4rem;
   display: flex;
   justify-content: space-between;
-  background: red;
+
   @media (max-width: 768px) {
-    height: 40vh;
+    height: 35vh;
     margin-left: 0;
     margin-right: 0;
   }
@@ -31,7 +31,6 @@ const Category = styled.div`
   width: 90%;
   height: 35vh;
   padding: 20px;
-  background: green;
   margin-right: 10px;
   &:last-child {
     margin-right: 0;
@@ -54,7 +53,8 @@ const CategoryImage = styled.img`
   border-radius: 2rem;
   @media (max-width: 768px) {
     width: 100%;
-    height: 16vh;
+    height: 18vh;
+    border-radius: 1rem;
   }
 `;
 
@@ -67,6 +67,7 @@ const CategoryTitle = styled.h3`
   }
 `;
 const Title = styled.h2`
+  text-align: center;
   font-size: 2rem;
   margin-left: 1.5rem;
   margin-bottom: 30px;
