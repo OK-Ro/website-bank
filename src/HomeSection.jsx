@@ -10,7 +10,7 @@ const Container = styled.div`
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   display: flex;
 
-  @media (max-width: 768px) and (max-device-width: 480px) {
+  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
     flex-direction: column;
     padding: 5px 5px;
     margin: 1rem;
@@ -27,13 +27,16 @@ const LeftSection = styled.div`
     margin-bottom: 1rem;
     height: 50vh;
   }
+  @media (max-width: 360px) {
+    height: 80vh;
+  }
 `;
 
 const RightSection = styled.div`
   width: 55%;
   position: relative;
 
-  @media (max-width: 768px) {
+  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
     width: 100%;
   }
 `;
@@ -45,7 +48,8 @@ const ImageContainer = styled.div`
   background-color: transparent;
   top: 38rem;
   margin-left: 15rem;
-  @media (max-width: 768px) and (max-device-width: 480px) {
+
+  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -97,7 +101,8 @@ const Circle = styled.div`
   box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.87),
     inset 5px 5px 60px rgba(0, 0, 0, 0.555),
     inset -5px -5px 15px rgba(0, 0, 0, 0.75);
-  @media (max-width: 768px) and (max-device-width: 480px) {
+
+  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
     border: 2px solid white;
     box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.4),
       inset 5px 5px 60px rgba(0, 0, 0, 0.555),
@@ -113,15 +118,23 @@ const LargeCircle = styled(Circle)`
   right: 200px;
   background-image: url("https://static.wixstatic.com/media/bb1bd6_e70f4c7201f94a258d92cbda381ddfb1~mv2.gif");
   background-size: cover;
-  animation: ${HeartbeatAnimation} 1s infinite alternate; /* Apply HeartbeatAnimation */
+  animation: ${HeartbeatAnimation} 1s infinite alternate;
 
-  @media (max-width: 768px) and (max-device-width: 480px) {
+  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
     width: 80px;
     height: 80px;
     top: -29rem;
     right: auto;
     left: 70%;
     transform: translateX(-50%);
+  }
+
+  @media (max-width: 360px) {
+    top: -37rem;
+  }
+
+  @media (max-width: 360px) {
+    top: -37rem;
   }
 `;
 
@@ -133,13 +146,16 @@ const MediumCircle = styled(Circle)`
   background-image: url("https://cdn.dribbble.com/users/1856812/screenshots/4020514/webpage.gif");
   background-size: cover;
   animation: ${PulsateAnimation} 4s infinite alternate;
-  @media (max-width: 768px) and (max-device-width: 480px) {
+  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
     width: 50px;
     height: 50px;
     top: -16.8rem;
     right: auto;
     left: 30%;
     transform: translateX(-50%);
+  }
+  @media (max-width: 360px) {
+    top: -21.5rem;
   }
 `;
 
@@ -151,8 +167,7 @@ const SmallCircle = styled(Circle)`
   background-image: url("https://cdn.dribbble.com/users/278201/screenshots/3861829/gif.gif");
   background-size: cover;
   animation: ${PulsateAnimation} 5s infinite alternate;
-
-  @media (max-width: 768px) and (max-device-width: 480px) {
+  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
     width: 70px;
     height: 70px;
     top: 6rem;
@@ -169,14 +184,18 @@ const SmallestCircle = styled(Circle)`
   right: 1200px;
   background-image: url("https://www.bing.com/th/id/OGC.77a9c3545a7e1016d73876cabfa4e314?pid=1.7&rurl=https%3a%2f%2ffiverr-res.cloudinary.com%2fattachments%2fgeneric_asset%2fasset%2fe28bed16bca1eef244ddb4c98572fb20-1596709168025%2fgif.gif&ehk=yFkI3d59zWOrmbeEscgeW7hPk2xFi92uT32E47R1rUI%3d");
   background-size: cover;
-  animation: ${PulsateAnimation} 6s infinite alternate;
-  @media (max-width: 768px) and (max-device-width: 480px) {
+  animation: ${HeartbeatAnimation} 2s infinite alternate;
+
+  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
     width: 40px;
     height: 40px;
     top: -5rem;
     right: auto;
     left: 80%;
     transform: translateX(-50%);
+  }
+  @media (max-width: 360px) {
+    top: -7rem;
   }
 `;
 
