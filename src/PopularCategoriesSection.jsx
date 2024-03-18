@@ -31,6 +31,7 @@ const Category = styled.div`
   width: 90%;
   height: 35vh;
   padding: 20px;
+  background: green;
   margin-right: 10px;
   &:last-child {
     margin-right: 0;
@@ -53,8 +54,7 @@ const CategoryImage = styled.img`
   border-radius: 2rem;
   @media (max-width: 768px) {
     width: 100%;
-    height: 18vh;
-    border-radius: 1rem;
+    height: 16vh;
   }
 `;
 
