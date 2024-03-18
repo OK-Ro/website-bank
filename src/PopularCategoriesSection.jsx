@@ -10,11 +10,18 @@ const PopularSection = styled.section`
   margin-bottom: 4rem;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    height: 35vh;
+    margin-left: 0;
+    margin-right: 0;
+  }
 `;
 
 const CategoryContainer = styled.div`
   margin: 20px;
   width: 100vw;
+
   @media (max-width: 768px) {
     margin: 3px;
   }
@@ -31,7 +38,7 @@ const Category = styled.div`
 
   @media (max-width: 768px) {
     width: 45%;
-    height: 16vh;
+    height: 25vh;
     padding: 10px;
   }
 
@@ -44,9 +51,10 @@ const CategoryImage = styled.img`
   width: 100%;
   height: 30vh;
   border-radius: 2rem;
-  @media (max-width: 576px) {
+  @media (max-width: 768px) {
     width: 100%;
-    height: 12vh;
+    height: 18vh;
+    border-radius: 1rem;
   }
 `;
 
@@ -54,16 +62,17 @@ const CategoryTitle = styled.h3`
   margin-top: 25px;
   font-size: 18px;
   color: #333;
-  @media (max-width: 576px) {
+  @media (max-width: 768px) {
     margin-top: 10px;
   }
 `;
 const Title = styled.h2`
+  text-align: center;
   font-size: 2rem;
   margin-left: 1.5rem;
   margin-bottom: 30px;
   color: #333;
-  @media (max-width: 576px) {
+  @media (max-width: 768px) {
     margin-left: 20px;
   }
 `;
