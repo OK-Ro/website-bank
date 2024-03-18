@@ -10,9 +10,9 @@ const PopularSection = styled.section`
   margin-bottom: 4rem;
   display: flex;
   justify-content: space-between;
-
+  background: red;
   @media (max-width: 768px) {
-    height: 35vh;
+    height: 40vh;
     margin-left: 0;
     margin-right: 0;
   }
@@ -67,7 +67,6 @@ const CategoryTitle = styled.h3`
   }
 `;
 const Title = styled.h2`
-  text-align: center;
   font-size: 2rem;
   margin-left: 1.5rem;
   margin-bottom: 30px;
