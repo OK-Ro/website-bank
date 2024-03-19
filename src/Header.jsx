@@ -30,7 +30,7 @@ const LogoContainer = styled.div`
     height: auto;
     display: block;
     @media (max-width: 768px) and (max-device-width: 480px),
-      (max-width: 360px) {
+    (max-width: 360px) {
       max-width: 30%;
     }
   }
@@ -43,7 +43,8 @@ const HeaderContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+  @media (max-width: 768px) and (max-device-width: 480px),
+  (max-width: 360px) {
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
@@ -107,7 +108,8 @@ const NavMenu = styled.nav`
       }
     }
   }
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+@media (max-width: 768px) and (max-device-width: 480px),
+       (max-width: 360px) {
     display: ${(props) => (props.isOpen ? "block" : "none")};
     position: fixed;
     top: 0;
