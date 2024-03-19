@@ -30,7 +30,8 @@ const LogoContainer = styled.div`
     max-width: 150px;
     height: auto;
     display: block;
-    @media (max-width: 768px) and (max-device-width: 480px) {
+
+    @media (max-width: 768px) {
       max-width: 30%;
     }
   }
@@ -43,7 +44,7 @@ const HeaderContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 
-  @media (max-width: 768px) and (max-device-width: 480px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
