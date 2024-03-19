@@ -197,22 +197,15 @@ const NavToggler = styled.div`
 const CloseIcon = styled.span`
   position: absolute;
   top: 20px;
-  right: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  right: 20px;
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   cursor: pointer;
   z-index: 1000;
   background-color: #1abc9c;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  padding: 0.5rem;
-  border: 3px solid white;
   box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.87);
 `;
+
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef();
