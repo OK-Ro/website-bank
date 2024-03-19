@@ -211,10 +211,7 @@ const CloseIcon = styled.span`
   border-radius: 50%;
   padding: 0.5rem;
   border: 3px solid white;
-  box-shadow: 0 0 10px rgba(27, 131, 166, 0.6);
-  box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.4),
-    inset 5px 5px 60px rgba(0, 0, 0, 0.555),
-    inset -5px -5px 15px rgba(0, 0, 0, 0);
+  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.87);
 `;
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
