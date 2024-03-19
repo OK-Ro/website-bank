@@ -108,7 +108,7 @@ const NavMenu = styled.nav`
       }
     }
   }
-  @media (max-width: 768px) and (max-device-width: 480px) {
+  @media (max-width: 768px) {
     display: ${(props) => (props.isOpen ? "block" : "none")};
     position: fixed;
     top: 0;
@@ -182,7 +182,7 @@ const NavMenu = styled.nav`
 const NavToggler = styled.div`
   display: none;
 
-  @media (max-width: 768px) and (max-device-width: 480px) {
+  @media (max-width: 768px) {
     display: block;
     cursor: pointer;
     color: #fff;
