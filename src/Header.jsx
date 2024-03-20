@@ -202,7 +202,7 @@ const CloseIcon = styled.span`
   font-size: 25px;
   cursor: pointer;
   z-index: 1000;
-  background-color: #1abc9c;
+
   box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.87),
   border-radius: 50%;
 `;
