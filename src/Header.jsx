@@ -7,7 +7,8 @@ const HeaderSection = styled.header`
   background-color: #1abc9c;
   padding: 20px 0;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  @media (max-width: 768px) and (max-device-width: 480px) {
+
+  @media (max-width: 768px) {
     padding: 20px 0;
   }
 `;
@@ -29,8 +30,8 @@ const LogoContainer = styled.div`
     max-width: 150px;
     height: auto;
     display: block;
-    @media (max-width: 768px) and (max-device-width: 480px),
-      (max-width: 360px) {
+
+    @media (max-width: 768px) {
       max-width: 30%;
     }
   }
@@ -43,7 +44,7 @@ const HeaderContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
@@ -107,7 +108,7 @@ const NavMenu = styled.nav`
       }
     }
   }
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+  @media (max-width: 768px) {
     display: ${(props) => (props.isOpen ? "block" : "none")};
     position: fixed;
     top: 0;
@@ -181,7 +182,7 @@ const NavMenu = styled.nav`
 const NavToggler = styled.div`
   display: none;
 
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+  @media (max-width: 768px) {
     display: block;
     cursor: pointer;
     color: #fff;
@@ -196,25 +197,15 @@ const NavToggler = styled.div`
 const CloseIcon = styled.span`
   position: absolute;
   top: 20px;
-  right: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  right: 20px;
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   cursor: pointer;
   z-index: 1000;
   background-color: #1abc9c;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  padding: 0.5rem;
-  border: 3px solid white;
-  box-shadow: 0 0 10px rgba(27, 131, 166, 0.6);
-  box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.4),
-    inset 5px 5px 60px rgba(0, 0, 0, 0.555),
-    inset -5px -5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.87);
 `;
+
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef();
