@@ -241,12 +241,7 @@ function Header() {
         </LogoContainer>
 
         <NavToggler onClick={toggleMenu}>☰</NavToggler>
-        {isOpen && (
-          <CloseIcon onClick={handleClose}>
-            <FontAwesomeIcon icon={faTimes} />
-          </CloseIcon>
-        )}
-
+        {isOpen && <CloseIcon onClick={handleClose}>×</CloseIcon>}
         <NavMenu ref={menuRef} isOpen={isOpen}>
           <ul>
             <li>
