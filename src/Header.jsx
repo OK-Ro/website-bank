@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const HeaderSection = styled.header`
   background-color: #1abc9c;
@@ -201,7 +199,7 @@ const CloseIcon = styled.span`
   color: white;
   font-size: 25px;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 1000; /* Ensure it's above other elements */
   background: red;
   border-radius: 50%;
 `;
