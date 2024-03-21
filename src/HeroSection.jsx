@@ -7,7 +7,7 @@ const Container = styled.div`
   margin: 3rem;
   border-radius: 2rem;
 
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+  @media (max-width: 768px) {
     padding: 60px 0;
     margin: 1rem;
   }
@@ -17,7 +17,8 @@ const HeroContent = styled.div`
   text-align: left;
   width: 80%;
   margin-left: 3rem;
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+
+  @media (max-width: 768px) and (max-device-width: 480px) {
     width: 100%;
     margin-left: 0;
     padding: 0 1rem;
@@ -30,7 +31,8 @@ const Title = styled.h1`
   margin-bottom: 20px;
   font-weight: bold;
   width: 125%;
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+
+  @media (max-width: 768px) and (max-device-width: 480px) {
     font-size: 40px;
     margin-bottom: 50px;
     width: auto;
@@ -141,7 +143,7 @@ const Dot = styled.div`
   box-shadow: 0 0 10px rgba(27, 131, 166, 0.1);
   background: linear-gradient(to right, #1abc9c, #1abc9c, #1abc9c);
 
-  @media (max-width: 768px) and (max-device-width: 480px) {
+  @media (max-width: 768px) {
     width: 0.5rem;
     height: 0.5rem;
   }
