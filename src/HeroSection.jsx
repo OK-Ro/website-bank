@@ -44,7 +44,7 @@ const Paragraph = styled.p`
   margin-bottom: 30px;
   line-height: 1.6;
 
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+  @media (max-width: 768px) and (max-device-width: 480px) {
     font-size: 16px;
     width: 94%;
     margin-bottom: 3px;
@@ -58,7 +58,7 @@ const SearchContainer = styled.div`
   width: 45vw;
   padding: 2rem 0;
 
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+  @media (max-width: 768px) and (max-device-width: 480px) {
     width: 90%;
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -78,7 +78,8 @@ const SearchInput = styled.input`
   position: relative;
   z-index: 1001;
   outline: none;
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+
+  @media (max-width: 768px) and (max-device-width: 480px) {
     height: 2.4rem;
     width: 97%;
     z-index: 1;
