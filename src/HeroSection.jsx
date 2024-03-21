@@ -81,10 +81,10 @@ const SearchInput = styled.input`
   z-index: 1001;
   outline: none;
 
-  @media (max-width: 768px) and (max-device-width: 480px) {
+  @media (max-width: 768px) {
     height: 2.4rem;
     width: 97%;
-    z-index: 1;
+    z-index: none;
   }
 `;
 
