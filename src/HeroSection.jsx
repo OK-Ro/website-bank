@@ -105,7 +105,7 @@ const SearchButton = styled.button`
     padding: 0.8rem 2.9rem;
     font-size: 1rem;
     right: -38%;
-    top: 27.5%;
+    top: 24%;
     z-index: 1000;
   }
 `;
@@ -123,7 +123,6 @@ const SpecialBlock = styled.div`
   z-index: 1;
 
   @media (max-width: 768px) {
-    display: none;
     top: -3rem;
     left: -0.5rem;
     width: 1rem;
