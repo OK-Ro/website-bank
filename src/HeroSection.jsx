@@ -99,7 +99,7 @@ const SearchButton = styled.button`
   box-shadow: 0 0 10px rgba(27, 131, 166, 0.6);
   z-index: 1001;
 
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+  @media (max-width: 768px) and (max-device-width: 480px) {
     padding: 0.8rem 2.9rem;
     font-size: 1rem;
     right: -38%;
