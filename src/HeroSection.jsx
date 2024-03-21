@@ -84,7 +84,7 @@ const SearchInput = styled.input`
   @media (max-width: 768px) {
     height: 2.4rem;
     width: 97%;
-    z-index: none;
+    z-index: auto;
   }
 `;
 
