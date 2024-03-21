@@ -120,7 +120,7 @@ const SpecialBlock = styled.div`
   gap: 0.5rem;
   z-index: 1;
 
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+  @media (max-width: 768px) and (max-device-width: 480px) {
     display: none;
     top: -3rem;
     left: -0.5rem;
