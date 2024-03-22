@@ -7,7 +7,7 @@ const Container = styled.div`
   margin: 3rem;
   border-radius: 2rem;
 
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+  @media (max-width: 768px) {
     padding: 60px 0;
     margin: 1rem;
   }
@@ -17,7 +17,8 @@ const HeroContent = styled.div`
   text-align: left;
   width: 80%;
   margin-left: 3rem;
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+
+  @media (max-width: 768px) {
     width: 100%;
     margin-left: 0;
     padding: 0 1rem;
@@ -30,7 +31,8 @@ const Title = styled.h1`
   margin-bottom: 20px;
   font-weight: bold;
   width: 125%;
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+
+  @media (max-width: 768px) {
     font-size: 40px;
     margin-bottom: 50px;
     width: auto;
@@ -44,7 +46,7 @@ const Paragraph = styled.p`
   margin-bottom: 30px;
   line-height: 1.6;
 
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+  @media (max-width: 768px) {
     font-size: 16px;
     width: 94%;
     margin-bottom: 3px;
@@ -58,7 +60,7 @@ const SearchContainer = styled.div`
   width: 45vw;
   padding: 2rem 0;
 
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+  @media (max-width: 768px) {
     width: 90%;
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -76,12 +78,12 @@ const SearchInput = styled.input`
   background: white;
   box-shadow: 0 9px 90px rgba(0, 0, 0, 0.2);
   position: relative;
-  z-index: 1001;
-  outline: none;
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+  z-index: 1000;
+
+  @media (max-width: 768px) {
     height: 2.4rem;
     width: 97%;
-    z-index: 1;
+    z-index: auto;
   }
 `;
 
@@ -97,14 +99,14 @@ const SearchButton = styled.button`
   cursor: pointer;
   border: 4px solid white;
   box-shadow: 0 0 10px rgba(27, 131, 166, 0.6);
-  z-index: 1001;
+  z-index: 1000;
 
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+  @media (max-width: 768px) {
     padding: 0.8rem 2.9rem;
     font-size: 1rem;
     right: -38%;
-    top: 27.5%;
-    z-index: 1001;
+    top: 24%;
+    z-index: 1000;
   }
 `;
 
@@ -120,8 +122,7 @@ const SpecialBlock = styled.div`
   gap: 0.5rem;
   z-index: 1;
 
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
-    display: none;
+  @media (max-width: 768px) {
     top: -3rem;
     left: -0.5rem;
     width: 1rem;
@@ -140,7 +141,7 @@ const Dot = styled.div`
   box-shadow: 0 0 10px rgba(27, 131, 166, 0.1);
   background: linear-gradient(to right, #1abc9c, #1abc9c, #1abc9c);
 
-  @media (max-width: 768px) and (max-device-width: 480px), (max-width: 360px) {
+  @media (max-width: 768px) {
     width: 0.5rem;
     height: 0.5rem;
   }
