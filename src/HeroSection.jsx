@@ -104,7 +104,7 @@ const SearchButton = styled.button`
     padding: 0.8rem 2.9rem;
     font-size: 1rem;
     right: -38%;
-    top: 24%;
+    top: 28%;
     z-index: 1000;
   }
 `;
@@ -122,7 +122,7 @@ const SpecialBlock = styled.div`
   z-index: 1;
 
   @media (max-width: 768px) {
-    top: -3rem;
+    top: -10rem;
     left: -0.5rem;
     width: 1rem;
     height: 1rem;
@@ -136,7 +136,7 @@ const Dot = styled.div`
   width: 1rem;
   height: 1rem;
   border-radius: 2px;
-  border: 3px solid white;
+  border: 2px solid white;
   box-shadow: 0 0 10px rgba(27, 131, 166, 0.1);
   background: linear-gradient(to right, #1abc9c, #1abc9c, #1abc9c);
 
