@@ -104,7 +104,7 @@ const SearchButton = styled.button`
     padding: 0.8rem 2.9rem;
     font-size: 1rem;
     right: -38%;
-    top: 24%;
+    top: 2%;
     z-index: 1000;
   }
 `;
