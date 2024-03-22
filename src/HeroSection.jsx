@@ -96,7 +96,7 @@ const SearchButton = styled.button`
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
-  border: 4px solid white;
+  border: 4px solid white; /* Border declaration */
   box-shadow: 0 0 10px rgba(27, 131, 166, 0.6);
   z-index: 1000;
 
@@ -111,6 +111,7 @@ const SearchButton = styled.button`
 
 const SpecialBlock = styled.div`
   position: relative;
+  top: 50%;
   left: -3rem;
   transform: translateY(-50%);
   width: 4rem;
@@ -122,7 +123,6 @@ const SpecialBlock = styled.div`
   z-index: 1;
 
   @media (max-width: 768px) {
-    top: -10rem;
     left: -0.5rem;
     width: 1rem;
     height: 1rem;
@@ -137,12 +137,11 @@ const Dot = styled.div`
   height: 1rem;
   border-radius: 2px;
   border: 2px solid white;
-  box-shadow: 0 0 10px rgba(27, 131, 166, 0.1);
   background: linear-gradient(to right, #1abc9c, #1abc9c, #1abc9c);
 
   @media (max-width: 768px) {
     width: 0.5rem;
-    height: 0.5rem;
+    height: 0.4rem;
   }
 `;
 
