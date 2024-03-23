@@ -1,13 +1,13 @@
 // App.js
 import React from "react";
 import styled from "styled-components";
-import Header from "./Header";
+import Header from "./components/Header";
 
 import ScrollEffectContainer from "./ScrollEffectContainer";
 import FeaturedTemplatesSection from "./components/FeaturedTemplatesSection";
 import AboutSection from "./AboutSection";
-import PopularCategoriesSection from "./PopularCategoriesSection";
-import ServicesSection from "./ServiceSection";
+import PopularCategoriesSection from "./components/PopularCategoriesSection";
+import ServicesSection from "./components/ServiceSection";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/ContactSection";
 import Footer from "./components/Footer";
