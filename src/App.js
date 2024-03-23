@@ -8,10 +8,10 @@ import FeaturedTemplatesSection from "./FeaturedTemplatesSection";
 import AboutSection from "./AboutSection";
 import PopularCategoriesSection from "./PopularCategoriesSection";
 import ServicesSection from "./ServiceSection";
-import Testimonials from "./Testimonials";
+import Testimonials from "./components/Testimonials";
 import Contact from "./ContactSection";
 import Footer from "./Footer";
-import HomeSection from "./HomeSection";
+import HomeSection from "./components/HomeSection";
 
 const AppContainer = styled.div`
   overflow-x: hidden;

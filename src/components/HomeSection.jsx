@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import HeroSectionComponent from "./HeroSection";
+import HeroSectionComponent from "../HeroSection";
 
 const Container = styled.div`
   background: linear-gradient(to right, #f5f5f5, #c0adada5);
