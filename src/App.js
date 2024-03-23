@@ -10,7 +10,7 @@ import PopularCategoriesSection from "./PopularCategoriesSection";
 import ServicesSection from "./ServiceSection";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/ContactSection";
-import Footer from "./Footer";
+import Footer from "./components/Footer";
 import HomeSection from "./components/HomeSection";
 
 const AppContainer = styled.div`
