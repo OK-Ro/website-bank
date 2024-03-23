@@ -9,7 +9,7 @@ import AboutSection from "./AboutSection";
 import PopularCategoriesSection from "./PopularCategoriesSection";
 import ServicesSection from "./ServiceSection";
 import Testimonials from "./components/Testimonials";
-import Contact from "./ContactSection";
+import Contact from "./components/ContactSection";
 import Footer from "./Footer";
 import HomeSection from "./components/HomeSection";
 
