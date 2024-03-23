@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Header from "./Header";
 
 import ScrollEffectContainer from "./ScrollEffectContainer";
-import FeaturedTemplatesSection from "./FeaturedTemplatesSection";
+import FeaturedTemplatesSection from "./components/FeaturedTemplatesSection";
 import AboutSection from "./AboutSection";
 import PopularCategoriesSection from "./PopularCategoriesSection";
 import ServicesSection from "./ServiceSection";
