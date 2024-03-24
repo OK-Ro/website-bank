@@ -5,7 +5,7 @@ import Header from "./components/Header";
 
 import ScrollEffectContainer from "./ScrollEffectContainer";
 import FeaturedTemplatesSection from "./components/FeaturedTemplatesSection";
-import AboutSection from "./AboutSection";
+import AboutSection from "./components/AboutSection";
 import PopularCategoriesSection from "./components/PopularCategoriesSection";
 import ServicesSection from "./components/ServiceSection";
 import Testimonials from "./components/Testimonials";
