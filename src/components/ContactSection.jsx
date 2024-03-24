@@ -36,6 +36,12 @@ const FormInput = styled.input`
   &:focus {
     background-color: #e0e0e0;
   }
+
+  // Media query for mobile devices
+  @media (max-width: 768px) {
+    padding: 10px;
+    font-size: 14px;
+  }
 `;
 
 const FormTextarea = styled.textarea`
@@ -50,6 +56,12 @@ const FormTextarea = styled.textarea`
   &:focus {
     background-color: #e0e0e0;
   }
+
+  // Media query for mobile devices
+  @media (max-width: 768px) {
+    padding: 10px;
+    font-size: 14px;
+  }
 `;
 
 const FormButton = styled.button`
@@ -63,6 +75,12 @@ const FormButton = styled.button`
   transition: background-color 0.3s;
   &:hover {
     background-color: #0056b3;
+  }
+
+  // Media query for mobile devices
+  @media (max-width: 768px) {
+    padding: 10px 0;
+    font-size: 14px;
   }
 `;
 
