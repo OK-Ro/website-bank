@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const HeaderSection = styled.header`
   background-color: #1abc9c;
-  padding: 20px 0;
+  padding: 40px 0;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 
   @media (max-width: 768px) {

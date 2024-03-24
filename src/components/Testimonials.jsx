@@ -23,7 +23,7 @@ const TestimonialsContainer = styled.div`
 
 const Testimonial = styled.div`
   flex: 0 1 calc(25% - 20px); /* Adjust width according to the number of testimonials you want in a row */
-  background-color: #f8f9fa;
+  background: linear-gradient(to right, #f5f5f5, #c0adada5);
   border-radius: 8px;
   padding: 30px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
