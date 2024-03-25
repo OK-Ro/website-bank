@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const PricingSec = styled.section`
+const CustomPricingSection = styled.section`
   background-color: #f9f9f9;
   padding: 80px 0;
 `;
@@ -26,24 +26,32 @@ const PricingGrid = styled.div`
 const PricingCard = styled.div`
   background-color: #fff;
   padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
 `;
 
 const PricingTitle = styled.h3`
   font-size: 24px;
   margin-bottom: 20px;
+  color: #333;
 `;
 
 const PricingDescription = styled.p`
   font-size: 16px;
   margin-bottom: 20px;
+  color: #666;
 `;
 
 const PricingPrice = styled.div`
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 20px;
+  color: #007bff;
 `;
 
 const PricingButton = styled.button`
@@ -60,9 +68,9 @@ const PricingButton = styled.button`
   }
 `;
 
-const PricingSection = () => {
+const CustomPricingSection = () => {
   return (
-    <PricingSec>
+    <CustomPricingSection>
       <PricingContainer>
         <PricingHeading>Pricing Packages</PricingHeading>
         <PricingGrid>
@@ -92,8 +100,8 @@ const PricingSection = () => {
           </PricingCard>
         </PricingGrid>
       </PricingContainer>
-    </PricingSec>
+    </CustomPricingSection>
   );
 };
 
-export default PricingSection;
+export default CustomPricingSection;
