@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const CustomPricingSection = styled.section`
+const PricingSec = styled.section`
   background-color: #f9f9f9;
   padding: 80px 0;
 `;
@@ -15,6 +15,7 @@ const PricingContainer = styled.div`
 const PricingHeading = styled.h2`
   font-size: 36px;
   margin-bottom: 40px;
+  color: #333;
 `;
 
 const PricingGrid = styled.div`
@@ -28,17 +29,16 @@ const PricingCard = styled.div`
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-
+  transition: transform 0.3s ease;
   &:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
   }
 `;
 
 const PricingTitle = styled.h3`
   font-size: 24px;
   margin-bottom: 20px;
-  color: #333;
+  color: #007bff;
 `;
 
 const PricingDescription = styled.p`
@@ -51,7 +51,7 @@ const PricingPrice = styled.div`
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #007bff;
+  color: #333;
 `;
 
 const PricingButton = styled.button`
@@ -68,9 +68,9 @@ const PricingButton = styled.button`
   }
 `;
 
-const CustomPricingSection = () => {
+const PricingSection = () => {
   return (
-    <CustomPricingSection>
+    <PricingSec>
       <PricingContainer>
         <PricingHeading>Pricing Packages</PricingHeading>
         <PricingGrid>
@@ -100,8 +100,8 @@ const CustomPricingSection = () => {
           </PricingCard>
         </PricingGrid>
       </PricingContainer>
-    </CustomPricingSection>
+    </PricingSec>
   );
 };
 
-export default CustomPricingSection;
+export default PricingSection;
