@@ -60,16 +60,10 @@ const PricingButton = styled.button`
   }
 `;
 
-const Pricing = () => {
+const PricingSection = () => {
   return (
     <PricingSection>
       <PricingContainer>
-        <p>
-          Find your ideal website template with Website Bank. From business
-          sites to e-commerce stores, our curated selection has it all. Impress
-          visitors with professionally designed templates. Start today and
-          unlock your online presence!
-        </p>
         <PricingHeading>Pricing Packages</PricingHeading>
         <PricingGrid>
           <PricingCard>
@@ -102,4 +96,4 @@ const Pricing = () => {
   );
 };
 
-export default Pricing;
+export default PricingSection;
