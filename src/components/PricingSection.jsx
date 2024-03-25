@@ -9,13 +9,13 @@ const PricingSec = styled.section`
 const PricingContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
 `;
 
 const PricingHeading = styled.h2`
   font-size: 36px;
   margin-bottom: 40px;
   color: #333;
+  text-align: center;
 `;
 
 const PricingGrid = styled.div`
@@ -39,6 +39,7 @@ const PricingTitle = styled.h3`
   font-size: 24px;
   margin-bottom: 20px;
   color: #007bff;
+  text-align: center;
 `;
 
 const PricingDescription = styled.p`
@@ -52,6 +53,7 @@ const PricingPrice = styled.div`
   font-weight: bold;
   margin-bottom: 20px;
   color: #333;
+  text-align: center;
 `;
 
 const PricingButton = styled.button`
@@ -75,28 +77,20 @@ const PricingSection = () => {
         <PricingHeading>Pricing Packages</PricingHeading>
         <PricingGrid>
           <PricingCard>
-            <PricingTitle>Basic</PricingTitle>
+            <PricingTitle>Starter Plan</PricingTitle>
             <PricingDescription>
               Perfect for small businesses and startups.
             </PricingDescription>
-            <PricingPrice>$9.99 / month</PricingPrice>
-            <PricingButton>Select Plan</PricingButton>
+            <PricingPrice>$39 / month</PricingPrice>
+            <PricingButton>Get Now</PricingButton>
           </PricingCard>
           <PricingCard>
-            <PricingTitle>Standard</PricingTitle>
+            <PricingTitle>Pro Plan</PricingTitle>
             <PricingDescription>
               Ideal for growing businesses with more features.
             </PricingDescription>
-            <PricingPrice>$19.99 / month</PricingPrice>
-            <PricingButton>Select Plan</PricingButton>
-          </PricingCard>
-          <PricingCard>
-            <PricingTitle>Premium</PricingTitle>
-            <PricingDescription>
-              Advanced features for established businesses.
-            </PricingDescription>
-            <PricingPrice>$29.99 / month</PricingPrice>
-            <PricingButton>Select Plan</PricingButton>
+            <PricingPrice>$59 / month</PricingPrice>
+            <PricingButton>Get Now</PricingButton>
           </PricingCard>
         </PricingGrid>
       </PricingContainer>
