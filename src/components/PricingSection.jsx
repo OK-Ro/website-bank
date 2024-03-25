@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const PricingSection = styled.section`
+const PricingSec = styled.section`
   background-color: #f9f9f9;
   padding: 80px 0;
 `;
@@ -62,7 +62,7 @@ const PricingButton = styled.button`
 
 const PricingSection = () => {
   return (
-    <PricingSection>
+    <PricingSec>
       <PricingContainer>
         <PricingHeading>Pricing Packages</PricingHeading>
         <PricingGrid>
@@ -92,7 +92,7 @@ const PricingSection = () => {
           </PricingCard>
         </PricingGrid>
       </PricingContainer>
-    </PricingSection>
+    </PricingSec>
   );
 };
 
