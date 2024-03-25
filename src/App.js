@@ -12,6 +12,7 @@ import Testimonials from "./components/Testimonials";
 import Contact from "./components/ContactSection";
 import Footer from "./components/Footer";
 import HomeSection from "./components/HomeSection";
+import PricingSection from "./components/PricingSection";
 
 const AppContainer = styled.div`
   overflow-x: hidden;
@@ -26,6 +27,9 @@ function App() {
         <PopularCategoriesSection />
       </ScrollEffectContainer>
       <ScrollEffectContainer>
+        <ScrollEffectContainer>
+          <PricingSection />
+        </ScrollEffectContainer>
         <FeaturedTemplatesSection />
       </ScrollEffectContainer>
       <ScrollEffectContainer>
