@@ -1,289 +1,97 @@
-export const Pricing = () => {
+import React from "react";
+
+function PricingSection() {
   return (
-    <div class="relative w-full h-full">
-      <div class="absolute hidden w-full bg-gray-50 lg:block h-96" />
-      <div class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-        <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-          <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-            <span class="relative inline-block">
-              <svg
-                viewBox="0 0 52 24"
-                fill="currentColor"
-                class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-gray-400 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
-              >
-                <defs>
-                  <pattern
-                    id="2c67e949-4a23-49f7-bf27-ca140852cf21"
-                    x="0"
-                    y="0"
-                    width=".135"
-                    height=".30"
-                  >
-                    <circle cx="1" cy="1" r=".7" />
-                  </pattern>
-                </defs>
-                <rect
-                  fill="url(#2c67e949-4a23-49f7-bf27-ca140852cf21)"
-                  width="52"
-                  height="24"
-                />
-              </svg>
-              <span class="relative">Affordable</span>
-            </span>{" "}
-            for everyone
+    <section className="py-10 bg-white sm:py-16 lg:py-24">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="max-w-xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-black lg:text-5xl sm:text-5xl">
+            Pricing &amp; Plans
           </h2>
-          <p class="text-base text-gray-700 md:text-lg">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque rem aperiam, eaque ipsa quae.
+          <p className="mt-4 text-lg leading-relaxed text-gray-600">
+            Amet minim mollit non deserunt ullam co est sit aliqua dolor do amet
+            sint. Velit officia consequat duis enim velit mollit.
           </p>
         </div>
-        <div class="grid max-w-screen-md gap-10 md:grid-cols-2 sm:mx-auto">
-          <div>
-            <div class="p-8 bg-gray-900 rounded">
-              <div class="mb-4 text-center">
-                <p class="text-xl font-medium tracking-wide text-white">
-                  Starter Plan
-                </p>
-                <div class="flex items-center justify-center">
-                  <p class="mr-2 text-5xl font-semibold text-white lg:text-6xl">
-                    $39
+
+        {/* lg+ */}
+        <div className="hidden mt-16 lg:block">
+          <table className="w-full">
+            <thead>
+              <tr>
+                <th className="py-8 pr-4"></th>
+                <th className="px-4 py-8 text-center">
+                  <span className="text-base font-medium text-blue-600">
+                    {" "}
+                    Free{" "}
+                  </span>
+                  <p className="mt-6 text-6xl font-bold">$0</p>
+                  <p className="mt-2 text-base font-normal text-gray-500">
+                    Per month
                   </p>
-                  <p class="text-lg text-gray-500">/ month</p>
-                </div>
-              </div>
-              <ul class="mb-8 space-y-2">
-                <li class="flex items-center">
-                  <div class="mr-3">
-                    <svg
-                      class="w-4 h-4 text-teal-accent-400"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeWidth="2"
-                    >
-                      <polyline
-                        fill="none"
-                        stroke="currentColor"
-                        points="6,12 10,16 18,8"
-                      />
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="none"
-                        r="11"
-                        stroke="currentColor"
-                      />
-                    </svg>
-                  </div>
-                  <p class="font-medium text-gray-300">10 deploys per day</p>
-                </li>
-                <li class="flex items-center">
-                  <div class="mr-3">
-                    <svg
-                      class="w-4 h-4 text-teal-accent-400"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeWidth="2"
-                    >
-                      <polyline
-                        fill="none"
-                        stroke="currentColor"
-                        points="6,12 10,16 18,8"
-                      />
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="none"
-                        r="11"
-                        stroke="currentColor"
-                      />
-                    </svg>
-                  </div>
-                  <p class="font-medium text-gray-300">10 GB of storage</p>
-                </li>
-                <li class="flex items-center">
-                  <div class="mr-3">
-                    <svg
-                      class="w-4 h-4 text-teal-accent-400"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeWidth="2"
-                    >
-                      <polyline
-                        fill="none"
-                        stroke="currentColor"
-                        points="6,12 10,16 18,8"
-                      />
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="none"
-                        r="11"
-                        stroke="currentColor"
-                      />
-                    </svg>
-                  </div>
-                  <p class="font-medium text-gray-300">3 domains</p>
-                </li>
-                <li class="flex items-center">
-                  <div class="mr-3">
-                    <svg
-                      class="w-4 h-4 text-teal-accent-400"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeWidth="2"
-                    >
-                      <polyline
-                        fill="none"
-                        stroke="currentColor"
-                        points="6,12 10,16 18,8"
-                      />
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="none"
-                        r="11"
-                        stroke="currentColor"
-                      />
-                    </svg>
-                  </div>
-                  <p class="font-medium text-gray-300">SSL Certificates</p>
-                </li>
-              </ul>
-              <button
-                type="submit"
-                class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-              >
-                Get Now
-              </button>
-            </div>
-            <div class="w-11/12 h-2 mx-auto bg-gray-900 rounded-b opacity-75" />
-            <div class="w-10/12 h-2 mx-auto bg-gray-900 rounded-b opacity-50" />
-            <div class="w-9/12 h-2 mx-auto bg-gray-900 rounded-b opacity-25" />
-          </div>
-          <div>
-            <div class="p-8 bg-gray-900 rounded">
-              <div class="mb-4 text-center">
-                <p class="text-xl font-medium tracking-wide text-white">
-                  Pro Plan
-                </p>
-                <div class="flex items-center justify-center">
-                  <p class="mr-2 text-5xl font-semibold text-white lg:text-6xl">
-                    $59
+                </th>
+                <th className="px-4 py-8 text-center">
+                  <span className="text-base font-medium text-blue-600">
+                    {" "}
+                    Team{" "}
+                  </span>
+                  <p className="mt-6 text-6xl font-bold">$99</p>
+                  <p className="mt-2 text-base font-normal text-gray-500">
+                    Per month
                   </p>
-                  <p class="text-lg text-gray-500">/ month</p>
-                </div>
-              </div>
-              <ul class="mb-8 space-y-2">
-                <li class="flex items-center">
-                  <div class="mr-3">
-                    <svg
-                      class="w-4 h-4 text-teal-accent-400"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeWidth="2"
-                    >
-                      <polyline
-                        fill="none"
-                        stroke="currentColor"
-                        points="6,12 10,16 18,8"
-                      />
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="none"
-                        r="11"
-                        stroke="currentColor"
-                      />
-                    </svg>
-                  </div>
-                  <p class="font-medium text-gray-300">100 deploys per day</p>
-                </li>
-                <li class="flex items-center">
-                  <div class="mr-3">
-                    <svg
-                      class="w-4 h-4 text-teal-accent-400"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeWidth="2"
-                    >
-                      <polyline
-                        fill="none"
-                        stroke="currentColor"
-                        points="6,12 10,16 18,8"
-                      />
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="none"
-                        r="11"
-                        stroke="currentColor"
-                      />
-                    </svg>
-                  </div>
-                  <p class="font-medium text-gray-300">50 GB of storage</p>
-                </li>
-                <li class="flex items-center">
-                  <div class="mr-3">
-                    <svg
-                      class="w-4 h-4 text-teal-accent-400"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeWidth="2"
-                    >
-                      <polyline
-                        fill="none"
-                        stroke="currentColor"
-                        points="6,12 10,16 18,8"
-                      />
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="none"
-                        r="11"
-                        stroke="currentColor"
-                      />
-                    </svg>
-                  </div>
-                  <p class="font-medium text-gray-300">Unlimited domains</p>
-                </li>
-                <li class="flex items-center">
-                  <div class="mr-3">
-                    <svg
-                      class="w-4 h-4 text-teal-accent-400"
-                      viewBox="0 0 24 24"
-                      strokeLinecap="round"
-                      strokeWidth="2"
-                    >
-                      <polyline
-                        fill="none"
-                        stroke="currentColor"
-                        points="6,12 10,16 18,8"
-                      />
-                      <circle
-                        cx="12"
-                        cy="12"
-                        fill="none"
-                        r="11"
-                        stroke="currentColor"
-                      />
-                    </svg>
-                  </div>
-                  <p class="font-medium text-gray-300">SSL Certificates</p>
-                </li>
-              </ul>
-              <button
-                type="submit"
-                class="inline-flex items-center justify-center w-full h-12 px-6 font-semibold tracking-wide text-teal-900 transition duration-200 rounded shadow-md bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none"
-              >
-                Get Now
-              </button>
-            </div>
-            <div class="w-11/12 h-2 mx-auto bg-gray-900 rounded-b opacity-75" />
-            <div class="w-10/12 h-2 mx-auto bg-gray-900 rounded-b opacity-50" />
-            <div class="w-9/12 h-2 mx-auto bg-gray-900 rounded-b opacity-25" />
-          </div>
+                </th>
+                <th className="px-4 py-8 text-center bg-gray-900 rounded-t-xl">
+                  <span className="px-4 py-2 text-base font-medium text-white bg-blue-600 rounded-full">
+                    {" "}
+                    Popular{" "}
+                  </span>
+                  <p className="mt-6 text-6xl font-bold text-white">$150</p>
+                  <p className="mt-2 text-base font-normal text-gray-200">
+                    Per month
+                  </p>
+                </th>
+                <th className="px-4 py-8 text-center">
+                  <span className="text-base font-medium text-blue-600">
+                    {" "}
+                    Enterprise{" "}
+                  </span>
+                  <p className="mt-6 text-6xl font-bold">$490</p>
+                  <p className="mt-2 text-base font-normal text-gray-500">
+                    Per month
+                  </p>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="py-4 pr-4 font-medium border-b border-gray-200">
+                  Website number
+                </td>
+                <td className="px-4 py-4 text-center border-b border-gray-200">
+                  01
+                </td>
+                <td className="px-4 py-4 text-center border-b border-gray-200">
+                  10
+                </td>
+                <td className="px-4 py-4 text-center text-white bg-gray-900 border-b border-white/20">
+                  50
+                </td>
+                <td className="px-4 py-4 text-center border-b border-gray-200">
+                  Unlimited
+                </td>
+              </tr>
+              {/* More rows */}
+            </tbody>
+          </table>
         </div>
       </div>
-    </div>
+
+      {/* xs to lg */}
+      <div className="block mt-12 border-t border-b border-gray-200 divide-y divide-gray-200 lg:hidden">
+        {/* Similar structure as the table */}
+      </div>
+    </section>
   );
-};
+}
+
+export default PricingSection;
