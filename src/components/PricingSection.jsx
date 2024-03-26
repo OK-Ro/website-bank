@@ -1,195 +1,231 @@
 import React from "react";
 import styled from "styled-components";
 
-// Styled components for the main container, card, and buttons
-const Body = styled.body`
-  font-family: "Montserrat", sans-serif;
-  background-color: #f7fafc;
-`;
-
+// Styled components for the main container and tiles
 const MainContainer = styled.div`
-  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-`;
-
-const Card = styled.div`
-  padding: 2rem;
-  border-radius: 3rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 2rem;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2.5rem;
+  color: #4a5568;
+  background-color: #f7fafc;
 
   @media (min-width: 768px) {
-    width: 32rem;
+    padding: 5rem;
   }
 `;
 
-const Title = styled.h1`
-  font-size: 2rem;
-  font-weight: 600;
-  color: ${(props) => props.color || "#000"};
-`;
-
-const Price = styled.p`
-  font-size: 3rem;
-  font-weight: 600;
-`;
-
-const Feature = styled.p`
-  font-size: 1.2rem;
-  color: ${(props) => props.color || "#000"};
-`;
-
-const Button = styled.a`
-  display: block;
+const TileContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
-  padding: 1rem 2rem;
-  background-color: #4299e1;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  border-radius: 1rem;
+  max-width: 4xl;
   margin-top: 2rem;
+
+  @media (min-width: 768px) {
+    margin-top: 3rem;
+  }
+`;
+
+const Tile = styled.div`
+  flex: 1;
+  margin-top: 2rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  @media (min-width: 768px) {
+    margin-top: 3rem;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+`;
+
+const TileHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem;
+  background-color: #cbd5e0;
+`;
+
+const TileTitle = styled.span`
+  font-weight: 600;
+`;
+
+const TilePrice = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 3xl;
+
+  span {
+    font-size: 5xl;
+    font-weight: bold;
+    color: #4a5568;
+  }
+
+  p {
+    font-size: 2xl;
+    color: #718096;
+    margin-left: 0.5rem;
+  }
+`;
+
+const TileBody = styled.div`
+  padding: 2.5rem;
+`;
+
+const FeaturesList = styled.ul`
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 1rem;
+    fill: #38a169;
+  }
+`;
+
+const JoinButton = styled.button`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 4rem;
+  margin-top: 2rem;
+  padding: 0.5rem 2rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #4a5568;
+  background-color: #cbd5e0;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #a0aec0;
+  }
 `;
 
 // Component
-const PricingPlans = () => {
+const PricingSection = () => {
   return (
-    <Body>
-      <MainContainer>
-        <div>
-          <div className="text-center font-semibold">
-            <Title color="#1a202c">
-              <span className="text-blue-700 tracking-wide">Flexible </span>
-              <span>Plans</span>
-            </Title>
-            <p className="pt-6 text-xl text-gray-400 font-normal w-full px-8 md:w-full">
-              Choose a plan that works best for you and your team.
-            </p>
-          </div>
-          <div className="pt-24 flex flex-row">
-            {/* Basic Card */}
-            <Card>
-              <Title color="#000">Basic</Title>
-              <Price>
-                <span className="text-gray-400 align-top">$ </span>
-                <span className="text-3xl font-semibold">10</span>
-                <span className="text-gray-400 font-medium">/ user</span>
-              </Price>
-              <hr className="mt-4 border-1" />
-              <div className="pt-8">
-                <Feature color="#718096">
-                  <span className="material-icons align-middle">done</span>
-                  <span className="pl-2">
-                    Get started with{" "}
-                    <span className="text-black">messaging</span>
-                  </span>
-                </Feature>
-                <Feature color="#718096">
-                  <span className="material-icons align-middle">done</span>
-                  <span className="pl-2">
-                    Flexible <span className="text-black">team meetings</span>
-                  </span>
-                </Feature>
-                <Feature color="#718096">
-                  <span className="material-icons align-middle">done</span>
-                  <span className="pl-2">
-                    <span className="text-black">5 TB</span> cloud storage
-                  </span>
-                </Feature>
-                <Button href="#">
-                  <span className="font-medium">Choose Plan</span>
-                  <span className="pl-2 material-icons align-middle text-sm">
-                    east
-                  </span>
-                </Button>
-              </div>
-            </Card>
+    <MainContainer>
+      <h2 className="text-2xl font-medium">Jedi Order Membership</h2>
 
-            {/* Startup Card */}
-            <Card>
-              <Title color="#fff">Startup</Title>
-              <Price>
-                <span className="text-gray-400 align-top">$ </span>
-                <span className="text-3xl font-semibold">24</span>
-                <span className="text-gray-400 font-medium">/ user</span>
-              </Price>
-              <hr className="mt-4 border-1 border-gray-600" />
-              <div className="pt-8">
-                <Feature color="#fff">
-                  <span className="material-icons align-middle">done</span>
-                  <span className="pl-2">
-                    All features in <span className="text-white">Basic</span>
-                  </span>
-                </Feature>
-                <Feature color="#fff">
-                  <span className="material-icons align-middle">done</span>
-                  <span className="pl-2">
-                    Flexible <span className="text-white">call scheduling</span>
-                  </span>
-                </Feature>
-                <Feature color="#fff">
-                  <span className="material-icons align-middle">done</span>
-                  <span className="pl-2">
-                    <span className="text-white">15 TB</span> cloud storage
-                  </span>
-                </Feature>
-                <Button href="#">
-                  <span className="font-medium">Choose Plan</span>
-                  <span className="pl-2 material-icons align-middle text-sm">
-                    east
-                  </span>
-                </Button>
-              </div>
-              <div className="absolute top-4 right-4">
-                <p className="bg-blue-700 font-semibold px-4 py-1 rounded-full uppercase text-xs">
-                  Popular
-                </p>
-              </div>
-            </Card>
+      <TileContainer>
+        {/* Tile 1 */}
+        <Tile>
+          <TileHeader>
+            <TileTitle>Padawan</TileTitle>
+            <TilePrice>
+              <span>$</span>
+              <span>20</span>
+              <p>/mo</p>
+            </TilePrice>
+          </TileHeader>
+          <TileBody>
+            <FeaturesList>
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <span>Lightsaber</span>
+              </li>
+              {/* Add more list items */}
+            </FeaturesList>
+            <JoinButton>Join now</JoinButton>
+          </TileBody>
+        </Tile>
 
-            {/* Enterprise Card */}
-            <Card>
-              <Title color="#000">Enterprise</Title>
-              <Price>
-                <span className="text-gray-400 align-top">$ </span>
-                <span className="text-3xl font-semibold">35</span>
-                <span className="text-gray-400 font-medium">/ user</span>
-              </Price>
-              <hr className="mt-4 border-1" />
-              <div className="pt-8">
-                <Feature color="#718096">
-                  <span className="material-icons align-middle">done</span>
-                  <span className="pl-2">
-                    All features in <span className="text-black">Startup</span>
-                  </span>
-                </Feature>
-                <Feature color="#718096">
-                  <span className="material-icons align-middle">done</span>
-                  <span className="pl-2">
-                    Growth <span className="text-black">oriented</span>
-                  </span>
-                </Feature>
-                <Feature color="#718096">
-                  <span className="material-icons align-middle">done</span>
-                  <span className="pl-2">
-                    <span className="text-black">Unlimited</span> cloud storage
-                  </span>
-                </Feature>
-                <Button href="#">
-                  <span className="font-medium">Choose Plan</span>
-                  <span className="pl-2 material-icons align-middle text-sm">
-                    east
-                  </span>
-                </Button>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </MainContainer>
-    </Body>
+        {/* Tile 2 */}
+        <Tile>
+          <TileHeader>
+            <TileTitle>Jedi Knight</TileTitle>
+            <TilePrice>
+              <span>$</span>
+              <span>50</span>
+              <p>/mo</p>
+            </TilePrice>
+          </TileHeader>
+          <TileBody>
+            <FeaturesList>
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <span>Padawan +</span>
+              </li>
+              {/* Add more list items */}
+            </FeaturesList>
+            <JoinButton>Join now</JoinButton>
+          </TileBody>
+        </Tile>
+
+        {/* Tile 3 */}
+        <Tile>
+          <TileHeader>
+            <TileTitle>Jedi Master</TileTitle>
+            <TilePrice>
+              <span>$</span>
+              <span>99</span>
+              <p>/mo</p>
+            </TilePrice>
+          </TileHeader>
+          <TileBody>
+            <FeaturesList>
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <span>Jedi Knight +</span>
+              </li>
+              {/* Add more list items */}
+            </FeaturesList>
+            <JoinButton>Join now</JoinButton>
+          </TileBody>
+        </Tile>
+
+        {/* Add more tiles */}
+      </TileContainer>
+    </MainContainer>
   );
 };
 
-export default PricingPlans;
+export default PricingSection;
