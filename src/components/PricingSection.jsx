@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const PricingSection = styled.section`
+const PricingSec = styled.section`
   background-color: #f9f9f9;
   padding: 80px 0;
 `;
@@ -9,20 +9,27 @@ const PricingSection = styled.section`
 const PricingContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
+`;
+
+const PricingHeading = styled.h2`
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #333;
+  text-align: center;
+`;
+
+const PricingGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
 `;
 
 const PricingCard = styled.div`
   background-color: #fff;
   padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  flex: 1;
-  max-width: 300px;
-  margin: 0 20px;
   &:hover {
     transform: translateY(-10px);
   }
@@ -31,17 +38,22 @@ const PricingCard = styled.div`
 const PricingTitle = styled.h3`
   font-size: 24px;
   margin-bottom: 20px;
+  color: #007bff;
+  text-align: center;
+`;
+
+const PricingDescription = styled.p`
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #666;
 `;
 
 const PricingPrice = styled.div`
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 20px;
-`;
-
-const PricingDescription = styled.p`
-  font-size: 16px;
-  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
 `;
 
 const PricingButton = styled.button`
@@ -58,37 +70,32 @@ const PricingButton = styled.button`
   }
 `;
 
-const Pricing = () => {
+const PricingSection = () => {
   return (
-    <PricingSection>
+    <PricingSec>
       <PricingContainer>
-        <PricingCard>
-          <PricingTitle>Basic</PricingTitle>
-          <PricingDescription>
-            Perfect for small businesses and startups.
-          </PricingDescription>
-          <PricingPrice>$9.99 / month</PricingPrice>
-          <PricingButton>Select Plan</PricingButton>
-        </PricingCard>
-        <PricingCard>
-          <PricingTitle>Standard</PricingTitle>
-          <PricingDescription>
-            Ideal for growing businesses with more features.
-          </PricingDescription>
-          <PricingPrice>$19.99 / month</PricingPrice>
-          <PricingButton>Select Plan</PricingButton>
-        </PricingCard>
-        <PricingCard>
-          <PricingTitle>Premium</PricingTitle>
-          <PricingDescription>
-            Advanced features for established businesses.
-          </PricingDescription>
-          <PricingPrice>$29.99 / month</PricingPrice>
-          <PricingButton>Select Plan</PricingButton>
-        </PricingCard>
+        <PricingHeading>Pricing Packages</PricingHeading>
+        <PricingGrid>
+          <PricingCard>
+            <PricingTitle>Starter Plan</PricingTitle>
+            <PricingDescription>
+              Perfect for small businesses and startups.
+            </PricingDescription>
+            <PricingPrice>$39 / month</PricingPrice>
+            <PricingButton>Get Now</PricingButton>
+          </PricingCard>
+          <PricingCard>
+            <PricingTitle>Pro Plan</PricingTitle>
+            <PricingDescription>
+              Ideal for growing businesses with more features.
+            </PricingDescription>
+            <PricingPrice>$59 / month</PricingPrice>
+            <PricingButton>Get Now</PricingButton>
+          </PricingCard>
+        </PricingGrid>
       </PricingContainer>
-    </PricingSection>
+    </PricingSec>
   );
 };
 
-export default Pricing;
+export default PricingSection;
