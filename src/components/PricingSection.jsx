@@ -54,7 +54,7 @@ const Button = styled.a`
 `;
 
 // Component
-const PricingSection = () => {
+const PricingPlans = () => {
   return (
     <Body>
       <MainContainer>
@@ -192,4 +192,4 @@ const PricingSection = () => {
   );
 };
 
-export default PricingSection;
+export default PricingPlans;
