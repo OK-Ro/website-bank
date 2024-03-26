@@ -1,100 +1,193 @@
 import React from "react";
 import styled from "styled-components";
 
-const PricingSec = styled.section`
-  background-color: #f9f9f9;
-  padding: 80px 0;
+// Styled components for the main container, card, and buttons
+const Body = styled.body`
+  font-family: "Montserrat", sans-serif;
+  background-color: #f7fafc;
 `;
 
-const PricingContainer = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
+const MainContainer = styled.div`
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-const PricingHeading = styled.h2`
-  font-size: 36px;
-  margin-bottom: 40px;
-  color: #333;
-  text-align: center;
-`;
+const Card = styled.div`
+  padding: 2rem;
+  border-radius: 3rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
 
-const PricingGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-`;
-
-const PricingCard = styled.div`
-  background-color: #fff;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  &:hover {
-    transform: translateY(-10px);
+  @media (min-width: 768px) {
+    width: 32rem;
   }
 `;
 
-const PricingTitle = styled.h3`
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #007bff;
-  text-align: center;
+const Title = styled.h1`
+  font-size: 2rem;
+  font-weight: 600;
+  color: ${(props) => props.color || "#000"};
 `;
 
-const PricingDescription = styled.p`
-  font-size: 16px;
-  margin-bottom: 20px;
-  color: #666;
+const Price = styled.p`
+  font-size: 3rem;
+  font-weight: 600;
 `;
 
-const PricingPrice = styled.div`
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #333;
-  text-align: center;
+const Feature = styled.p`
+  font-size: 1.2rem;
+  color: ${(props) => props.color || "#000"};
 `;
 
-const PricingButton = styled.button`
-  background-color: #007bff;
+const Button = styled.a`
+  display: block;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #4299e1;
   color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  &:hover {
-    background-color: #0056b3;
-  }
+  text-decoration: none;
+  text-align: center;
+  border-radius: 1rem;
+  margin-top: 2rem;
 `;
-
+// Component
 const PricingSection = () => {
   return (
-    <PricingSec>
-      <PricingContainer>
-        <PricingHeading>Pricing Packages</PricingHeading>
-        <PricingGrid>
-          <PricingCard>
-            <PricingTitle>Starter Plan</PricingTitle>
-            <PricingDescription>
-              Perfect for small businesses and startups.
-            </PricingDescription>
-            <PricingPrice>$39 / month</PricingPrice>
-            <PricingButton>Get Now</PricingButton>
-          </PricingCard>
-          <PricingCard>
-            <PricingTitle>Pro Plan</PricingTitle>
-            <PricingDescription>
-              Ideal for growing businesses with more features.
-            </PricingDescription>
-            <PricingPrice>$59 / month</PricingPrice>
-            <PricingButton>Get Now</PricingButton>
-          </PricingCard>
-        </PricingGrid>
-      </PricingContainer>
-    </PricingSec>
+    <Body>
+      <MainContainer>
+        <div>
+          <div className="text-center font-semibold">
+            <Title color="#1a202c">
+              <span className="text-blue-700 tracking-wide">Flexible </span>
+              <span>Plans</span>
+            </Title>
+            <p className="pt-6 text-xl text-gray-400 font-normal w-full px-8 md:w-full">
+              Choose a plan that works best for you and your team.
+            </p>
+          </div>
+          <div className="pt-24 flex flex-row">
+            {/* Basic Card */}
+            <Card>
+              <Title color="#000">Basic</Title>
+              <Price>
+                <span className="text-gray-400 align-top">$ </span>
+                <span className="text-3xl font-semibold">10</span>
+                <span className="text-gray-400 font-medium">/ user</span>
+              </Price>
+              <hr className="mt-4 border-1" />
+              <div className="pt-8">
+                <Feature color="#718096">
+                  <span className="material-icons align-middle">done</span>
+                  <span className="pl-2">
+                    Get started with{" "}
+                    <span className="text-black">messaging</span>
+                  </span>
+                </Feature>
+                <Feature color="#718096">
+                  <span className="material-icons align-middle">done</span>
+                  <span className="pl-2">
+                    Flexible <span className="text-black">team meetings</span>
+                  </span>
+                </Feature>
+                <Feature color="#718096">
+                  <span className="material-icons align-middle">done</span>
+                  <span className="pl-2">
+                    <span className="text-black">5 TB</span> cloud storage
+                  </span>
+                </Feature>
+                <Button href="#">
+                  <span className="font-medium">Choose Plan</span>
+                  <span className="pl-2 material-icons align-middle text-sm">
+                    east
+                  </span>
+                </Button>
+              </div>
+            </Card>
+
+            {/* Startup Card */}
+            <Card>
+              <Title color="#fff">Startup</Title>
+              <Price>
+                <span className="text-gray-400 align-top">$ </span>
+                <span className="text-3xl font-semibold">24</span>
+                <span className="text-gray-400 font-medium">/ user</span>
+              </Price>
+              <hr className="mt-4 border-1 border-gray-600" />
+              <div className="pt-8">
+                <Feature color="#fff">
+                  <span className="material-icons align-middle">done</span>
+                  <span className="pl-2">
+                    All features in <span className="text-white">Basic</span>
+                  </span>
+                </Feature>
+                <Feature color="#fff">
+                  <span className="material-icons align-middle">done</span>
+                  <span className="pl-2">
+                    Flexible <span className="text-white">call scheduling</span>
+                  </span>
+                </Feature>
+                <Feature color="#fff">
+                  <span className="material-icons align-middle">done</span>
+                  <span className="pl-2">
+                    <span className="text-white">15 TB</span> cloud storage
+                  </span>
+                </Feature>
+                <Button href="#">
+                  <span className="font-medium">Choose Plan</span>
+                  <span className="pl-2 material-icons align-middle text-sm">
+                    east
+                  </span>
+                </Button>
+              </div>
+              <div className="absolute top-4 right-4">
+                <p className="bg-blue-700 font-semibold px-4 py-1 rounded-full uppercase text-xs">
+                  Popular
+                </p>
+              </div>
+            </Card>
+
+            {/* Enterprise Card */}
+            <Card>
+              <Title color="#000">Enterprise</Title>
+              <Price>
+                <span className="text-gray-400 align-top">$ </span>
+                <span className="text-3xl font-semibold">35</span>
+                <span className="text-gray-400 font-medium">/ user</span>
+              </Price>
+              <hr className="mt-4 border-1" />
+              <div className="pt-8">
+                <Feature color="#718096">
+                  <span className="material-icons align-middle">done</span>
+                  <span className="pl-2">
+                    All features in <span className="text-black">Startup</span>
+                  </span>
+                </Feature>
+                <Feature color="#718096">
+                  <span className="material-icons align-middle">done</span>
+                  <span className="pl-2">
+                    Growth <span className="text-black">oriented</span>
+                  </span>
+                </Feature>
+                <Feature color="#718096">
+                  <span className="material-icons align-middle">done</span>
+                  <span className="pl-2">
+                    <span className="text-black">Unlimited</span> cloud storage
+                  </span>
+                </Feature>
+                <Button href="#">
+                  <span className="font-medium">Choose Plan</span>
+                  <span className="pl-2 material-icons align-middle text-sm">
+                    east
+                  </span>
+                </Button>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </MainContainer>
+    </Body>
   );
 };
 
