@@ -52,6 +52,7 @@ const Button = styled.a`
   border-radius: 1rem;
   margin-top: 2rem;
 `;
+
 // Component
 const PricingSection = () => {
   return (
