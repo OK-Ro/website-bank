@@ -1,12 +1,10 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const Wrapper = styled.div`
   font-family: "Yanone Kaffeesatz", sans-serif;
-  height: 100vh;
-  background-color: #f9f9f9;
+  height: 60vh;
+  background-color: #f9f9f9; /* Set background color */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +12,7 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   width: 100%;
-  max-width: 1200px;
+  max-width: 1200px; /* Adjust the max-width as needed */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -39,8 +37,8 @@ const CardContainer = styled.div`
 `;
 
 const Card = styled.div`
-  width: 300px;
-  height: 500px;
+  width: 300px; /* Adjust the width of each card */
+  height: 500px; /* Adjust the height of each card */
   text-align: center;
   position: relative;
   transition: all 0.2s;
@@ -85,6 +83,14 @@ const CardInner = styled.div`
   right: 0;
   margin: auto;
   border: 4px solid #fff;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    transition: all 0.2s;
+  }
 `;
 
 const Header = styled.div`
@@ -108,7 +114,7 @@ const Content = styled.div`
     font-size: 70px;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
   }
-  .description {
+  .text {
     font-weight: 100;
     margin-top: 20px;
     font-size: 13px;
@@ -117,26 +123,10 @@ const Content = styled.div`
   .title {
     font-weight: 800;
     text-transform: uppercase;
+
     margin-top: 40px;
     font-size: 25px;
     letter-spacing: 1px;
-  }
-  .features {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    p {
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-
-      svg {
-        margin-right: 10px;
-        color: #fe5e7d;
-      }
-    }
   }
 `;
 
@@ -172,15 +162,13 @@ const Cta = styled.div`
     }
   }
 `;
-
 const PricingSection = () => {
+  // Define array of information for different cards
   const cardData = [
     {
       title: "Basic",
       price: "$24.99",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut enim ad minima veniam.",
-      features: ["Feature 1", "Feature 2", "Feature 3"],
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       imageURL:
         "https://www.photoshopvideotutorial.com/freepsdmock/wp-content/uploads/2020/01/Free-3d-Website-Mockup-Presentation-scaled.jpg",
       imageHeaderURL: "https://cdn-icons-png.flaticon.com/512/9545/9545135.png",
@@ -188,9 +176,7 @@ const PricingSection = () => {
     {
       title: "Standard",
       price: "$49.99",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut enim ad minima veniam.",
-      features: ["Feature 1", "Feature 2", "Feature 3", "Feature 4"],
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       imageURL:
         "https://design4users.com/wp-content/uploads/2021/04/3d-graphics-website-1536x1152.jpg",
       imageHeaderURL: "https://cdn-icons-png.flaticon.com/512/9464/9464073.png",
@@ -198,20 +184,13 @@ const PricingSection = () => {
     {
       title: "Premium",
       price: "$99.99",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut enim ad minima veniam.",
-      features: [
-        "Feature 1",
-        "Feature 2",
-        "Feature 3",
-        "Feature 4",
-        "Feature 5",
-      ],
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       imageURL:
         "https://lh6.googleusercontent.com/proxy/Zd0gc5-DK2j9WPIKs3r4udd3QUc4-a-qg_Cpz2iBcvvljMXVkTT_3hyY6Ig_RA9nY-aDWwvFhXv91SyrcevI_Ikt=w1600",
       imageHeaderURL: "https://cdn-icons-png.flaticon.com/512/4524/4524987.png",
     },
   ];
+
   return (
     <Wrapper>
       <Container>
