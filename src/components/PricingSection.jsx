@@ -167,7 +167,7 @@ const PricingSection = () => {
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       imageURL:
         "https://www.photoshopvideotutorial.com/freepsdmock/wp-content/uploads/2020/01/Free-3d-Website-Mockup-Presentation-scaled.jpg",
-      imageHeaderURL: "https://cdn-icons-png.flaticon.com/512/9545/9545135.png",
+      imageHeaderURL: "https://example.com/image1.jpg", // Add the URL of the header image for the basic plan
     },
     {
       title: "Standard",
@@ -175,7 +175,7 @@ const PricingSection = () => {
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       imageURL:
         "https://design4users.com/wp-content/uploads/2021/04/3d-graphics-website-1536x1152.jpg",
-      imageHeaderURL: "https://cdn-icons-png.flaticon.com/512/9464/9464073.png",
+      imageHeaderURL: "https://example.com/image2.jpg", // Add the URL of the header image for the standard plan
     },
     {
       title: "Premium",
@@ -183,7 +183,7 @@ const PricingSection = () => {
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       imageURL:
         "https://d3ui957tjb5bqd.cloudfront.net/uploads/images/0f/9f/0f9fbb1c-6a1e-4a39-b0a1-084a978f2822/3d-website.jpg",
-      imageHeaderURL: "https://cdn-icons-png.flaticon.com/512/4524/4524987.png",
+      imageHeaderURL: "https://example.com/image3.jpg", // Add the URL of the header image for the premium plan
     },
   ];
 
@@ -196,7 +196,7 @@ const PricingSection = () => {
           {cardData.map((card, index) => (
             <Card key={index} animate={true}>
               <CardInner>
-                <img src={card.imageHeaderURL} alt="Template" />
+                <img src={card.im} alt="Template" />
               </CardInner>
               <Header>
                 <img src={card.imageURL} alt="Template Header" />
