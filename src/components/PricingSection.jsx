@@ -4,10 +4,6 @@ import styled, { css } from "styled-components";
 const Wrapper = styled.div`
   font-family: "Yanone Kaffeesatz", sans-serif;
   height: 60vh;
-  background-color: #f9f9f9; /* Set background color */
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 const Container = styled.div`
@@ -162,6 +158,7 @@ const Cta = styled.div`
     }
   }
 `;
+
 const PricingSection = () => {
   // Define array of information for different cards
   const cardData = [
