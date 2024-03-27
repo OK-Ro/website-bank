@@ -228,19 +228,9 @@ const PricingSection = () => {
               </Header>
               <Content>
                 <div className="price">{card.price}</div>
-                <div className="description">{card.description}</div>{" "}
-                {/* Corrected classname */}
+                <div className="text">{card.description}</div>
                 <div className="title">{card.title}</div>
-                <div className="features">
-                  {card.features.map((feature, idx) => (
-                    <p key={idx}>
-                      <FontAwesomeIcon icon={faCheck} />
-                      {feature}
-                    </p>
-                  ))}
-                </div>
               </Content>
-
               <Cta>
                 <button>
                   <span>Choose Plan</span>
