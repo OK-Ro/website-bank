@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 const Wrapper = styled.div`
   font-family: "Yanone Kaffeesatz", sans-serif;
-  height: 60vh;
+  height: 40vh;
 `;
 
 const Container = styled.div`
@@ -85,6 +85,7 @@ const CardInner = styled.div`
     height: 100%;
     object-fit: cover;
     position: relative;
+    top: 17px;
     transition: all 0.2s;
   }
 `;
@@ -183,7 +184,7 @@ const PricingSection = () => {
       price: "$99.99",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       imageURL:
-        "https://lh6.googleusercontent.com/proxy/Zd0gc5-DK2j9WPIKs3r4udd3QUc4-a-qg_Cpz2iBcvvljMXVkTT_3hyY6Ig_RA9nY-aDWwvFhXv91SyrcevI_Ikt=w1600",
+        "https://d3ui957tjb5bqd.cloudfront.net/uploads/images/0f/9f/0f9fbb1c-6a1e-4a39-b0a1-084a978f2822/3d-website.jpg",
       imageHeaderURL: "https://cdn-icons-png.flaticon.com/512/4524/4524987.png",
     },
   ];
