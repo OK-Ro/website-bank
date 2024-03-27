@@ -81,9 +81,7 @@ const CardInner = styled.div`
   border: 4px solid #fff;
 
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 26px;
     position: relative;
     top: 17px;
     transition: all 0.2s;
