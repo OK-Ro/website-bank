@@ -11,25 +11,9 @@ const Container = styled.div`
   max-width: 1200px; /* Adjust the max-width as needed */
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Title = styled.h2`
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 20px;
-`;
-
-const Subtitle = styled.p`
-  font-size: 18px;
-  margin-bottom: 40px;
-`;
-
-const CardContainer = styled.div`
-  display: flex;
   justify-content: space-between;
-  width: 100%;
+  align-items: center;
+  padding: 0 20px;
 `;
 
 const Card = styled.div`
@@ -180,37 +164,33 @@ const PricingSection = () => {
       price: "$99.99",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       imageURL:
-        "https://design4users.com/wp-content/uploads/2021/04/website-design-3d-people.png.pagespeed.ce.aqJipdpP6M.png",
+        "https://d3ui957tjb5bqd.cloudfront.net/uploads/images/0f/9f/0f9fbb1c-6a1e-4a39-b0a1-084a978f2822/3d-website.jpg",
     },
   ];
 
   return (
     <Wrapper>
       <Container>
-        <Title>Pricing</Title>
-        <Subtitle>Choose your best plan</Subtitle>
-        <CardContainer>
-          {cardData.map((card, index) => (
-            <Card key={index} animate={true}>
-              <CardInner>
-                <img src={card.imageURL} alt="Template" />
-              </CardInner>
-              <Header>
-                <img src={card.imageURL} alt="Template Header" />
-              </Header>
-              <Content>
-                <div className="price">{card.price}</div>
-                <div className="text">{card.description}</div>
-                <div className="title">{card.title}</div>
-              </Content>
-              <Cta>
-                <button>
-                  <span>Choose Plan</span>
-                </button>
-              </Cta>
-            </Card>
-          ))}
-        </CardContainer>
+        {cardData.map((card, index) => (
+          <Card key={index} animate={true}>
+            <CardInner>
+              <img src={card.imageURL} alt="Template" />
+            </CardInner>
+            <Header>
+              <img src={card.imageURL} alt="Template Header" />
+            </Header>
+            <Content>
+              <div className="price">{card.price}</div>
+              <div className="text">{card.description}</div>
+              <div className="title">{card.title}</div>
+            </Content>
+            <Cta>
+              <button>
+                <span>Choose Plan</span>
+              </button>
+            </Cta>
+          </Card>
+        ))}
       </Container>
     </Wrapper>
   );
