@@ -106,7 +106,7 @@ const Content = styled.div`
   .title {
     font-weight: 800;
     text-transform: uppercase;
-
+    color: rgba(255, 255, 255, 0.64);
     margin-top: 40px;
     font-size: 25px;
     letter-spacing: 1px;
