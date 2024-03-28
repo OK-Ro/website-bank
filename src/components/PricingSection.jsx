@@ -3,28 +3,31 @@ import styled, { css } from "styled-components";
 
 const Wrapper = styled.div`
   font-family: "Yanone Kaffeesatz", sans-serif;
-  height: 60vh;
+  height: 40vh;
 `;
 
 const Container = styled.div`
-  width: 100%;
-  max-width: 1200px; /* Adjust the max-width as needed */
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
+  width: 938px;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  right: 0;
+  transform: translateY(-50%);
+  margin: auto;
 `;
 
 const Card = styled.div`
-  width: 300px; /* Adjust the width of each card */
-  height: 500px; /* Adjust the height of each card */
+  margin: 0 auto;
+  display: inline-block;
+  margin-right: 30px;
+  width: 280px;
   text-align: center;
   position: relative;
   transition: all 0.2s;
   cursor: pointer;
   opacity: 0.5;
   box-shadow: 0px 17px 46px -10px #777777;
+  height: 470px;
   border-radius: 14px;
   animation: ${({ animate }) => animate && cardIntroAnimation} 1s forwards;
 
@@ -79,9 +82,10 @@ const Header = styled.div`
   overflow: hidden;
 
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 120%;
+    position: relative;
+    top: -30px;
+    left: 0;
     transition: all 0.1s linear;
   }
 `;
@@ -89,11 +93,13 @@ const Header = styled.div`
 const Content = styled.div`
   padding: 20px;
   .price {
+    color: white;
     font-weight: 800;
     font-size: 70px;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
   }
   .text {
+    color: rgba(255, 255, 255, 0.6);
     font-weight: 100;
     margin-top: 20px;
     font-size: 13px;
@@ -102,7 +108,7 @@ const Content = styled.div`
   .title {
     font-weight: 800;
     text-transform: uppercase;
-
+    color: rgba(255, 255, 255, 0.64);
     margin-top: 40px;
     font-size: 25px;
     letter-spacing: 1px;
@@ -143,46 +149,29 @@ const Cta = styled.div`
 `;
 
 const PricingSection = () => {
-  // Define array of information for different cards
-  const cardData = [
-    {
-      title: "Basic",
-      price: "$24.99",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      imageURL:
-        "https://www.photoshopvideotutorial.com/freepsdmock/wp-content/uploads/2020/01/Free-3d-Website-Mockup-Presentation-scaled.jpg",
-    },
-    {
-      title: "Standard",
-      price: "$49.99",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      imageURL:
-        "https://design4users.com/wp-content/uploads/2021/04/3d-graphics-website-1536x1152.jpg",
-    },
-    {
-      title: "Premium",
-      price: "$99.99",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      imageURL:
-        "https://d3ui957tjb5bqd.cloudfront.net/uploads/images/0f/9f/0f9fbb1c-6a1e-4a39-b0a1-084a978f2822/3d-website.jpg",
-    },
-  ];
-
   return (
     <Wrapper>
       <Container>
-        {cardData.map((card, index) => (
+        {[1, 2, 3].map((item, index) => (
           <Card key={index} animate={true}>
             <CardInner>
-              <img src={card.imageURL} alt="Template" />
+              <img
+                src="https://www.photoshopvideotutorial.com/freepsdmock/wp-content/uploads/2020/01/Free-3d-Website-Mockup-Presentation-scaled.jpg"
+                alt="Template"
+              />
             </CardInner>
             <Header>
-              <img src={card.imageURL} alt="Template Header" />
+              <img
+                src="https://design4users.com/wp-content/uploads/2021/04/3d-graphics-website-1536x1152.jpg.pagespeed.ce.3LDt6M4m8E.jpg"
+                alt="Template Header"
+              />
             </Header>
             <Content>
-              <div className="price">{card.price}</div>
-              <div className="text">{card.description}</div>
-              <div className="title">{card.title}</div>
+              <div className="price">$24.99</div>
+              <div className="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </div>
+              <div className="title">Template Title</div>
             </Content>
             <Cta>
               <button>
