@@ -3,31 +3,28 @@ import styled, { css } from "styled-components";
 
 const Wrapper = styled.div`
   font-family: "Yanone Kaffeesatz", sans-serif;
-  height: 40vh;
+  height: 60vh;
 `;
 
 const Container = styled.div`
-  width: 938px;
-  position: absolute;
-  top: 50%;
-  left: 30px;
-  right: 0;
-  transform: translateY(-50%);
-  margin: auto;
+  width: 100%;
+  max-width: 1200px; /* Adjust the max-width as needed */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 `;
 
 const Card = styled.div`
-  margin: 0 auto;
-  display: inline-block;
-  margin-right: 30px;
-  width: 280px;
+  width: 300px; /* Adjust the width of each card */
+  height: 500px; /* Adjust the height of each card */
   text-align: center;
   position: relative;
   transition: all 0.2s;
   cursor: pointer;
   opacity: 0.5;
   box-shadow: 0px 17px 46px -10px #777777;
-  height: 470px;
   border-radius: 14px;
   animation: ${({ animate }) => animate && cardIntroAnimation} 1s forwards;
 
@@ -82,10 +79,9 @@ const Header = styled.div`
   overflow: hidden;
 
   img {
-    width: 120%;
-    position: relative;
-    top: -30px;
-    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: all 0.1s linear;
   }
 `;
@@ -106,7 +102,7 @@ const Content = styled.div`
   .title {
     font-weight: 800;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.64);
+
     margin-top: 40px;
     font-size: 25px;
     letter-spacing: 1px;
@@ -153,19 +149,22 @@ const PricingSection = () => {
       title: "Basic",
       price: "$24.99",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      imageURL: "https://via.placeholder.com/500x120",
+      imageURL:
+        "https://www.photoshopvideotutorial.com/freepsdmock/wp-content/uploads/2020/01/Free-3d-Website-Mockup-Presentation-scaled.jpg",
     },
     {
       title: "Standard",
       price: "$49.99",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      imageURL: "https://via.placeholder.com/500x120",
+      imageURL:
+        "https://design4users.com/wp-content/uploads/2021/04/3d-graphics-website-1536x1152.jpg",
     },
     {
       title: "Premium",
       price: "$99.99",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      imageURL: "https://via.placeholder.com/500x120",
+      imageURL:
+        "https://d3ui957tjb5bqd.cloudfront.net/uploads/images/0f/9f/0f9fbb1c-6a1e-4a39-b0a1-084a978f2822/3d-website.jpg",
     },
   ];
 
