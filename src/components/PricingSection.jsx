@@ -93,7 +93,6 @@ const Header = styled.div`
 const Content = styled.div`
   padding: 20px;
   .price {
-    color: white;
     font-weight: 800;
     font-size: 70px;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
@@ -149,29 +148,43 @@ const Cta = styled.div`
 `;
 
 const PricingSection = () => {
+  // Define array of information for different cards
+  const cardData = [
+    {
+      title: "Basic",
+      price: "$24.99",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      imageURL: "https://via.placeholder.com/500x120",
+    },
+    {
+      title: "Standard",
+      price: "$49.99",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      imageURL: "https://via.placeholder.com/500x120",
+    },
+    {
+      title: "Premium",
+      price: "$99.99",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      imageURL: "https://via.placeholder.com/500x120",
+    },
+  ];
+
   return (
     <Wrapper>
       <Container>
-        {[1, 2, 3].map((item, index) => (
+        {cardData.map((card, index) => (
           <Card key={index} animate={true}>
             <CardInner>
-              <img
-                src="https://www.photoshopvideotutorial.com/freepsdmock/wp-content/uploads/2020/01/Free-3d-Website-Mockup-Presentation-scaled.jpg"
-                alt="Template"
-              />
+              <img src={card.imageURL} alt="Template" />
             </CardInner>
             <Header>
-              <img
-                src="https://design4users.com/wp-content/uploads/2021/04/3d-graphics-website-1536x1152.jpg.pagespeed.ce.3LDt6M4m8E.jpg"
-                alt="Template Header"
-              />
+              <img src={card.imageURL} alt="Template Header" />
             </Header>
             <Content>
-              <div className="price">$24.99</div>
-              <div className="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </div>
-              <div className="title">Template Title</div>
+              <div className="price">{card.price}</div>
+              <div className="text">{card.description}</div>
+              <div className="title">{card.title}</div>
             </Content>
             <Cta>
               <button>
