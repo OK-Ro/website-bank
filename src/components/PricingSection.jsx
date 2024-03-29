@@ -149,43 +149,29 @@ const Cta = styled.div`
 `;
 
 const PricingSection = () => {
-  // Define array of information for different cards
-  const cardData = [
-    {
-      title: "Basic",
-      price: "$24.99",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      imageURL: "https://via.placeholder.com/500x120",
-    },
-    {
-      title: "Standard",
-      price: "$49.99",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      imageURL: "https://via.placeholder.com/500x120",
-    },
-    {
-      title: "Premium",
-      price: "$99.99",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      imageURL: "https://via.placeholder.com/500x120",
-    },
-  ];
-
   return (
     <Wrapper>
       <Container>
-        {cardData.map((card, index) => (
+        {[1, 2, 3].map((item, index) => (
           <Card key={index} animate={true}>
             <CardInner>
-              <img src={card.imageURL} alt="Template" />
+              <img
+                src="https://www.photoshopvideotutorial.com/freepsdmock/wp-content/uploads/2020/01/Free-3d-Website-Mockup-Presentation-scaled.jpg"
+                alt="Template"
+              />
             </CardInner>
             <Header>
-              <img src={card.imageURL} alt="Template Header" />
+              <img
+                src="https://design4users.com/wp-content/uploads/2021/04/3d-graphics-website-1536x1152.jpg.pagespeed.ce.3LDt6M4m8E.jpg"
+                alt="Template Header"
+              />
             </Header>
             <Content>
-              <div className="price">{card.price}</div>
-              <div className="text">{card.description}</div>
-              <div className="title">{card.title}</div>
+              <div className="price">$24.99</div>
+              <div className="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </div>
+              <div className="title">Template Title</div>
             </Content>
             <Cta>
               <button>
