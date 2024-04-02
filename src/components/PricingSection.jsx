@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   font-family: "Yanone Kaffeesatz", sans-serif;
@@ -7,72 +7,39 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
-  width: 938px;
-  position: absolute;
-  top: 50%;
-  left: 30px;
-  right: 0;
-  transform: translateY(-50%);
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Card = styled.div`
-  margin: 0 auto;
-  display: inline-block;
-  margin-right: 30px;
+  margin: 0 20px;
   width: 280px;
   text-align: center;
   position: relative;
-  transition: all 0.2s;
   cursor: pointer;
-  opacity: 0.5;
-  box-shadow: 0px 17px 46px -10px #777777;
-  height: 470px;
+  opacity: 0.8;
   border-radius: 14px;
-  animation: ${({ animate }) => animate && cardIntroAnimation} 1s forwards;
+  box-shadow: 0px 17px 46px -10px #777777;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     opacity: 1;
-  }
-`;
-
-const cardIntroAnimation = css`
-  @keyframes cardIntroAnimation {
-    0% {
-      transform: scale(0);
-    }
-    25% {
-      transform: scale(1.06);
-    }
-    50% {
-      transform: scale(0.965);
-    }
-    75% {
-      transform: scale(1.02);
-    }
-    100% {
-      transform: scale(1);
-    }
+    transform: translateY(-5px);
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.1);
   }
 `;
 
 const CardInner = styled.div`
-  position: absolute;
   width: 70px;
   background: #f1f0ed;
   height: 70px;
   border-radius: 100px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  border: 4px solid #fff;
-
-  img {
-    height: 26px;
-    position: relative;
-    top: 17px;
-    transition: all 0.2s;
-  }
+  margin: 0 auto;
+  margin-top: -35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Header = styled.div`
@@ -82,68 +49,54 @@ const Header = styled.div`
   overflow: hidden;
 
   img {
-    width: 120%;
-    position: relative;
-    top: -30px;
-    left: 0;
-    transition: all 0.1s linear;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
   }
 `;
 
 const Content = styled.div`
   padding: 20px;
+
   .price {
     font-weight: 800;
-    font-size: 70px;
+    font-size: 36px;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
   }
+
   .text {
-    color: rgba(255, 255, 255, 0.6);
-    font-weight: 100;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 400;
     margin-top: 20px;
-    font-size: 13px;
-    line-height: 16px;
+    font-size: 14px;
+    line-height: 20px;
   }
+
   .title {
     font-weight: 800;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.64);
+    color: rgba(0, 0, 0, 0.64);
     margin-top: 40px;
-    font-size: 25px;
+    font-size: 18px;
     letter-spacing: 1px;
   }
 `;
 
 const Cta = styled.div`
-  position: absolute;
-  bottom: -24px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 200px;
+  margin-top: 20px;
+`;
 
-  button {
-    padding: 16px;
-    width: 100%;
-    background: linear-gradient(-90deg, #fe5e7d 0%, #e5375b 100%);
-    border: none;
-    font-family: "Yanone Kaffeesatz", sans-serif;
-    color: white;
-    outline: none;
-    font-size: 20px;
-    border-radius: 6px;
-    transform: scale(0.94);
-    cursor: pointer;
-    transition: box-shadow 0.3s, transform 0.3s 0.1s;
+const Button = styled.button`
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 
-    span {
-      text-shadow: 0px 4px 18px #ba3f57;
-    }
-
-    &:hover {
-      box-shadow: 0px 0px 60px 8px #f76583,
-        0px 0px 0px 2px rgba(255, 255, 255, 0.19) inset;
-    }
+  &:hover {
+    background-color: #0056b3;
   }
 `;
 
@@ -170,11 +123,17 @@ const PricingSection = () => {
     },
   ];
 
+  // Function to handle card selection
+  const handleSelectPlan = (plan) => {
+    console.log(`Selected plan: ${plan}`);
+    // Add your logic here to handle plan selection, such as redirecting to a checkout page
+  };
+
   return (
     <Wrapper>
       <Container>
         {cardData.map((card, index) => (
-          <Card key={index} animate={true}>
+          <Card key={index}>
             <CardInner>
               <img src={card.imageURL} alt="Template" />
             </CardInner>
@@ -187,9 +146,9 @@ const PricingSection = () => {
               <div className="title">{card.title}</div>
             </Content>
             <Cta>
-              <button>
-                <span>Choose Plan</span>
-              </button>
+              <Button onClick={() => handleSelectPlan(card.title)}>
+                Choose Plan
+              </Button>
             </Cta>
           </Card>
         ))}
