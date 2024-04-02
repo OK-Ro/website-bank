@@ -10,6 +10,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 `;
 
 const Card = styled.div`
@@ -27,6 +28,10 @@ const Card = styled.div`
     opacity: 1;
     transform: translateY(-5px);
     box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    margin: 20px 0;
   }
 `;
 
@@ -90,10 +95,10 @@ const Button = styled.button`
   background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s;
 
   &:hover {
     background-color: #0056b3;
@@ -107,19 +112,19 @@ const PricingSection = () => {
       title: "Basic",
       price: "$24.99",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      imageURL: "https://via.placeholder.com/500x120",
+      imageURL: "https://via.placeholder.com/500x300",
     },
     {
       title: "Standard",
       price: "$49.99",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      imageURL: "https://via.placeholder.com/500x120",
+      imageURL: "https://via.placeholder.com/500x300",
     },
     {
       title: "Premium",
       price: "$99.99",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      imageURL: "https://via.placeholder.com/500x120",
+      imageURL: "https://via.placeholder.com/500x300",
     },
   ];
 
