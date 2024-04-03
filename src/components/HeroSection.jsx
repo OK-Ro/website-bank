@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import ScrollEffectContainer from "../ScrollEffectContainer";
 
 const HeroSection = styled.section``;
 
@@ -149,28 +148,28 @@ const Dot = styled.div`
 function HeroSectionComponent() {
   return (
     <HeroSection>
-      <ScrollEffectContainer>
-        <Container>
-          <HeroContent>
-            <Title>Discover Your Perfect Website</Title>
-            <Paragraph>
-              Find your ideal website template with Website Bank. From business
-              sites to e-commerce stores, our curated selection has it all.
-              Impress visitors with professionally designed templates. Start
-              today and unlock your online presence!
-            </Paragraph>
+        <ScrollEffectContainer>
+      <Container>
+        <HeroContent>
+          <Title>Discover Your Perfect Website</Title>
+          <Paragraph>
+            Find your ideal website template with Website Bank. From business
+            sites to e-commerce stores, our curated selection has it all.
+            Impress visitors with professionally designed templates. Start today
+            and unlock your online presence!
+          </Paragraph>
 
-            <SearchContainer>
-              <SearchInput type="text" placeholder="Search templates..." />
-              <SpecialBlock>
-                {[...Array(49)].map((_, index) => (
-                  <Dot key={index} />
-                ))}
-              </SpecialBlock>
-              <SearchButton>Search</SearchButton>
-            </SearchContainer>
-          </HeroContent>
-        </Container>
+          <SearchContainer>
+            <SearchInput type="text" placeholder="Search templates..." />
+            <SpecialBlock>
+              {[...Array(49)].map((_, index) => (
+                <Dot key={index} />
+              ))}
+            </SpecialBlock>
+            <SearchButton>Search</SearchButton>
+          </SearchContainer>
+        </HeroContent>
+      </Container>
       </ScrollEffectContainer>
     </HeroSection>
   );
