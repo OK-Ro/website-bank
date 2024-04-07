@@ -34,6 +34,66 @@ const Service = styled.div`
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   }
+
+  .txt {
+    margin-left: -3rem;
+    z-index: 1;
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+    p {
+      font-size: 0.7rem;
+      font-family: "Open Sans", sans-serif;
+      letter-spacing: 0rem;
+      margin-top: 33px;
+      opacity: 0;
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+
+  a {
+    z-index: 3;
+    font-size: 0.7rem;
+    color: rgba(0, 0, 0, 1);
+    margin-left: 1rem;
+    position: relative;
+    bottom: -0.5rem;
+    text-transform: uppercase;
+    &:after {
+      content: "";
+      display: inline-block;
+      height: 0.5em;
+      width: 0;
+      margin-right: -100%;
+      margin-left: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 1);
+      transition: 0.5s;
+    }
+  }
+
+  .ico-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  i {
+    position: relative;
+    right: -50%;
+    top: 60%;
+    font-size: 12rem;
+    line-height: 0;
+    opacity: 0.2;
+    color: rgba(255, 255, 255, 1);
+    z-index: 0;
+  }
 `;
 
 const ServiceIcon = styled.div`
@@ -74,97 +134,53 @@ const ServicesSection = () => {
   return (
     <Section>
       <Container>
-        <Service>
-          <ServiceIcon>
-            <FontAwesomeIcon icon={faPencilAlt} />
-          </ServiceIcon>
-          <ServiceTitle>Website Design</ServiceTitle>
-          <ServiceDescription>
-            Professionally designed website templates tailored to your needs.
-          </ServiceDescription>
-          <ServiceFeatures>
-            <ServiceFeature>
-              <FontAwesomeIcon icon={faCheck} />
-              Responsive Design
-            </ServiceFeature>
-            <ServiceFeature>
-              <FontAwesomeIcon icon={faCheck} />
-              Modern UI/UX
-            </ServiceFeature>
-            <ServiceFeature>
-              <FontAwesomeIcon icon={faCheck} />
-              Customizable Layouts
-            </ServiceFeature>
-          </ServiceFeatures>
+        <Service className="card gr-1">
+          <div className="ico-card">
+            <FontAwesomeIcon icon={faPencilAlt} className="icon" />
+          </div>
+          <div className="txt">
+            <ServiceTitle>Website Design</ServiceTitle>
+            <ServiceDescription>
+              Professionally designed website templates tailored to your needs.
+            </ServiceDescription>
+          </div>
+          <a href="/">Learn More</a>
         </Service>
-        <Service>
-          <ServiceIcon>
-            <FontAwesomeIcon icon={faCogs} />
-          </ServiceIcon>
-          <ServiceTitle>Customization</ServiceTitle>
-          <ServiceDescription>
-            Tailor our templates to match your brand identity and vision.
-          </ServiceDescription>
-          <ServiceFeatures>
-            <ServiceFeature>
-              <FontAwesomeIcon icon={faCheck} />
-              Brand Integration
-            </ServiceFeature>
-            <ServiceFeature>
-              <FontAwesomeIcon icon={faCheck} />
-              Color Customization
-            </ServiceFeature>
-            <ServiceFeature>
-              <FontAwesomeIcon icon={faCheck} />
-              Font Selection
-            </ServiceFeature>
-          </ServiceFeatures>
+        <Service className="card gr-2">
+          <div className="ico-card">
+            <FontAwesomeIcon icon={faCogs} className="icon" />
+          </div>
+          <div className="txt">
+            <ServiceTitle>Customization</ServiceTitle>
+            <ServiceDescription>
+              Tailor our templates to match your brand identity and vision.
+            </ServiceDescription>
+          </div>
+          <a href="/">Learn More</a>
         </Service>
-        <Service>
-          <ServiceIcon>
-            <FontAwesomeIcon icon={faServer} />
-          </ServiceIcon>
-          <ServiceTitle>Hosting</ServiceTitle>
-          <ServiceDescription>
-            Reliable hosting solutions to keep your website online 24/7.
-          </ServiceDescription>
-          <ServiceFeatures>
-            <ServiceFeature>
-              <FontAwesomeIcon icon={faCheck} />
-              High Uptime Guarantee
-            </ServiceFeature>
-            <ServiceFeature>
-              <FontAwesomeIcon icon={faCheck} />
-              Scalable Infrastructure
-            </ServiceFeature>
-            <ServiceFeature>
-              <FontAwesomeIcon icon={faCheck} />
-              Security Measures
-            </ServiceFeature>
-          </ServiceFeatures>
+        <Service className="card gr-3">
+          <div className="ico-card">
+            <FontAwesomeIcon icon={faServer} className="icon" />
+          </div>
+          <div className="txt">
+            <ServiceTitle>Hosting</ServiceTitle>
+            <ServiceDescription>
+              Reliable hosting solutions to keep your website online 24/7.
+            </ServiceDescription>
+          </div>
+          <a href="/">Learn More</a>
         </Service>
-        <Service>
-          <ServiceIcon>
-            <FontAwesomeIcon icon={faLifeRing} />
-          </ServiceIcon>
-          <ServiceTitle>Support</ServiceTitle>
-          <ServiceDescription>
-            Dedicated customer support to assist you whenever you need.
-          </ServiceDescription>
-          <ServiceFeatures>
-            <ServiceFeature>
-              <FontAwesomeIcon icon={faCheck} />
-              24/7 Availability
-            </ServiceFeature>
-            <ServiceFeature>
-              <FontAwesomeIcon icon={faCheck} />
-              Experienced Team
-            </ServiceFeature>
-            <ServiceFeature>
-              <FontAwesomeIcon icon={faCheck} />
-              Timely Responses
-            </ServiceFeature>
-          </ServiceFeatures>
+        <Service className="card gr-1">
+          <div className="ico-card">
+            <FontAwesomeIcon icon={faLifeRing} className="icon" />
+          </div>
+          <div className="txt">
+            <ServiceTitle>Support</ServiceTitle>
+            <ServiceDescription>
+              Dedicated customer support to assist you whenever you need.
+            </ServiceDescription>
+          </div>
+          <a href="/">Learn More</a>
         </Service>
       </Container>
     </Section>
