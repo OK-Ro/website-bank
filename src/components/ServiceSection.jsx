@@ -30,12 +30,17 @@ const Service = styled.div`
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: transform 0.3s ease-in-out;
 
-  /* Additional styling for icon */
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
   .icon {
     margin-bottom: 20px;
-    color: #007bff; /* Change icon color */
-    font-size: 3rem; /* Adjust icon size */
+    color: #007bff;
+    font-size: 3rem;
   }
 `;
 
