@@ -83,6 +83,7 @@ const ServicesSection = () => {
         "Customizable Layouts",
         "SEO Optimization",
         "Social Media Integration",
+        "Performance Optimization",
       ],
     },
     {
@@ -96,6 +97,7 @@ const ServicesSection = () => {
         "Font Selection",
         "E-commerce Integration",
         "Multi-language Support",
+        "Performance Optimization",
       ],
     },
     {
@@ -109,6 +111,7 @@ const ServicesSection = () => {
         "Security Measures",
         "SSL Certificate",
         "Automatic Backups",
+        "Performance Optimization",
       ],
     },
     {
@@ -122,6 +125,7 @@ const ServicesSection = () => {
         "Timely Responses",
         "Knowledge Base",
         "Ticketing System",
+        "Performance Optimization",
       ],
     },
   ];
