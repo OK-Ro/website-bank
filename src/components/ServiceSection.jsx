@@ -1,3 +1,4 @@
+// Import necessary modules and components
 import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,6 +10,7 @@ import {
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
+// Styled components for the section
 const Section = styled.section`
   padding: 80px 0;
   background-color: #f8f9fa;
@@ -70,7 +72,9 @@ const ServiceFeature = styled.li`
   }
 `;
 
+// ServicesSection component
 const ServicesSection = () => {
+  // Array of service data with additional features
   const servicesData = [
     {
       icon: faPencilAlt,
@@ -82,8 +86,6 @@ const ServicesSection = () => {
         "Modern UI/UX",
         "Customizable Layouts",
         "SEO Optimization",
-        "Social Media Integration",
-        "Performance Optimization",
       ],
     },
     {
@@ -96,8 +98,6 @@ const ServicesSection = () => {
         "Color Customization",
         "Font Selection",
         "E-commerce Integration",
-        "Multi-language Support",
-        "Performance Optimization",
       ],
     },
     {
@@ -110,8 +110,6 @@ const ServicesSection = () => {
         "Scalable Infrastructure",
         "Security Measures",
         "SSL Certificate",
-        "Automatic Backups",
-        "Performance Optimization",
       ],
     },
     {
@@ -124,8 +122,6 @@ const ServicesSection = () => {
         "Experienced Team",
         "Timely Responses",
         "Knowledge Base",
-        "Ticketing System",
-        "Performance Optimization",
       ],
     },
   ];
