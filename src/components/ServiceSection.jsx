@@ -1,4 +1,3 @@
-// Import necessary modules and components
 import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,7 +9,6 @@ import {
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
-// Styled components for the section
 const Section = styled.section`
   padding: 80px 0;
   background-color: #f8f9fa;
@@ -72,23 +70,35 @@ const ServiceFeature = styled.li`
   }
 `;
 
-// ServicesSection component
 const ServicesSection = () => {
-  // Array of service data
   const servicesData = [
     {
       icon: faPencilAlt,
       title: "Website Design",
       description:
         "Professionally designed website templates tailored to your needs.",
-      features: ["Responsive Design", "Modern UI/UX", "Customizable Layouts"],
+      features: [
+        "Responsive Design",
+        "Modern UI/UX",
+        "Customizable Layouts",
+        "SEO Optimization",
+        "Social Media Integration",
+        "Performance Optimization",
+      ],
     },
     {
       icon: faCogs,
       title: "Customization",
       description:
         "Tailor our templates to match your brand identity and vision.",
-      features: ["Brand Integration", "Color Customization", "Font Selection"],
+      features: [
+        "Brand Integration",
+        "Color Customization",
+        "Font Selection",
+        "E-commerce Integration",
+        "Multi-language Support",
+        "Performance Optimization",
+      ],
     },
     {
       icon: faServer,
@@ -99,6 +109,9 @@ const ServicesSection = () => {
         "High Uptime Guarantee",
         "Scalable Infrastructure",
         "Security Measures",
+        "SSL Certificate",
+        "Automatic Backups",
+        "Performance Optimization",
       ],
     },
     {
@@ -106,7 +119,14 @@ const ServicesSection = () => {
       title: "Support",
       description:
         "Dedicated customer support to assist you whenever you need.",
-      features: ["24/7 Availability", "Experienced Team", "Timely Responses"],
+      features: [
+        "24/7 Availability",
+        "Experienced Team",
+        "Timely Responses",
+        "Knowledge Base",
+        "Ticketing System",
+        "Performance Optimization",
+      ],
     },
   ];
 
