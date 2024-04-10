@@ -74,21 +74,31 @@ const ServiceFeature = styled.li`
 
 // ServicesSection component
 const ServicesSection = () => {
-  // Array of service data
+  // Array of service data with additional features
   const servicesData = [
     {
       icon: faPencilAlt,
       title: "Website Design",
       description:
         "Professionally designed website templates tailored to your needs.",
-      features: ["Responsive Design", "Modern UI/UX", "Customizable Layouts"],
+      features: [
+        "Responsive Design",
+        "Modern UI/UX",
+        "Customizable Layouts",
+        "SEO Optimization",
+      ],
     },
     {
       icon: faCogs,
       title: "Customization",
       description:
         "Tailor our templates to match your brand identity and vision.",
-      features: ["Brand Integration", "Color Customization", "Font Selection"],
+      features: [
+        "Brand Integration",
+        "Color Customization",
+        "Font Selection",
+        "E-commerce Integration",
+      ],
     },
     {
       icon: faServer,
@@ -99,6 +109,7 @@ const ServicesSection = () => {
         "High Uptime Guarantee",
         "Scalable Infrastructure",
         "Security Measures",
+        "SSL Certificate",
       ],
     },
     {
@@ -106,7 +117,12 @@ const ServicesSection = () => {
       title: "Support",
       description:
         "Dedicated customer support to assist you whenever you need.",
-      features: ["24/7 Availability", "Experienced Team", "Timely Responses"],
+      features: [
+        "24/7 Availability",
+        "Experienced Team",
+        "Timely Responses",
+        "Knowledge Base",
+      ],
     },
   ];
 
