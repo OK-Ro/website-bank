@@ -1,4 +1,3 @@
-// Import necessary modules and components
 import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,7 +9,6 @@ import {
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
-// Styled components for the section
 const Section = styled.section`
   padding: 80px 0;
   background-color: #f8f9fa;
@@ -72,64 +70,102 @@ const ServiceFeature = styled.li`
   }
 `;
 
-// ServicesSection component
 const ServicesSection = () => {
-  // Array of service data
-  const servicesData = [
-    {
-      icon: faPencilAlt,
-      title: "Website Design",
-      description:
-        "Professionally designed website templates tailored to your needs.",
-      features: ["Responsive Design", "Modern UI/UX", "Customizable Layouts"],
-    },
-    {
-      icon: faCogs,
-      title: "Customization",
-      description:
-        "Tailor our templates to match your brand identity and vision.",
-      features: ["Brand Integration", "Color Customization", "Font Selection"],
-    },
-    {
-      icon: faServer,
-      title: "Hosting",
-      description:
-        "Reliable hosting solutions to keep your website online 24/7.",
-      features: [
-        "High Uptime Guarantee",
-        "Scalable Infrastructure",
-        "Security Measures",
-      ],
-    },
-    {
-      icon: faLifeRing,
-      title: "Support",
-      description:
-        "Dedicated customer support to assist you whenever you need.",
-      features: ["24/7 Availability", "Experienced Team", "Timely Responses"],
-    },
-  ];
-
   return (
     <Section>
       <Container>
-        {servicesData.map((service, index) => (
-          <Service key={index}>
-            <ServiceIcon>
-              <FontAwesomeIcon icon={service.icon} />
-            </ServiceIcon>
-            <ServiceTitle>{service.title}</ServiceTitle>
-            <ServiceDescription>{service.description}</ServiceDescription>
-            <ServiceFeatures>
-              {service.features.map((feature, index) => (
-                <ServiceFeature key={index}>
-                  <FontAwesomeIcon icon={faCheck} />
-                  {feature}
-                </ServiceFeature>
-              ))}
-            </ServiceFeatures>
-          </Service>
-        ))}
+        <Service>
+          <ServiceIcon>
+            <FontAwesomeIcon icon={faPencilAlt} />
+          </ServiceIcon>
+          <ServiceTitle>Website Design</ServiceTitle>
+          <ServiceDescription>
+            Professionally designed website templates tailored to your needs.
+          </ServiceDescription>
+          <ServiceFeatures>
+            <ServiceFeature>
+              <FontAwesomeIcon icon={faCheck} />
+              Responsive Design
+            </ServiceFeature>
+            <ServiceFeature>
+              <FontAwesomeIcon icon={faCheck} />
+              Modern UI/UX
+            </ServiceFeature>
+            <ServiceFeature>
+              <FontAwesomeIcon icon={faCheck} />
+              Customizable Layouts
+            </ServiceFeature>
+          </ServiceFeatures>
+        </Service>
+        <Service>
+          <ServiceIcon>
+            <FontAwesomeIcon icon={faCogs} />
+          </ServiceIcon>
+          <ServiceTitle>Customization</ServiceTitle>
+          <ServiceDescription>
+            Tailor our templates to match your brand identity and vision.
+          </ServiceDescription>
+          <ServiceFeatures>
+            <ServiceFeature>
+              <FontAwesomeIcon icon={faCheck} />
+              Brand Integration
+            </ServiceFeature>
+            <ServiceFeature>
+              <FontAwesomeIcon icon={faCheck} />
+              Color Customization
+            </ServiceFeature>
+            <ServiceFeature>
+              <FontAwesomeIcon icon={faCheck} />
+              Font Selection
+            </ServiceFeature>
+          </ServiceFeatures>
+        </Service>
+        <Service>
+          <ServiceIcon>
+            <FontAwesomeIcon icon={faServer} />
+          </ServiceIcon>
+          <ServiceTitle>Hosting</ServiceTitle>
+          <ServiceDescription>
+            Reliable hosting solutions to keep your website online 24/7.
+          </ServiceDescription>
+          <ServiceFeatures>
+            <ServiceFeature>
+              <FontAwesomeIcon icon={faCheck} />
+              High Uptime Guarantee
+            </ServiceFeature>
+            <ServiceFeature>
+              <FontAwesomeIcon icon={faCheck} />
+              Scalable Infrastructure
+            </ServiceFeature>
+            <ServiceFeature>
+              <FontAwesomeIcon icon={faCheck} />
+              Security Measures
+            </ServiceFeature>
+          </ServiceFeatures>
+        </Service>
+        <Service>
+          <ServiceIcon>
+            <FontAwesomeIcon icon={faLifeRing} />
+          </ServiceIcon>
+          <ServiceTitle>Support</ServiceTitle>
+          <ServiceDescription>
+            Dedicated customer support to assist you whenever you need.
+          </ServiceDescription>
+          <ServiceFeatures>
+            <ServiceFeature>
+              <FontAwesomeIcon icon={faCheck} />
+              24/7 Availability
+            </ServiceFeature>
+            <ServiceFeature>
+              <FontAwesomeIcon icon={faCheck} />
+              Experienced Team
+            </ServiceFeature>
+            <ServiceFeature>
+              <FontAwesomeIcon icon={faCheck} />
+              Timely Responses
+            </ServiceFeature>
+          </ServiceFeatures>
+        </Service>
       </Container>
     </Section>
   );
