@@ -8,7 +8,7 @@ const TestimonalContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
+  min-height: 100vh;
   width: 100%;
   background-image: radial-gradient(
       at 40% 20%,
