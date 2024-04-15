@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-const TestimonalContainer = styled.TestimonalContainer`
+const TestimonalContainer = styled.Container`
   background-image: radial-gradient(
       at 40% 20%,
       rgb(255, 184, 122) 0px,
@@ -149,7 +149,7 @@ const Testimonials = () => {
   }, [currentIndex]);
 
   return (
-    <TestimonalContainer>
+    <Container>
       <Main>
         <Heading>Testimonials</Heading>
         <Slider>
