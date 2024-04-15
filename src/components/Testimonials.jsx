@@ -1,15 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-const TestimonalContainer = styled.div`
-  scroll-behavior: smooth;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  width: 100%;
+const TestimonalContainer = styled.TestimonalContainer`
   background-image: radial-gradient(
       at 40% 20%,
       rgb(255, 184, 122) 0px,
