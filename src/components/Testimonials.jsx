@@ -238,7 +238,7 @@ const Testimonials = () => {
           ></Button>
         </Indicator>
       </Main>
-    </TestimonalContainer>
+    </Container>
   );
 };
 
