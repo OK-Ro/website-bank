@@ -1,4 +1,3 @@
-// ScrollEffectContainer.js
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 
@@ -29,7 +28,7 @@ const ScrollEffectContainer = ({ children }) => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check initial state
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
