@@ -1,134 +1,229 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 
-// Styled components for the Testimonials Section
-
-const TestimonialsSection = styled.section`
-  margin-top: 40px;
-  margin-bottom: 40px;
-  text-align: center;
-`;
-
-const TestimonialsContainer = styled.div`
+const TestimonalContainer = styled.div`
+  scroll-behavior: smooth;
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 20px;
-  @media (max-width: 768px) {
-    gap: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  width: 100%;
+  background-image: radial-gradient(
+      at 40% 20%,
+      rgb(255, 184, 122) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 80% 0%, rgb(31, 221, 255) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgb(255, 219, 222) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, rgb(255, 133, 173) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgb(255, 181, 138) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, rgb(107, 102, 255) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, rgb(255, 133, 167) 0px, transparent 50%);
+  background-repeat: no-repeat;
+`;
+
+const Main = styled.main`
+  width: 800px;
+`;
+
+const Heading = styled.h1`
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  color: #fff;
+  margin-bottom: 70px;
+`;
+
+const Slider = styled.div`
+  width: 100%;
+  overflow: hidden;
+`;
+
+const SlideRow = styled.div`
+  display: flex;
+  width: 3200px;
+  transition: 0.5s;
+`;
+
+const SlideCol = styled.div`
+  position: relative;
+  width: 800px;
+  height: 400px;
+`;
+
+const Hero = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+`;
+
+const HeroImage = styled.img`
+  height: 100%;
+  border-radius: 10px;
+  width: 320px;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+`;
+
+const Content = styled.div`
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 520px;
+  height: 270px;
+  color: #4d4352;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border-radius: 10px;
+  padding: 45px;
+  z-index: 2;
+  user-select: none;
+`;
+
+const Text = styled.p`
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.3;
+`;
+
+const Heading2 = styled.h2`
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 35px;
+  color: #4d4352;
+`;
+
+const Indicator = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+`;
+
+const Button = styled.span`
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  margin: 4px;
+  border-radius: 15px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  &.active {
+    width: 30px;
   }
 `;
 
-const Testimonial = styled.div`
-  flex: 0 1 calc(25% - 20px); /* Adjust width according to the number of testimonials you want in a row */
-  background: linear-gradient(to right, #f5f5f5, #c0adada5);
-  border-radius: 8px;
-  padding: 30px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-  @media (max-width: 768px) {
-    flex: 0 1 calc(80% - 20px);
-    height: 50vh;
-  }
-`;
-
-const TestimonialIcon = styled.div`
-  color: #007bff;
-  font-size: 30px;
-  margin-bottom: 10px;
-  @media (max-width: 768px) {
-    margin-bottom: 30px;
-  }
-`;
-
-const TestimonialImage = styled.img`
-  width: 150px; /* Adjust image size as needed */
-  height: 150px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-`;
-
-const TestimonialText = styled.div`
-  margin-bottom: 10px;
-  @media (max-width: 768px) {
-    margin-bottom: 40px;
-  }
-`;
-
-const TestimonialAuthor = styled.div`
-  font-style: italic;
-`;
-
-const testimonialsData = [
+const testimoniesData = [
   {
-    text: "I am extremely satisfied with the website template I purchased from your platform. It was easy to customize and fit my needs perfectly.",
-    author: "John Doe",
-    image:
-      "https://th.bing.com/th/id/OIP.jAEnONxlpsGr8oF6yPHI9QHaHZ?w=200&h=199&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    name: "Zen",
+    description:
+      "Zen Doan is a business analyst, entrepreneur, and media proprietor, and investor. She is also known as the best-selling book author.",
+    title: "Author",
+    imageSrc:
+      "https://user-images.githubusercontent.com/13468728/234031693-6bbaba7d-632c-4d7d-965f-75a76a549ce2.jpg",
   },
   {
-    text: "The support team was incredibly helpful and responsive. They answered all of my questions promptly and made the process smooth.",
-    author: "Jane Smith",
-    image:
-      "https://www.bing.com/th?id=OIP.kx4PP2AZfFKfNHq0yOMSAAHaNJ&w=150&h=267&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+    name: "Jonathan",
+    description:
+      "Jonathan Koletic is an American internet entrepreneur and media proprietor, and investor. He is the founder of the multi-national technology company Treymont.",
+    title: "Treymont Inc.",
+    imageSrc:
+      "https://user-images.githubusercontent.com/13468728/234031617-2dfb19ea-01d0-4370-b63b-bb6bdfb4f78e.jpg",
   },
   {
-    text: "I'm very pleased with the service provided by Company X. Their professionalism and attention to detail exceeded my expectations. I highly recommend their services.",
-    author: "Alex Bax",
-    image:
-      "https://th.bing.com/th/id/OIP.7mHXjj_rXnhRlqCfJ-Ew_AHaHF?pid=ImgDet&w=200&h=191&c=7&dpr=1,3",
+    name: "Charlie",
+    description:
+      "Charlie Green is a European entrepreneur and media consultant, and investor. He is the founder of the Hallmark Inc.",
+    title: "Hallmark Inc.",
+    imageSrc:
+      "https://user-images.githubusercontent.com/13468728/234031646-10533999-39e5-4c7b-ab54-d0299b13ce74.jpg",
+  },
+  {
+    name: "Sarah",
+    description:
+      "Sarah Dam is an American internet entrepreneur and media proprietor, and investor. She is the founder of the multi-national technology company Zara.",
+    title: "Zara Inc.",
+    imageSrc:
+      "https://github.com/ecemgo/ecemgo/assets/13468728/55116c98-5f9a-4b0a-9fdb-4911b52d5ef3",
   },
 ];
 
 const Testimonials = () => {
-  const [typedText, setTypedText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (currentIndex < testimonialsData.length) {
-        const currentTestimonial = testimonialsData[currentIndex].text;
-        const currentSubstring = currentTestimonial.substring(
-          0,
-          typedText.length + 1
-        );
-        setTypedText(currentSubstring);
-        if (currentSubstring === currentTestimonial) {
-          setCurrentIndex((prevIndex) => prevIndex + 1);
-        }
-      } else {
-        clearInterval(interval);
-      }
-    }, 100);
+    const btns = document.querySelectorAll(".btn");
+    const slideRow = document.getElementById("slide-row");
+    const main = document.querySelector("main");
 
-    return () => clearInterval(interval);
-  }, [typedText, currentIndex]);
+    function updateSlide() {
+      const mainWidth = main.offsetWidth;
+      const translateValue = currentIndex * -mainWidth;
+      slideRow.style.transform = `translateX(${translateValue}px)`;
+
+      btns.forEach((btn, index) => {
+        btn.classList.toggle("active", index === currentIndex);
+      });
+    }
+
+    btns.forEach((btn, index) => {
+      btn.addEventListener("click", () => {
+        setCurrentIndex(index);
+        updateSlide();
+      });
+    });
+
+    window.addEventListener("resize", () => {
+      updateSlide();
+    });
+
+    return () => {
+      window.removeEventListener("resize", () => {
+        updateSlide();
+      });
+    };
+  }, [currentIndex]);
 
   return (
-    <TestimonialsSection>
-      <h2>Testimonials</h2>
-      <TestimonialsContainer>
-        {testimonialsData.map((testimonial, index) => (
-          <Testimonial key={index}>
-            <TestimonialIcon>
-              <FontAwesomeIcon icon={faQuoteLeft} />
-            </TestimonialIcon>
-            <TestimonialImage
-              src={testimonial.image}
-              alt={testimonial.author}
-            />
-            <TestimonialText>
-              <p>{index === currentIndex ? typedText : testimonial.text}</p>
-            </TestimonialText>
-            <TestimonialAuthor>
-              <p>- {testimonial.author}</p>
-            </TestimonialAuthor>
-          </Testimonial>
-        ))}
-      </TestimonialsContainer>
-    </TestimonialsSection>
+    <TestimonalContainer>
+      <Main>
+        <Heading>Testimonials</Heading>
+        <Slider>
+          <SlideRow id="slide-row">
+            {testimoniesData.map((testimony, index) => (
+              <SlideCol key={index}>
+                <Content>
+                  <Text>{testimony.description}</Text>
+                  <Heading2>{testimony.name}</Heading2>
+                  <Text>{testimony.title}</Text>
+                </Content>
+                <Hero>
+                  <HeroImage
+                    src={testimony.imageSrc}
+                    alt={`${testimony.name}'s avatar`}
+                  />
+                </Hero>
+              </SlideCol>
+            ))}
+          </SlideRow>
+        </Slider>
+        <Indicator>
+          {testimoniesData.map((_, index) => (
+            <Button
+              key={index}
+              className={currentIndex === index ? "btn active" : "btn"}
+            ></Button>
+          ))}
+        </Indicator>
+      </Main>
+    </TestimonalContainer>
   );
 };
 
