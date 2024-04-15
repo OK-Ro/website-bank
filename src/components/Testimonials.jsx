@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-const TestimonalContainer = styled.Container`
+const Container = styled.Container``;
+
+const Main = styled.main`
+  width: 800px;
+
   background-image: radial-gradient(
       at 40% 20%,
       rgb(255, 184, 122) 0px,
@@ -14,10 +18,6 @@ const TestimonalContainer = styled.Container`
     radial-gradient(at 80% 100%, rgb(107, 102, 255) 0px, transparent 50%),
     radial-gradient(at 0% 0%, rgb(255, 133, 167) 0px, transparent 50%);
   background-repeat: no-repeat;
-`;
-
-const Main = styled.main`
-  width: 800px;
 `;
 
 const Heading = styled.h1`
