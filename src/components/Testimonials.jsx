@@ -120,41 +120,6 @@ const Button = styled.span`
   }
 `;
 
-const testimoniesData = [
-  {
-    name: "Zen",
-    description:
-      "Zen Doan is a business analyst, entrepreneur, and media proprietor, and investor. She is also known as the best-selling book author.",
-    title: "Author",
-    imageSrc:
-      "https://user-images.githubusercontent.com/13468728/234031693-6bbaba7d-632c-4d7d-965f-75a76a549ce2.jpg",
-  },
-  {
-    name: "Jonathan",
-    description:
-      "Jonathan Koletic is an American internet entrepreneur and media proprietor, and investor. He is the founder of the multi-national technology company Treymont.",
-    title: "Treymont Inc.",
-    imageSrc:
-      "https://user-images.githubusercontent.com/13468728/234031617-2dfb19ea-01d0-4370-b63b-bb6bdfb4f78e.jpg",
-  },
-  {
-    name: "Charlie",
-    description:
-      "Charlie Green is a European entrepreneur and media consultant, and investor. He is the founder of the Hallmark Inc.",
-    title: "Hallmark Inc.",
-    imageSrc:
-      "https://user-images.githubusercontent.com/13468728/234031646-10533999-39e5-4c7b-ab54-d0299b13ce74.jpg",
-  },
-  {
-    name: "Sarah",
-    description:
-      "Sarah Dam is an American internet entrepreneur and media proprietor, and investor. She is the founder of the multi-national technology company Zara.",
-    title: "Zara Inc.",
-    imageSrc:
-      "https://github.com/ecemgo/ecemgo/assets/13468728/55116c98-5f9a-4b0a-9fdb-4911b52d5ef3",
-  },
-];
-
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -197,30 +162,88 @@ const Testimonials = () => {
         <Heading>Testimonials</Heading>
         <Slider>
           <SlideRow id="slide-row">
-            {testimoniesData.map((testimony, index) => (
-              <SlideCol key={index}>
-                <Content>
-                  <Text>{testimony.description}</Text>
-                  <Heading2>{testimony.name}</Heading2>
-                  <Text>{testimony.title}</Text>
-                </Content>
-                <Hero>
-                  <HeroImage
-                    src={testimony.imageSrc}
-                    alt={`${testimony.name}'s avatar`}
-                  />
-                </Hero>
-              </SlideCol>
-            ))}
+            <SlideCol>
+              <Content>
+                <Text>
+                  Zen Doan is a business analyst, entrepreneur, and media
+                  proprietor, and investor. She is also known as the
+                  best-selling book author.
+                </Text>
+                <Heading2>Zen</Heading2>
+                <Text>Author</Text>
+              </Content>
+              <Hero>
+                <HeroImage
+                  src="https://user-images.githubusercontent.com/13468728/234031693-6bbaba7d-632c-4d7d-965f-75a76a549ce2.jpg"
+                  alt="avatar"
+                />
+              </Hero>
+            </SlideCol>
+            <SlideCol>
+              <Content>
+                <Text>
+                  Jonathan Koletic is an American internet entrepreneur and
+                  media proprietor, and investor. He is the founder of the
+                  multi-national technology company Treymont.
+                </Text>
+                <Heading2>Jonathan</Heading2>
+                <Text>Treymont Inc.</Text>
+              </Content>
+              <Hero>
+                <HeroImage
+                  src="https://user-images.githubusercontent.com/13468728/234031617-2dfb19ea-01d0-4370-b63b-bb6bdfb4f78e.jpg"
+                  alt="avatar"
+                />
+              </Hero>
+            </SlideCol>
+            <SlideCol>
+              <Content>
+                <Text>
+                  Charlie Green is a European entrepreneur and media consultant,
+                  and investor. He is the founder of the Hallmark Inc.
+                </Text>
+                <Heading2>Charlie</Heading2>
+                <Text>Hallmark Inc.</Text>
+              </Content>
+              <Hero>
+                <HeroImage
+                  src="https://user-images.githubusercontent.com/13468728/234031646-10533999-39e5-4c7b-ab54-d0299b13ce74.jpg"
+                  alt="avatar"
+                />
+              </Hero>
+            </SlideCol>
+            <SlideCol>
+              <Content>
+                <Text>
+                  Sarah Dam is an American internet entrepreneur and media
+                  proprietor, and investor. She is the founder of the
+                  multi-national technology company Zara.
+                </Text>
+                <Heading2>Sarah</Heading2>
+                <Text>Zara Inc.</Text>
+              </Content>
+              <Hero>
+                <HeroImage
+                  src="https://github.com/ecemgo/ecemgo/assets/13468728/55116c98-5f9a-4b0a-9fdb-4911b52d5ef3"
+                  alt="avatar"
+                />
+              </Hero>
+            </SlideCol>
           </SlideRow>
         </Slider>
         <Indicator>
-          {testimoniesData.map((_, index) => (
-            <Button
-              key={index}
-              className={currentIndex === index ? "btn active" : "btn"}
-            ></Button>
-          ))}
+          <Button
+            className={currentIndex === 0 ? "btn active" : "btn"}
+          ></Button>
+          <Button
+            className={currentIndex === 1 ? "btn active" : "btn"}
+          ></Button>
+          <Button
+            className={currentIndex === 2 ? "btn active" : "btn"}
+          ></Button>
+          <Button
+            className={currentIndex === 3 ? "btn active" : "btn"}
+          ></Button>
         </Indicator>
       </Main>
     </TestimonalContainer>
