@@ -68,7 +68,9 @@ const Hero = styled.div`
   right: 0;
   height: 100%;
   @media (max-width: 768px) {
-    right: 100px;
+    width: 300px;
+    height: 170px;
+    padding: 25px;
   }
 `;
 
