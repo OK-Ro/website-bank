@@ -26,6 +26,9 @@ const TestimonalContainer = styled.div`
 
 const Main = styled.main`
   width: 800px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Heading = styled.h1`
@@ -50,6 +53,10 @@ const SlideCol = styled.div`
   position: relative;
   width: 800px;
   height: 400px;
+  @media (max-width: 768px) {
+    width: 800px;
+    height: 400px;
+  }
 `;
 
 const Hero = styled.div`
