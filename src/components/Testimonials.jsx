@@ -67,6 +67,9 @@ const Hero = styled.div`
   top: 0;
   right: 0;
   height: 100%;
+  @media (max-width: 768px) {
+    right: 100px;
+  }
 `;
 
 const HeroImage = styled.img`
