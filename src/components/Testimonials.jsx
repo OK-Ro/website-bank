@@ -26,9 +26,6 @@ const TestimonalContainer = styled.div`
 
 const Main = styled.main`
   width: 800px;
-  @media (max-width: 768px) {
-    width: 100%;
-  }
 `;
 
 const Heading = styled.h1`
@@ -41,9 +38,6 @@ const Heading = styled.h1`
 const Slider = styled.div`
   width: 100%;
   overflow: hidden;
-  @media (max-width: 768px) {
-    padding: 0.5rem;
-  }
 `;
 
 const SlideRow = styled.div`
@@ -56,10 +50,6 @@ const SlideCol = styled.div`
   position: relative;
   width: 800px;
   height: 400px;
-  @media (max-width: 768px) {
-    width: 600px;
-    height: 300px;
-  }
 `;
 
 const Hero = styled.div`
@@ -94,20 +84,12 @@ const Content = styled.div`
   padding: 45px;
   z-index: 2;
   user-select: none;
-  @media (max-width: 768px) {
-    width: 300px;
-    height: 170px;
-    padding: 25px;
-  }
 `;
 
 const Text = styled.p`
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.3;
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
 `;
 
 const Heading2 = styled.h2`
