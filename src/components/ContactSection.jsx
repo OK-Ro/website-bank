@@ -27,6 +27,7 @@ const ContactContainer = styled.div`
 const ContactFormContainer = styled.div`
   background: #f4f3f3;
   font-family: "Lato", sans-serif;
+
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 0.5fr 2fr;
@@ -219,12 +220,16 @@ const ContactSection = () => {
         </Header>
         <Address>
           <i className="fas fa-map-marker-alt"></i>
+          <h3>8266 Gygax</h3>
+          <h3>Norfolk, VA</h3>
         </Address>
         <Phone>
           <i className="fas fa-phone-alt"></i>
+          <h3>757 287 1608</h3>
         </Phone>
         <Email>
           <i className="fas fa-envelope"></i>
+          <h3>hello@adept.com</h3>
         </Email>
         <ContactForm>
           <input type="text" placeholder="Name" />
