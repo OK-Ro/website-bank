@@ -1,33 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const contactContainer = styled.div`
-  scroll-behavior: smooth;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-  width: 100%;
-  background-image: radial-gradient(
-      at 40% 20%,
-      rgb(255, 184, 122) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 80% 0%, rgb(31, 221, 255) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, rgb(255, 219, 222) 0px, transparent 50%),
-    radial-gradient(at 80% 50%, rgb(255, 133, 173) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, rgb(255, 181, 138) 0px, transparent 50%),
-    radial-gradient(at 80% 100%, rgb(107, 102, 255) 0px, transparent 50%),
-    radial-gradient(at 0% 0%, rgb(255, 133, 167) 0px, transparent 50%);
-  background-repeat: no-repeat;
-`;
-
+// Styled components
 const ContactFormContainer = styled.div`
   background: #f4f3f3;
   font-family: "Lato", sans-serif;
-  width: 800px;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 0.5fr 2fr;
@@ -189,9 +167,9 @@ const ContactForm = styled.form`
   }
 `;
 
+// React component
 const ContactSection = () => {
   return (
-    <contactContainer
     <ContactFormContainer>
       <ContactUs>
         <ContactHeader>
