@@ -1,11 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 
-// Styled components
+const ContactContainer = styled.div`
+  scroll-behavior: smooth;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  width: 100%;
+
+  background-repeat: no-repeat;
+`;
+
 const ContactFormContainer = styled.div`
   background: #f4f3f3;
   font-family: "Lato", sans-serif;
-  width: 800px;
+
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 0.5fr 2fr;
@@ -167,55 +179,56 @@ const ContactForm = styled.form`
   }
 `;
 
-// React component
 const ContactSection = () => {
   return (
-    <ContactFormContainer>
-      <ContactUs>
-        <ContactHeader>
-          <h1>&#9135;&#9135;&#9135;&#9135;&nbsp;&nbsp;CONTACT US</h1>
-        </ContactHeader>
-        <SocialBar>
-          <ul>
-            <li>
-              <i className="fab fa-facebook-f"></i>
-            </li>
-            <li>
-              <i className="fab fa-twitter"></i>
-            </li>
-            <li>
-              <i className="fab fa-instagram"></i>
-            </li>
-            <li>
-              <i className="fab fa-dribbble"></i>
-            </li>
-          </ul>
-        </SocialBar>
-      </ContactUs>
-      <Header>
-        <h1>Let's Get Started</h1>
-        <h2>Contact us to start your next project!</h2>
-      </Header>
-      <Address>
-        <i className="fas fa-map-marker-alt"></i>
-        <h3>8266 Gygax</h3>
-        <h3>Norfolk, VA</h3>
-      </Address>
-      <Phone>
-        <i className="fas fa-phone-alt"></i>
-        <h3>757 287 1608</h3>
-      </Phone>
-      <Email>
-        <i className="fas fa-envelope"></i>
-        <h3>hello@adept.com</h3>
-      </Email>
-      <ContactForm>
-        <input type="text" placeholder="Name" />
-        <input type="email" placeholder="Email" />
-        <textarea rows="4" placeholder="Tell us about your project..." />
-        <button type="button">SEND</button>
-      </ContactForm>
-    </ContactFormContainer>
+    <ContactContainer>
+      <ContactFormContainer>
+        <ContactUs>
+          <ContactHeader>
+            <h1>&#9135;&#9135;&#9135;&#9135;&nbsp;&nbsp;CONTACT US</h1>
+          </ContactHeader>
+          <SocialBar>
+            <ul>
+              <li>
+                <i className="fab fa-facebook-f"></i>
+              </li>
+              <li>
+                <i className="fab fa-twitter"></i>
+              </li>
+              <li>
+                <i className="fab fa-instagram"></i>
+              </li>
+              <li>
+                <i className="fab fa-dribbble"></i>
+              </li>
+            </ul>
+          </SocialBar>
+        </ContactUs>
+        <Header>
+          <h1>Let's Get Started</h1>
+          <h2>Contact us to start your next project!</h2>
+        </Header>
+        <Address>
+          <i className="fas fa-map-marker-alt"></i>
+          <h3>8266 Gygax</h3>
+          <h3>Norfolk, VA</h3>
+        </Address>
+        <Phone>
+          <i className="fas fa-phone-alt"></i>
+          <h3>757 287 1608</h3>
+        </Phone>
+        <Email>
+          <i className="fas fa-envelope"></i>
+          <h3>hello@adept.com</h3>
+        </Email>
+        <ContactForm>
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <textarea rows="4" placeholder="Tell us about your project..." />
+          <button type="button">SEND</button>
+        </ContactForm>
+      </ContactFormContainer>
+    </ContactContainer>
   );
 };
 
