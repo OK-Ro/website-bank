@@ -5,7 +5,7 @@ import styled from "styled-components";
 const ContactFormContainer = styled.div`
   background: #f4f3f3;
   font-family: "Lato", sans-serif;
-  width: 100%;
+  width: 800px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 0.5fr 2fr;
