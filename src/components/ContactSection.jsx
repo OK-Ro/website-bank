@@ -5,96 +5,166 @@ import styled from "styled-components";
 const ContactFormContainer = styled.div`
   background: #f4f3f3;
   font-family: "Lato", sans-serif;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+  width: 800px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, auto);
-  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 0.5fr 2fr;
+  grid-template-areas:
+    "contact-us header header header"
+    "contact-us address phone email"
+    "contact-us contact-form contact-form contact-form";
 `;
 
 const ContactUs = styled.div`
   position: relative;
+  width: 250px;
   background: #c3e0ec;
   overflow: hidden;
+
+  &:before {
+    position: absolute;
+    content: "";
+    bottom: -50px;
+    left: -100px;
+    height: 250px;
+    width: 400px;
+    background: #f8b7d8;
+    transform: rotate(25deg);
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    bottom: -80px;
+    right: -100px;
+    height: 270px;
+    width: 400px;
+    background: #9ed8eb;
+    transform: rotate(-25deg);
+  }
 `;
 
 const ContactHeader = styled.div`
   color: white;
   position: absolute;
   transform: rotate(-90deg);
-  top: 50%;
-  left: -30px;
-  font-size: 1.5rem;
+  top: 120px;
+  left: -40px;
+
+  & h1 {
+    font-size: 1.5rem;
+  }
 `;
 
 const SocialBar = styled.div`
   position: absolute;
   bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  ul {
+  left: 75px;
+  z-index: 1;
+  width: 100px;
+
+  & ul {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
   }
-  li {
-    margin-right: 10px;
-  }
-  i {
+
+  & li {
+    display: inline-block;
     color: white;
-    font-size: 1.5rem;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    margin-right: -4px;
+    font-size: 1.2rem;
   }
 `;
 
 const Header = styled.div`
   text-align: center;
+  padding: 20px 0;
   color: #444;
+
+  & h1 {
+    font-weight: normal;
+  }
+
+  & h2 {
+    margin-top: 10px;
+    font-weight: 300;
+  }
 `;
 
 const Address = styled.div`
   text-align: center;
+  padding: 20px 0;
   color: #444;
+
+  & h3 {
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  & i {
+    color: #f8b7d8;
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+  }
 `;
 
+const Phone = styled(Address)``;
+
+const Email = styled(Address)``;
+
 const ContactForm = styled.form`
-  width: 100%;
-  grid-column: span 4;
+  position: relative;
+  width: 440px;
+  margin: 0 auto;
   padding: 20px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   background: white;
-`;
 
-const InputField = styled.input`
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-`;
+  & input,
+  & textarea {
+    background: white;
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    border: 0;
+  }
 
-const TextArea = styled.textarea`
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-`;
+  & input {
+    height: 40px;
+    line-height: 40px;
+    outline: 0;
+    border-bottom: 1px solid rgba(68, 68, 68, 0.3);
+    font-size: 1rem;
+    color: rgba(68, 68, 68, 0.8);
+  }
 
-const SubmitButton = styled.button`
-  width: 100%;
-  padding: 10px;
-  background-color: #9ed8eb;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
+  & textarea {
+    border-bottom: 1px solid rgba(68, 68, 68, 0.3);
+    resize: none;
+    outline: none;
+    font-size: 1rem;
+    font-family: lato;
+    color: rgba(68, 68, 68, 0.8);
+  }
+
+  & button {
+    position: absolute;
+    display: block;
+    height: 40px;
+    width: 250px;
+    left: 95px;
+    border: 0;
+    border-radius: 20px;
+    bottom: -20px;
+    background: #9ed8eb;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 300;
+    outline: none;
+  }
 `;
 
 // React component
@@ -103,7 +173,7 @@ const ContactSection = () => {
     <ContactFormContainer>
       <ContactUs>
         <ContactHeader>
-          <h1>CONTACT US</h1>
+          <h1>&#9135;&#9135;&#9135;&#9135;&nbsp;&nbsp;CONTACT US</h1>
         </ContactHeader>
         <SocialBar>
           <ul>
@@ -131,22 +201,21 @@ const ContactSection = () => {
         <h3>8266 Gygax</h3>
         <h3>Norfolk, VA</h3>
       </Address>
-      <Address>
+      <Phone>
         <i className="fas fa-phone-alt"></i>
         <h3>757 287 1608</h3>
-      </Address>
-      <Address>
+      </Phone>
+      <Email>
         <i className="fas fa-envelope"></i>
         <h3>hello@adept.com</h3>
-      </Address>
+      </Email>
       <ContactForm>
-        <InputField type="text" placeholder="Name" />
-        <InputField type="email" placeholder="Email" />
-        <TextArea rows="4" placeholder="Tell us about your project..." />
-        <SubmitButton type="submit">SEND</SubmitButton>
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email" />
+        <textarea rows="4" placeholder="Tell us about your project..." />
+        <button type="button">SEND</button>
       </ContactForm>
     </ContactFormContainer>
   );
 };
-
 export default ContactSection;
