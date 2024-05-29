@@ -10,79 +10,38 @@ import {
 const FooterSection = styled.footer`
   background-color: #333;
   color: #fff;
-  padding: 40px 20px;
-  text-align: center;
-
-  @media (min-width: 768px) {
-    text-align: left;
-  }
+  padding: 40px 0;
 `;
 
 const FooterContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
 `;
 
 const FooterLinks = styled.ul`
   list-style: none;
   padding: 0;
-  margin: 20px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  li {
-    margin: 5px 0;
-  }
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-    align-items: flex-start;
-
-    li {
-      margin: 0 15px;
-    }
-  }
+  margin: 0;
 `;
 
 const ContactInfo = styled.div`
-  margin: 20px 0;
-  text-align: center;
-
   p {
     margin: 5px 0;
-  }
-
-  @media (min-width: 768px) {
-    text-align: left;
   }
 `;
 
 const SocialLinks = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-
   .social-icon {
-    margin: 0 10px;
+    margin-right: 10px;
     color: #fff;
     font-size: 24px;
+    text-decoration: none;
     transition: color 0.3s;
 
     &:hover {
       color: #ccc;
     }
-  }
-
-  @media (min-width: 768px) {
-    justify-content: flex-start;
   }
 `;
 
