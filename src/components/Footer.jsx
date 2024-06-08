@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookF,
@@ -6,50 +7,111 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
+const FooterSection = styled.footer`
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+`;
+
+const FooterContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;
+
+const FooterLinks = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    margin: 0;
+  }
+`;
+
+const FooterLink = styled.li`
+  margin: 0 15px;
+  a {
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      color: #ccc;
+    }
+  }
+`;
+
+const ContactInfo = styled.div`
+  text-align: center;
+  margin-bottom: 20px;
+  @media (min-width: 768px) {
+    text-align: left;
+    margin-bottom: 0;
+  }
+  p {
+    margin: 5px 0;
+  }
+`;
+
+const SocialLinks = styled.div`
+  display: flex;
+  justify-content: center;
+  .social-icon {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+    &:hover {
+      color: #ccc;
+    }
+  }
+`;
+
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-10">
-      <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center">
+    <FooterSection>
+      <FooterContainer>
         {/* Footer Links */}
-        <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 mb-6 md:mb-0">
-          <li>
-            <a href="/#" className="hover:text-gray-400">
-              Terms of Service
-            </a>
-          </li>
-          <li>
-            <a href="/#" className="hover:text-gray-400">
-              Privacy Policy
-            </a>
-          </li>
-          <li>
-            <a href="/#" className="hover:text-gray-400">
-              FAQs
-            </a>
-          </li>
-        </ul>
+        <FooterLinks>
+          <FooterLink>
+            <a href="/#">Terms of Service</a>
+          </FooterLink>
+          <FooterLink>
+            <a href="/#">Privacy Policy</a>
+          </FooterLink>
+          <FooterLink>
+            <a href="/#">FAQs</a>
+          </FooterLink>
+        </FooterLinks>
 
         {/* Contact Information */}
-        <div className="text-center md:text-left mb-6 md:mb-0">
-          <p className="mb-1">Contact Us:</p>
-          <p className="mb-1">Email: info@example.com</p>
+        <ContactInfo>
+          <p>Contact Us:</p>
+          <p>Email: info@example.com</p>
           <p>Phone: 123-456-7890</p>
-        </div>
+        </ContactInfo>
 
         {/* Social Media Links */}
-        <div className="flex space-x-4">
-          <a href="/#" className="text-white hover:text-gray-400">
-            <FontAwesomeIcon icon={faFacebookF} className="text-2xl" />
+        <SocialLinks>
+          <a href="/#" className="social-icon">
+            <FontAwesomeIcon icon={faFacebookF} />
           </a>
-          <a href="/#" className="text-white hover:text-gray-400">
-            <FontAwesomeIcon icon={faTwitter} className="text-2xl" />
+          <a href="/#" className="social-icon">
+            <FontAwesomeIcon icon={faTwitter} />
           </a>
-          <a href="/#" className="text-white hover:text-gray-400">
-            <FontAwesomeIcon icon={faInstagram} className="text-2xl" />
+          <a href="/#" className="social-icon">
+            <FontAwesomeIcon icon={faInstagram} />
           </a>
-        </div>
-      </div>
-    </footer>
+        </SocialLinks>
+      </FooterContainer>
+    </FooterSection>
   );
 };
 
