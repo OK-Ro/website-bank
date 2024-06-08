@@ -35,22 +35,23 @@ const Bubbles = styled.div`
   left: 0;
   right: 0;
   height: 1rem;
-  background: #ed5565;
-  filter: url("#blob");
+  background: transparent;
 
   .bubble {
     position: absolute;
     left: var(--position, 50%);
-    background: linear-gradient(
-      to bottom,
-      #ff5722,
-      #ff9800,
-      #ffeb3b,
-      #ffc107,
-      #ff5722
+    width: var(--size, 4rem);
+    height: var(--size, 4rem);
+    background: radial-gradient(
+      ellipse at center,
+      rgba(255, 87, 34, 0.8) 0%,
+      rgba(255, 87, 34, 0.6) 20%,
+      rgba(255, 87, 34, 0.4) 40%,
+      rgba(255, 87, 34, 0.2) 60%,
+      transparent 80%
     );
     z-index: 1;
-    border-radius: 100%;
+    border-radius: 10% 50% 50% 50% / 50% 10% 50% 50%;
     animation: ${bubbleSize} var(--time, 4s) ease-in infinite var(--delay, 0s),
       ${bubbleMove} var(--time, 4s) ease-in infinite var(--delay, 0s);
     transform: translate(-50%, 100%);
