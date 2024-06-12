@@ -120,7 +120,6 @@ const Button = styled.button`
 `;
 
 const PricingSection = () => {
-  // Define array of information for different cards
   const cardData = [
     {
       title: "Basic",
@@ -146,13 +145,12 @@ const PricingSection = () => {
   // Function to handle card selection
   const handleSelectPlan = (plan) => {
     console.log(`Selected plan: ${plan}`);
-    // Add your logic here to handle plan selection, such as redirecting to a checkout page
+    // logic here to handle plan
   };
   return (
     <Wrapper>
       <Container>
         {cardData.map((card, index) => (
-          // Wrap each Card with its own ScrollEffectContainer
           <ScrollEffectContainer key={index}>
             <Card>
               <CardInner>
