@@ -53,9 +53,23 @@ const Content = styled.div`
   background: #000;
   color: #f5f7fa;
 
-  a {
+  div {
+    margin-bottom: 1rem;
+  }
+
+  b {
+    color: white;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  span {
     color: #f5f7fa;
-    text-decoration: none;
     margin-right: 0.5rem;
   }
 
@@ -95,44 +109,47 @@ const Footer = () => {
       </Bubbles>
       <Content>
         <div>
-          <div>
-            <b>Eldew</b>
-            <a href="#">Secuce</a>
-            <a href="#">Drupand</a>
-            <a href="#">Oceash</a>
-            <a href="#">Ugefe</a>
-            <a href="#">Babed</a>
-          </div>
-          <div>
-            <b>Spotha</b>
-            <a href="#">Miskasa</a>
-            <a href="#">Agithe</a>
-            <a href="#">Scesha</a>
-            <a href="#">Lulle</a>
-          </div>
-          <div>
-            <b>Chashakib</b>
-            <a href="#">Chogauw</a>
-            <a href="#">Phachuled</a>
-            <a href="#">Tiebeft</a>
-            <a href="#">Ocid</a>
-            <a href="#">Izom</a>
-            <a href="#">Ort</a>
-          </div>
-          <div>
-            <b>Athod</b>
-            <a href="#">Pamuz</a>
-            <a href="#">Vapert</a>
-            <a href="#">Neesk</a>
-            <a href="#">Omemanen</a>
+          <b>Eldew</b>
+          <div className="links">
+            <span>Secuce</span>
+            <span>Drupand</span>
+            <span>Oceash</span>
+            <span>Ugefe</span>
+            <span>Babed</span>
           </div>
         </div>
         <div>
-          <a
+          <b>Spotha</b>
+          <div className="links">
+            <span>Miskasa</span>
+            <span>Agithe</span>
+            <span>Scesha</span>
+            <span>Lulle</span>
+          </div>
+        </div>
+        <div>
+          <b>Chashakib</b>
+          <div className="links">
+            <span>Chogauw</span>
+            <span>Phachuled</span>
+            <span>Tiebeft</span>
+            <span>Ocid</span>
+            <span>Izom</span>
+            <span>Ort</span>
+          </div>
+        </div>
+        <div>
+          <b>Athod</b>
+          <div className="links">
+            <span>Pamuz</span>
+            <span>Vapert</span>
+            <span>Neesk</span>
+            <span>Omemanen</span>
+          </div>
+        </div>
+        <div>
+          <div
             className="image"
-            href="https://codepen.io/z-"
-            target="_blank"
-            rel="noopener noreferrer"
             style={{
               backgroundImage:
                 "url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/happy.svg')",
